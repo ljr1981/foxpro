@@ -1,7 +1,8 @@
 The Eiffel FoxPro Library
 =========================
-
 Giving Eiffel access to xBase Database Files (DBFs)
+---------------------------------------------------
+
 The dBase-III/IV/V or "xBase" languages of the 1980s and 1990s left a very big mark on the computing industry. One of the xBase languages to evolve was Foxpro from Fox Software, which was eventually purchased by Microsoft and became Microsoft Visual FoxPro, reaching version 9.x.
 
 At the core of this technology was (and is) the DBF (i.e. database file). The DBF not only served as a vehicle for persisting data to long term storage, but became (in the case of Foxpro) the storage mechanism for its own code. Thus, the use of the DBF was core and prolific. However, this choice would also doom the language system to being excluded from the .NET family when Microsoft began its project of shepherding various languages into that programming paradigm.
