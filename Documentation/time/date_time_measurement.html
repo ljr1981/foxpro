@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Date/Time Measurement"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2009, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>date_time_measurement Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_measurement_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_measurement_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="date_time_measurement"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Date/Time Measurement&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2009-01-01 04:38:30 -0800 (Thu, 01 Jan 2009) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 76534 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">deferred</SPAN> <SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../time/date_time_measurement.html">DATE_TIME_MEASUREMENT</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../time/date_constants.html">DATE_CONSTANTS</A>
+
+	<A CLASS="eclass" HREF="../time/time_constants.html">TIME_CONSTANTS</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_date"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_measurement.html">DATE_MEASUREMENT</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Date corresponding to current object</SPAN>
+		<SPAN CLASS="ekeyword">deferred</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_time"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/time_measurement.html">TIME_MEASUREMENT</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Time corresponding to current object</SPAN>
+		<SPAN CLASS="ekeyword">deferred</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_year"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_year">year</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Year of the current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_measurement.html#f_year">year</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_year</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_measurement.html#f_year">year</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_month"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_month">month</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Month of the current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_measurement.html#f_month">month</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_month</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_measurement.html#f_month">month</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_day"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_day">day</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Day of the current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_measurement.html#f_day">day</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_day</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_measurement.html#f_day">day</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_hour"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_hour">hour</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Hour of the current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_hour">hour</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_hour</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_hour">hour</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_minute"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_minute">minute</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Minute of the current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_minute">minute</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_minute</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_minute">minute</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_second"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_second">second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Second of the current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_second">second</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_second</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_second">second</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_fine_second"></A><A CLASS="efeature" HREF="../time/date_time_measurement.html#f_fine_second">fine_second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Representation of second with decimals</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_fine_second">fine_second</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_fine_second</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/time_measurement.html#f_fine_second">fine_second</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">invariant</SPAN>
+	<SPAN CLASS="etag">date_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_date">date</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+	<SPAN CLASS="etag">time_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_time_measurement.html#f_time">time</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2009, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../time/date_time_measurement.html">DATE_TIME_MEASUREMENT</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_measurement_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_measurement_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="date_time_measurement"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

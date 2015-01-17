@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="FoxPro DBF Writer"/>
+<meta name="synopsis" content="Given a collection of Eiffel data that one wants to place in an external DBF, use Current to construct the DBF header, subrecord (field) specifications, and then write those, plus any data content to the external DBF.  Steps: ====== (1) Create an instance of this class as an object. (2) Set the header specifications. (3) Set the field specifications. (4) Add data TUPLEs (records) using `add_row'  See EIS link below for more information."/>
+<meta name="eis" content="name=readme, protocol=PDF, tag=readme, src=$JINNY_TRUNK\jinny_foxpro\readme.pdf"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>fp_dbf_writer Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_dbf_writer_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_dbf_writer.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_dbf_writer"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../foxpro/fp_dbf_writer_chart.html">FP_DBF_WRITER</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ecluster" HREF="../foxpro/index.html">foxpro</A>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;FoxPro DBF Writer&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/any_chart.html">ANY</A>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`boolean_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_boolean_data">boolean_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_flag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`date_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_date_data">date_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_chart.html">DATE</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`datetime_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_datetime_data">datetime_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_datetime</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_time_chart.html">DATE_TIME</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`dbf_name' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_dbf_name">dbf_name</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`decimal_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_decimal_data">decimal_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_decimal</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal_chart.html">DECIMAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`float_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_float_data">float_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_float</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_32_chart.html">REAL_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`float_data_decimal' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_float_data_decimal">float_data_decimal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_decimal</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal_chart.html">DECIMAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`header' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_header">header</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_header_chart.html">FP_HEADER</A></SPAN>
+	<SPAN TITLE="`integer_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_integer_data">integer_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_integer</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_64_chart.html">INTEGER_64</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`name' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_name">name</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`numeric_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_numeric_data">numeric_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_numeric</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_32_chart.html">REAL_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`origin_1600' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_origin_1600">Origin_1600</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_chart.html">DATE</A></SPAN>
+	<SPAN TITLE="`string_data' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_string_data">string_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_spec</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_chart.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`add_row' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_add_row">add_row</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_row</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_row_specification_tuple">row_specification_tuple</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../base/tuple_chart.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`generate_dbf' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_generate_dbf">generate_dbf</A></SPAN>
+	<SPAN TITLE="`set_name' is declared in `Current'"><A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_set_name">set_name</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_name</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_dbf_writer.html#f_name">name</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_dbf_writer_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_dbf_writer.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_dbf_writer"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

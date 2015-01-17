@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="TTTPlatform specific encoding of Unicode strings. By default, UTF-8 on unix or UTF-16 on Windows.  TTTMixed-encoding consideration TTT============================  TTTMost operating systems have conventions for strings that are incompatible with Unicode. TTTOn UNIX, a string is just a null-terminated byte sequence, it does not follow any TTTspecific encoding. Usually the locale setting enables you to see the string the way TTTyou expect. TTTOn Windows, the sequence of names is made of null-terminated UTF-16 code unit sequence. Windows TTTdoes not guarantee that the sequence is actually a valid UTF-16 sequence.  TTTIn other words, when there is an invalid UTF-8 encoding on UNIX, or an invalid UTF-16 encoding TTTon Windows, the string is not directly representable as a Unicode string. To make it possible TTTto create and store strings in a textually representable form, the query `string' will create TTTan encoded representation that can be then later used in `make' to create a NATIVE_STRING TTTequivalent to the original string. The encoding is described in UTF_CONVERTER's note clause TTTand is a fourth variant of the recommended practice for replacement characters in Unicode TTT(see http://www.unicode.org/review/pr-121.html). "/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>native_string Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="native_string_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="native_string.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="native_string"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../base/native_string_chart.html">NATIVE_STRING</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">elks</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> 
+		<SPAN CLASS="estring">&quot;Platform specific encoding of Unicode strings. By default, UTF-8 on unix or UTF-16 on Windows.</SPAN>
+		
+		<SPAN CLASS="estring">Mixed-encoding consideration</SPAN>
+		<SPAN CLASS="estring">============================</SPAN>
+		
+		<SPAN CLASS="estring">Most operating systems have conventions for strings that are incompatible with Unicode.</SPAN>
+		<SPAN CLASS="estring">On UNIX, a string is just a null-terminated byte sequence, it does not follow any</SPAN>
+		<SPAN CLASS="estring">specific encoding. Usually the locale setting enables you to see the string the way</SPAN>
+		<SPAN CLASS="estring">you expect.</SPAN>
+		<SPAN CLASS="estring">On Windows, the sequence of names is made of null-terminated UTF-16 code unit sequence. Windows</SPAN>
+		<SPAN CLASS="estring">does not guarantee that the sequence is actually a valid UTF-16 sequence.</SPAN>
+		
+		<SPAN CLASS="estring">In other words, when there is an invalid UTF-8 encoding on UNIX, or an invalid UTF-16 encoding</SPAN>
+		<SPAN CLASS="estring">on Windows, the string is not directly representable as a Unicode string. To make it possible</SPAN>
+		<SPAN CLASS="estring">to create and store strings in a textually representable form, the query </SPAN><SPAN CLASS="estring">`string'</SPAN><SPAN CLASS="estring"> will create</SPAN>
+		<SPAN CLASS="estring">an encoded representation that can be then later used in </SPAN><SPAN CLASS="estring">`make'</SPAN><SPAN CLASS="estring"> to create a NATIVE_STRING</SPAN>
+		<SPAN CLASS="estring">equivalent to the original string. The encoding is described in UTF_CONVERTER's note clause</SPAN>
+		<SPAN CLASS="estring">and is a fourth variant of the recommended practice for replacement characters in Unicode</SPAN>
+		<SPAN CLASS="estring">(see </SPAN><A CLASS="estring" HREF="http://www.unicode.org/review/pr-121.html">http://www.unicode.org/review/pr-121.html</A><SPAN CLASS="estring">).</SPAN>
+		<SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">create</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/native_string.html#f_make">make</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/native_string.html#f_make_empty">make_empty</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/native_string.html#f_make_from_pointer">make_from_pointer</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/native_string.html#f_make_from_raw_string">make_from_raw_string</A>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/native_string_handler_chart.html">NATIVE_STRING_HANDLER</A>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`bytes_count' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_bytes_count">bytes_count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`capacity' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_capacity">capacity</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`is_empty' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_is_empty">is_empty</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_equal' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_is_equal">is_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/native_string_chart.html">NATIVE_STRING</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`item' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_item">item</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+	<SPAN TITLE="`managed_data' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_managed_data">managed_data</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/managed_pointer_chart.html">MANAGED_POINTER</A></SPAN>
+	<SPAN TITLE="`raw_string' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_raw_string">raw_string</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`string' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_string">string</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32_chart.html">STRING_32</A></SPAN>
+	<SPAN TITLE="`substring' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_substring">substring</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">start_pos</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">end_pos</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32_chart.html">STRING_32</A></SPAN>
+	<SPAN TITLE="`unit_count' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_unit_count">unit_count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`unit_size' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_unit_size">unit_size</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`set_shared_from_pointer' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_set_shared_from_pointer">set_shared_from_pointer</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_ptr</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_shared_from_pointer_and_count' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_set_shared_from_pointer_and_count">set_shared_from_pointer_and_count</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_ptr</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_length</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_string' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_set_string">set_string</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_substring' is declared in `Current'"><A CLASS="efeature" HREF="../base/native_string.html#f_set_substring">set_substring</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">start_pos</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">end_pos</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<SPAN CLASS="ekeyword">Constraints</SPAN>
+	<SPAN CLASS="etag">little endian windows</SPAN>
+	<SPAN CLASS="etag">even count on windows</SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="native_string_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="native_string.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="native_string"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

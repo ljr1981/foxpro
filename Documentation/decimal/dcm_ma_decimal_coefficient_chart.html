@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Decimal coefficients. They hold the significant digits. Can be seen as arrays of decimal values. Zero-based index. Index '0' is the least significant digit,index 'count-'1 is the most significant digit."/>
+<meta name="copyright" content="Copyright (c) 2004, Paul G. Crismer and others."/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2004, Paul G. Crismer and others."/>
+<meta name="license" content="MIT license"/>
+<meta name="details" content="Originally developed by Paul G. Crismer as part of Gobo.  Revised by Jocelyn Fiat for void safety."/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>dcm_ma_decimal_coefficient Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_coefficient_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_coefficient.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="dcm_ma_decimal_coefficient"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">deferred</SPAN> <SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">decimal</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> 
+		<SPAN CLASS="estring">&quot;Decimal coefficients. They hold the significant digits.</SPAN>
+		<SPAN CLASS="estring">Can be seen as arrays of decimal values.</SPAN>
+		<SPAN CLASS="estring">Zero-based index.</SPAN>
+		<SPAN CLASS="estring">Index '0' is the least significant digit,index 'count-'1 is the most significant digit.&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/comparable_chart.html">COMPARABLE</A><SPAN CLASS="echar">*</SPAN>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`capacity' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_capacity">capacity</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`count' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_count">count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`is_equal' was declared in COMPARABLE"><A CLASS="efeature" HREF="../base/comparable.html#f_is_equal">is_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_greater' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_is_greater">is_greater</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_is_greater">&gt;</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_greater_equal' was declared in COMPARABLE"><A CLASS="efeature" HREF="../base/comparable.html#f_is_greater_equal">is_greater_equal</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_less' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_is_less">is_less</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_is_less">&lt;</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_less_equal' was declared in COMPARABLE"><A CLASS="efeature" HREF="../base/comparable.html#f_is_less_equal">is_less_equal</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_one' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_is_one">is_one</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_significant' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_is_significant">is_significant</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_zero' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_is_zero">is_zero</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`item' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_item">item</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">index</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`lower' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_lower">lower</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`max' was declared in COMPARABLE"><A CLASS="efeature" HREF="../base/comparable.html#f_max">max</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A></SPAN>
+	<SPAN TITLE="`min' was declared in COMPARABLE"><A CLASS="efeature" HREF="../base/comparable.html#f_min">min</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A></SPAN>
+	<SPAN TITLE="`msd_index' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_msd_index">msd_index</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`subcoefficient' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_subcoefficient">subcoefficient</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">index_start</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">index_end</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A></SPAN>
+	<SPAN TITLE="`three_way_comparison' was declared in COMPARABLE"><A CLASS="efeature" HREF="../base/comparable.html#f_three_way_comparison">three_way_comparison</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`to_twin' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_to_twin">to_twin</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_chart.html">DCM_MA_DECIMAL_COEFFICIENT</A></SPAN>
+	<SPAN TITLE="`upper' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_upper">upper</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`valid_index' is declared in `Current'"><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_coefficient.html#f_valid_index">valid_index</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">index</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+
+<SPAN CLASS="ekeyword">Constraints</SPAN>
+	<SPAN CLASS="etag">count less or equal capacity</SPAN>
+	<SPAN CLASS="etag">count not negative</SPAN>
+	<SPAN CLASS="etag">lower upper consistent</SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_coefficient_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_coefficient.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="dcm_ma_decimal_coefficient"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

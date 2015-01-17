@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="TTCondition variables allow threads to synchronize based on the content of a shared data, whereas TTmutexes only synchronize access to the data. In other words, a condition variable is a TTsynchronization object that enables threads to wait until a particular condition occurs. TT TTWhen a thread executes a `wait' call on a condition variable, it must hold an associated `mutex' TT(used for checking that condition). Then, it is immediately suspended and put into the waiting TTqueue. The thread is suspended and is waiting for the condition to occur.  TTEventually, when the condition has occurred, a thread will `signal' it. Two possible scenarios: TT- if there are threads waiting, then one of the waiting thread will resume its execution and TT  will get the `mutex' in a locked state. TT- if there are no threads waiting, nothing is done  TTFor the simple usage of a condition variable, it is very similar to using a semaphore. TT TTIn addition you have `broadcast' that will resume all waiting threads at once, and TT`wait_with_timeout' that will wait only a certain amount of time before abandonning the wait. TT TTThe `signal' and `broadcast' routines can be called by a thread whether or not it currently owns TTthe mutex that threads calling `wait' or `wait_with_timeout' have associated with the condition TTvariable during their waits. If, however, predictable scheduling behavior is required, then that TTmutex should be locked by the thread prior to calling `signal' or `broadcast'. TT TTAssuming `shared_data' an INTEGER initially set to zero, then a typical usage of condition variable TTto wait until `shared_data' becomes one, could be written as followed in thread A: TT TTTmutex.lock TTTfrom TTTuntil TTTTshared_data = 1 TTTloop TTTTcondition_variable.wait (mutex) TTTend TTTmutex.unlock TTT TTand in thread B: TT TTTmutex.lock TTTshared_data := 1 TTTcondition_variable.signal TTTmutex.unlock TTT TTThread A will be blocked until thread B signal that now `shared_data' is 1."/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2010, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>condition_variable Relations</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="condition_variable_chart.html">Chart</A></TD>
+<TD CLASS="nolink2">Relations</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="condition_variable.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="condition_variable"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../thread/condition_variable_links.html">CONDITION_VARIABLE</A>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/disposable_links.html">DISPOSABLE</A><SPAN CLASS="echar">*</SPAN>
+
+<SPAN CLASS="ekeyword">Clients</SPAN>
+	<A CLASS="eclass" HREF="../thread/condition_variable_links.html">CONDITION_VARIABLE</A>
+	<A CLASS="eclass" HREF="../testing/eqa_system_execution_process_links.html">EQA_SYSTEM_EXECUTION_PROCESS</A>
+
+<SPAN CLASS="ekeyword">Suppliers</SPAN>
+	<A CLASS="eclass" HREF="../base/boolean_links.html">BOOLEAN</A>
+	<A CLASS="eclass" HREF="../thread/condition_variable_links.html">CONDITION_VARIABLE</A>
+	<A CLASS="eclass" HREF="../base/integer_32_links.html">INTEGER_32</A>
+	<A CLASS="eclass" HREF="../thread/mutex_links.html">MUTEX</A>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="condition_variable_chart.html">Chart</A></TD>
+<TD CLASS="nolink2">Relations</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="condition_variable.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="condition_variable"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

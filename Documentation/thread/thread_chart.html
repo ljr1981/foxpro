@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Class defining an Eiffel thread."/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2013, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>thread Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="thread_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="thread.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="thread"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">deferred</SPAN> <SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../thread/thread_chart.html">THREAD</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">thread</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Class defining an Eiffel thread.&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../thread/thread_control_chart.html">THREAD_CONTROL</A>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`current_thread_id' was declared in THREAD_ENVIRONMENT"><A CLASS="efeature" HREF="../thread/thread_environment.html#f_current_thread_id">current_thread_id</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+	<SPAN TITLE="`is_exit_supported' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_is_exit_supported">is_exit_supported</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_last_launch_successful' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_is_last_launch_successful">is_last_launch_successful</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_launchable' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_is_launchable">is_launchable</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`join_with_timeout' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_join_with_timeout">join_with_timeout</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_timeout_ms</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_64_chart.html">NATURAL_64</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`terminated' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_terminated">terminated</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`thread_id' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_thread_id">thread_id</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`execute' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_execute">execute</A></SPAN>
+	<SPAN TITLE="`exit' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_exit">exit</A></SPAN>
+	<SPAN TITLE="`join' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_join">join</A></SPAN>
+	<SPAN TITLE="`join_all' was declared in THREAD_CONTROL"><A CLASS="efeature" HREF="../thread/thread_control.html#f_join_all">join_all</A></SPAN>
+	<SPAN TITLE="`launch' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_launch">launch</A></SPAN>
+	<SPAN TITLE="`launch_with_attributes' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_launch_with_attributes">launch_with_attributes</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">attr</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../thread/thread_attributes_chart.html">THREAD_ATTRIBUTES</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`sleep' is declared in `Current'"><A CLASS="efeature" HREF="../thread/thread.html#f_sleep">sleep</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">nanoseconds</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_64_chart.html">INTEGER_64</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`yield' was declared in THREAD_CONTROL"><A CLASS="efeature" HREF="../thread/thread_control.html#f_yield">yield</A></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="thread_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="thread.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="thread"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

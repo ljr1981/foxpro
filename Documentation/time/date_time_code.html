@@ -1,0 +1,407 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Code used by the DATE/TIME to STRING conversion"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2013, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>date_time_code Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_code_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_code_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="date_time_code"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Code used by the DATE/TIME to STRING conversion&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2013-06-19 02:21:05 -0700 (Wed, 19 Jun 2013) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 92714 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../time/date_time_code.html">DATE_TIME_CODE</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../time/code_validity_checker.html">CODE_VALIDITY_CHECKER</A>
+
+	<A CLASS="eclass" HREF="../base/debug_output.html">DEBUG_OUTPUT</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../time/date_time_code.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Creation</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_make">make</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create code.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">v_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">v_is_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_code">is_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date_time_code.html#f_set_value">set_value</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">value_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_debug_output"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_debug_output">debug_output</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> String that should be displayed in debugger to represent </SPAN>`Current'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_make_empty">make_empty</A>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_out">out</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot; -&gt; &quot;<SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_name">name</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_separator_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_is_separator_code">is_separator_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">inspect</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A>
+			<SPAN CLASS="ekeyword">when</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_colon_type_code">Colon_type_code</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_slash_type_code">Slash_type_code</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_minus_type_code">Minus_type_code</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_comma_type_code">Comma_type_code</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_space_type_code">Space_type_code</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_dot_type_code">Dot_type_code</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Change</SPAN>
+
+	<A NAME="f_set_value"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_set_value">set_value</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set all the attributes such as</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Value, count_max, etc.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">v_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">v_is_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_code">is_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_name</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_name">name</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_twin">twin</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_day">is_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;day-numeric&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">31</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_day_numeric_type_code">Day_numeric_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_day0">is_day0</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;day-numeric-on-2-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">31</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_day_numeric_on_2_digits_type_code">Day_numeric_on_2_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_day_text">is_day_text</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">3</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">3</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;day-text&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">7</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_day_text_type_code">Day_text_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_year4">is_year4</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">4</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">4</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;year-on-4-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_year_on_4_digits_type_code">Year_on_4_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">-1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">-1</SPAN>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_year2">is_year2</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;year-on-2-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_year_on_2_digits_type_code">Year_on_2_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">-1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">-1</SPAN>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_month">is_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;month-numeric&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">12</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_month_numeric_type_code">Month_numeric_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_month0">is_month0</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;month-numeric-on-2-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">12</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_month_numeric_on_2_digits_type_code">Month_numeric_on_2_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_month_text">is_month_text</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">3</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">3</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;month-text&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">12</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_month_text_type_code">Month_text_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_hour">is_hour</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;hour-numeric&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">24</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_numeric_type_code">Hour_numeric_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_hour0">is_hour0</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;hour-numeric-on-2-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">24</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_numeric_on_2_digits_type_code">Hour_numeric_on_2_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_hour12">is_hour12</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;hour-12-clock-scale&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">12</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_12_clock_scale_type_code">Hour_12_clock_scale_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_minute">is_minute</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;minute-numeric&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">59</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_minute_numeric_type_code">Minute_numeric_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_minute0">is_minute0</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;minute-numeric-on-2-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">59</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_minute_numeric_on_2_digits_type_code">Minute_numeric_on_2_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_second">is_second</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;second-numeric&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">59</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_second_numeric_type_code">Second_numeric_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_second0">is_second0</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;second-numeric-on-2-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">59</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_second_numeric_on_2_digits_type_code">Second_numeric_on_2_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_fractional_second">is_fractional_second</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_substring">substring</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">3</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_to_integer">to_integer</A>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;fractional-second-numeric&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_fractional_second_numeric_type_code">Fractional_second_numeric_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">-1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">-1</SPAN>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_colon">is_colon</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;colon&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_colon_type_code">Colon_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_slash">is_slash</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;slash&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_slash_type_code">Slash_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_minus">is_minus</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;minus&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_minus_type_code">Minus_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_comma">is_comma</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;comma&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_comma_type_code">Comma_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_space">is_space</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;space&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_space_type_code">Space_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_dot">is_dot</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;dot&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_dot_type_code">Dot_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_meridiem">is_meridiem</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;meridiem&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_meridiem_type_code">Meridiem_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">check</SPAN>
+					<SPAN CLASS="etag">is_hour12_0</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/code_validity_checker.html#f_is_hour12_0">is_hour12_0</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+				<SPAN CLASS="elocal">l_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> &quot;hour-12-clock-scale-on-2-digits&quot;
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">12</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_12_clock_scale_on_2_digits_type_code">Hour_12_clock_scale_on_2_digits_type_code</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_integer_32">to_integer_32</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../time/date_time_code.html#f_name">name</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_name</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">value_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Attributes</SPAN>
+
+	<A NAME="f_value"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_value">value</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> String code</SPAN>
+
+	<A NAME="f_count_max"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_count_max">count_max</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Count max of the real value</SPAN>
+
+	<A NAME="f_count_min"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_count_min">count_min</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Count min of the real value</SPAN>
+
+	<A NAME="f_name"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_name">name</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Name of the code</SPAN>
+
+	<A NAME="f_value_max"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_value_max">value_max</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Max of the real value</SPAN>
+
+	<A NAME="f_value_min"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_value_min">value_min</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Min of the real value</SPAN>
+
+	<A NAME="f_type"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_type">type</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Type number.</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_is_text"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_is_text">is_text</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Has the code a string value?</SPAN>
+
+	<A NAME="f_is_numeric"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_is_numeric">is_numeric</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Has the code a numeric value?</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../time/find_separator_facility.html">FIND_SEPARATOR_FACILITY</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_day_numeric_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_day_numeric_type_code">Day_numeric_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+
+	<A NAME="f_day_numeric_on_2_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_day_numeric_on_2_digits_type_code">Day_numeric_on_2_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+
+	<A NAME="f_day_text_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_day_text_type_code">Day_text_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">3</SPAN>
+
+	<A NAME="f_year_on_4_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_year_on_4_digits_type_code">Year_on_4_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">4</SPAN>
+
+	<A NAME="f_year_on_2_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_year_on_2_digits_type_code">Year_on_2_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">5</SPAN>
+
+	<A NAME="f_month_numeric_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_month_numeric_type_code">Month_numeric_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">6</SPAN>
+
+	<A NAME="f_month_numeric_on_2_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_month_numeric_on_2_digits_type_code">Month_numeric_on_2_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">7</SPAN>
+
+	<A NAME="f_month_text_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_month_text_type_code">Month_text_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">8</SPAN>
+
+	<A NAME="f_hour_numeric_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_numeric_type_code">Hour_numeric_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">9</SPAN>
+
+	<A NAME="f_hour_numeric_on_2_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_numeric_on_2_digits_type_code">Hour_numeric_on_2_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">10</SPAN>
+
+	<A NAME="f_hour_12_clock_scale_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_12_clock_scale_type_code">Hour_12_clock_scale_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">11</SPAN>
+
+	<A NAME="f_hour_12_clock_scale_on_2_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_hour_12_clock_scale_on_2_digits_type_code">Hour_12_clock_scale_on_2_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">12</SPAN>
+
+	<A NAME="f_minute_numeric_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_minute_numeric_type_code">Minute_numeric_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">13</SPAN>
+
+	<A NAME="f_minute_numeric_on_2_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_minute_numeric_on_2_digits_type_code">Minute_numeric_on_2_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">14</SPAN>
+
+	<A NAME="f_second_numeric_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_second_numeric_type_code">Second_numeric_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">15</SPAN>
+
+	<A NAME="f_second_numeric_on_2_digits_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_second_numeric_on_2_digits_type_code">Second_numeric_on_2_digits_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">16</SPAN>
+
+	<A NAME="f_fractional_second_numeric_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_fractional_second_numeric_type_code">Fractional_second_numeric_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">17</SPAN>
+
+	<A NAME="f_colon_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_colon_type_code">Colon_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">18</SPAN>
+
+	<A NAME="f_slash_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_slash_type_code">Slash_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">19</SPAN>
+
+	<A NAME="f_minus_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_minus_type_code">Minus_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">20</SPAN>
+
+	<A NAME="f_comma_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_comma_type_code">Comma_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">21</SPAN>
+
+	<A NAME="f_space_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_space_type_code">Space_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">22</SPAN>
+
+	<A NAME="f_dot_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_dot_type_code">Dot_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">23</SPAN>
+
+	<A NAME="f_meridiem_type_code"></A><A CLASS="efeature" HREF="../time/date_time_code.html#f_meridiem_type_code">Meridiem_type_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">24</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Type code constants</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2013, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../time/date_time_code.html">DATE_TIME_CODE</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_code_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_time_code_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="date_time_code"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

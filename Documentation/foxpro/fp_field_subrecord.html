@@ -1,0 +1,409 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="FoxPro DBF Header-Subrecord Field Specification"/>
+<meta name="specification" content="TTHeader Specification TT==================== TT32 ?128//147/ n: Field subrecords The number of fields determines the  TTnumber of field subrecords. One field subrecord exists for each  TTfield in the table.  TTSubrecord Specification TT=======================  TTByte offsetTTDescription TT-----------TT------------ TT0 ?128//147/ 10TTTField name with a maximum of 10 characters. If less than  TTTTTT10, it is padded with null characters (0x00). TTTTTT TT11TTTTField type: TTTTTTW   -   Blob TTTTTTC   ?128//147/   Character TTTTTTC   ?128//147/   Character (binary) TTTTTTY   ?128//147/   Currency TTTTTTB   ?128//147/   Double TTTTTTD   ?128//147/   Date TTTTTTT   ?128//147/   DateTime TTTTTTF   ?128//147/   Float TTTTTTG   ?128//147/   General TTTTTTI   ?128//147/   Integer TTTTTTL   ?128//147/   Logical TTTTTTM   ?128//147/   Memo TTTTTTM   ?128//147/   Memo (binary) TTTTTTN   ?128//147/   Numeric TTTTTTP   ?128//147/   Picture TTTTTTQ   -   Varbinary TTTTTTV   -   Varchar TTTTTTV   -   Varchar (binary) TTTTTNote TTTTTFor each Varchar and Varbinary field, one bit, or  TTTTTTvarlength bit, is allocated in the last system  TTTTTTfield, which is a hidden field and stores the null  TTTTTTstatus for all fields that can be null. If the  TTTTTTVarchar or Varbinary field can be null, the null  TTTTTTbit follows the varlength bit. If the varlength  TTTTTTbit is set to 1, the length of the actual field  TTTTTTvalue length is stored in the last byte of the  TTTTTTfield. Otherwise, if the bit is set to 0, length  TTTTTTof the value is equal to the field size. TTTTTT TT12 ?128//147/ 15TTDisplacement of field in record TT TT16TTTLength of field (in bytes) TT TT17TTTNumber of decimal places TT TT18TTTField flags:  TTTTT0x01   System Column (not visible to user)  TTTTT0x02   Column can store null values  TTTTT0x04   Binary column (for CHAR and MEMO only)  TTTTT0x06   (0x02+0x04) When a field is NULL and binary (Integer, Currency, and Character/Memo fields)  TTTTT0x0C   Column is autoincrementing. TT TT19 - 22TTValue of autoincrement Next value (LSB-MSB) TT TT23TTTValue of autoincrement Step value TT TT24 ?128//147/ 31TTReserved TT TTFor information about limitations on characters per record,  TTmaximum fields, and so on, see Visual FoxPro System Capacities."/>
+<meta name="eis" content="name=table_file_structure, protocol=URI, tag=external, src=http://msdn.microsoft.com/en-us/library/st4a0s68(VS.80).aspx"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>fp_field_subrecord Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_field_subrecord_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_field_subrecord_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_field_subrecord"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">FoxPro DBF Header-Subrecord Field Specification</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">specification</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">		Header Specification</SPAN>
+		<SPAN CLASS="estring">		====================</SPAN>
+		<SPAN CLASS="estring">		32 – n: Field subrecords The number of fields determines the </SPAN>
+		<SPAN CLASS="estring">		number of field subrecords. One field subrecord exists for each </SPAN>
+		<SPAN CLASS="estring">		field in the table.</SPAN>
+		
+		<SPAN CLASS="estring">		Subrecord Specification</SPAN>
+		<SPAN CLASS="estring">		=======================</SPAN>
+		
+		<SPAN CLASS="estring">		Byte offset		Description</SPAN>
+		<SPAN CLASS="estring">		-----------		------------</SPAN>
+		<SPAN CLASS="estring">		0 – 10			Field name with a maximum of 10 characters. If less than </SPAN>
+		<SPAN CLASS="estring">						10, it is padded with null characters (0x00).</SPAN>
+		<SPAN CLASS="estring">						</SPAN>
+		<SPAN CLASS="estring">		11				Field type:</SPAN>
+		<SPAN CLASS="estring">						W &nbsp;&nbsp;- &nbsp;&nbsp;Blob</SPAN>
+		<SPAN CLASS="estring">						C &nbsp;&nbsp;– &nbsp;&nbsp;Character</SPAN>
+		<SPAN CLASS="estring">						C &nbsp;&nbsp;– &nbsp;&nbsp;Character (binary)</SPAN>
+		<SPAN CLASS="estring">						Y &nbsp;&nbsp;– &nbsp;&nbsp;Currency</SPAN>
+		<SPAN CLASS="estring">						B &nbsp;&nbsp;– &nbsp;&nbsp;Double</SPAN>
+		<SPAN CLASS="estring">						D &nbsp;&nbsp;– &nbsp;&nbsp;Date</SPAN>
+		<SPAN CLASS="estring">						T &nbsp;&nbsp;– &nbsp;&nbsp;DateTime</SPAN>
+		<SPAN CLASS="estring">						F &nbsp;&nbsp;– &nbsp;&nbsp;Float</SPAN>
+		<SPAN CLASS="estring">						G &nbsp;&nbsp;– &nbsp;&nbsp;General</SPAN>
+		<SPAN CLASS="estring">						I &nbsp;&nbsp;– &nbsp;&nbsp;Integer</SPAN>
+		<SPAN CLASS="estring">						L &nbsp;&nbsp;– &nbsp;&nbsp;Logical</SPAN>
+		<SPAN CLASS="estring">						M &nbsp;&nbsp;– &nbsp;&nbsp;Memo</SPAN>
+		<SPAN CLASS="estring">						M &nbsp;&nbsp;– &nbsp;&nbsp;Memo (binary)</SPAN>
+		<SPAN CLASS="estring">						N &nbsp;&nbsp;– &nbsp;&nbsp;Numeric</SPAN>
+		<SPAN CLASS="estring">						P &nbsp;&nbsp;– &nbsp;&nbsp;Picture</SPAN>
+		<SPAN CLASS="estring">						Q &nbsp;&nbsp;- &nbsp;&nbsp;Varbinary</SPAN>
+		<SPAN CLASS="estring">						V &nbsp;&nbsp;- &nbsp;&nbsp;Varchar</SPAN>
+		<SPAN CLASS="estring">						V &nbsp;&nbsp;- &nbsp;&nbsp;Varchar (binary)</SPAN>
+		<SPAN CLASS="estring">					Note</SPAN>
+		<SPAN CLASS="estring">					For each Varchar and Varbinary field, one bit, or </SPAN>
+		<SPAN CLASS="estring">						&quot;varlength&quot; bit, is allocated in the last system </SPAN>
+		<SPAN CLASS="estring">						field, which is a hidden field and stores the null </SPAN>
+		<SPAN CLASS="estring">						status for all fields that can be null. If the </SPAN>
+		<SPAN CLASS="estring">						Varchar or Varbinary field can be null, the null </SPAN>
+		<SPAN CLASS="estring">						bit follows the &quot;varlength&quot; bit. If the &quot;varlength&quot; </SPAN>
+		<SPAN CLASS="estring">						bit is set to 1, the length of the actual field </SPAN>
+		<SPAN CLASS="estring">						value length is stored in the last byte of the </SPAN>
+		<SPAN CLASS="estring">						field. Otherwise, if the bit is set to 0, length </SPAN>
+		<SPAN CLASS="estring">						of the value is equal to the field size.</SPAN>
+		<SPAN CLASS="estring">						</SPAN>
+		<SPAN CLASS="estring">		12 – 15		Displacement of field in record</SPAN>
+		<SPAN CLASS="estring">		</SPAN>
+		<SPAN CLASS="estring">		16			Length of field (in bytes)</SPAN>
+		<SPAN CLASS="estring">		</SPAN>
+		<SPAN CLASS="estring">		17			Number of decimal places</SPAN>
+		<SPAN CLASS="estring">		</SPAN>
+		<SPAN CLASS="estring">		18			Field flags: </SPAN>
+		<SPAN CLASS="estring">					0x01 &nbsp;&nbsp;System Column (not visible to user) </SPAN>
+		<SPAN CLASS="estring">					0x02 &nbsp;&nbsp;Column can store null values </SPAN>
+		<SPAN CLASS="estring">					0x04 &nbsp;&nbsp;Binary column (for CHAR and MEMO only) </SPAN>
+		<SPAN CLASS="estring">					0x06 &nbsp;&nbsp;(0x02+0x04) When a field is NULL and binary (Integer, Currency, and Character/Memo fields) </SPAN>
+		<SPAN CLASS="estring">					0x0C &nbsp;&nbsp;Column is autoincrementing.</SPAN>
+		<SPAN CLASS="estring">		</SPAN>
+		<SPAN CLASS="estring">		19 - 22		Value of autoincrement Next value (LSB-MSB)</SPAN>
+		<SPAN CLASS="estring">		</SPAN>
+		<SPAN CLASS="estring">		23			Value of autoincrement Step value</SPAN>
+		<SPAN CLASS="estring">		</SPAN>
+		<SPAN CLASS="estring">		24 – 31		Reserved</SPAN>
+		<SPAN CLASS="estring">		</SPAN>
+		<SPAN CLASS="estring">		For information about limitations on characters per record, </SPAN>
+		<SPAN CLASS="estring">		maximum fields, and so on, see Visual FoxPro System Capacities.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">eis</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;name=table_file_structure&quot;</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="estring">&quot;protocol=URI&quot;</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="estring">&quot;tag=external&quot;</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="estring">&quot;src=</SPAN><A CLASS="estring" HREF="http://msdn.microsoft.com/en-us/library/st4a0s68">http://msdn.microsoft.com/en-us/library/st4a0s68</A><SPAN CLASS="estring">(VS.80).aspx&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2015-01-16 08:59:42 -0500 (Fri, 16 Jan 2015) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 10596 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../foxpro/fp_field_subrecord.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../foxpro/fp_spec.html">FP_SPEC</A>
+		<SPAN CLASS="ekeyword">rename</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_now">specification_now</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_subrecord_string_now">subrecord_string_now</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_on_date">specification_on_date</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_subrecord_string">subrecord_string</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_default_create">default_create</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../foxpro/fp_byte_helper.html">FP_BYTE_HELPER</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_default_create">default_create</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_default_create">default_create</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialization</SPAN>
+
+	<A NAME="f_default_create"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_default_create">default_create</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Process instances of classes with no creation clause.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (Default: do nothing.)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_types">Field_types</A> <A CLASS="esymbol" HREF="../base/string_8.html#f_item">[</A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_integer_specification">Integer_specification</A><A CLASS="esymbol" HREF="../base/string_8.html#f_item">]</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_out"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_out">out</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New string containing terse printable representation</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> of current object</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Repurposed to output the </SPAN>`specification_now'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> See </SPAN>`header_string'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_subrecord_string_now">subrecord_string_now</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_subrecord_string"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_subrecord_string">subrecord_string</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date.html">DATE</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Specification based on </SPAN>`a_date'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_subrecord_string_now">subrecord_string_now</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_subrecord_string_now"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_subrecord_string_now">subrecord_string_now</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Current as a string</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_bytes_32</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_byte_helper.html#f_all_bytes_tuple_32">all_bytes_tuple_32</A>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_make_empty">make_empty</A>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_string">append_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_calculated_field_name">calculated_field_name</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_character">append_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_bytes_32</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_byte_helper.html#f_all_bytes_tuple_32">all_bytes_tuple_32</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_displacement">displacement</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_general.html#f_append_code">append_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_bytes_32</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">lsb</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_natural_32">to_natural_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_general.html#f_append_code">append_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_bytes_32</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">msb3</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_natural_32">to_natural_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_general.html#f_append_code">append_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_bytes_32</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">msb2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_natural_32">to_natural_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_general.html#f_append_code">append_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_bytes_32</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">msb</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_natural_32">to_natural_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_general.html#f_append_code">append_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_byte_helper.html#f_lsb_32">lsb_32</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_length_in_bytes">field_length_in_bytes</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_natural_32">to_natural_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_general.html#f_append_code">append_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_byte_helper.html#f_lsb_32">lsb_32</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_number_of_decimal_places">number_of_decimal_places</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_natural_32">to_natural_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_general.html#f_append_code">append_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_byte_helper.html#f_lsb_32">lsb_32</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/natural_8_ref.html#f_to_natural_32">to_natural_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">from</SPAN>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">32</SPAN>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_character">append_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="echar">'%U'</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">thirty_two_characters</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">32</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access: Subrecord Fields</SPAN>
+
+	<A NAME="f_field_name"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Bytes #0 – 10	Field name with a maximum of 10 characters.</SPAN>
+		<SPAN CLASS="ekeyword">attribute</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_make_empty">make_empty</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_max_field_name_size">Max_field_name_size</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_calculated_field_name"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_calculated_field_name">calculated_field_name</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Calculated version of </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A><SPAN CLASS="ecomment">, held to specifications.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A>
+			<SPAN CLASS="ekeyword">from</SPAN>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_max_field_name_size">Max_field_name_size</A>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_character">append_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="echar">'%U'</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_field_type"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8.html">CHARACTER_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> FoxPro data-type of field.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Defaulting to &quot;I&quot; for integer.</SPAN>
+		<SPAN CLASS="ekeyword">attribute</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_types">Field_types</A> <A CLASS="esymbol" HREF="../base/string_8.html#f_item">[</A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_integer_specification">Integer_specification</A><A CLASS="esymbol" HREF="../base/string_8.html#f_item">]</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_displacement"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_displacement">displacement</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Bytes #12 – 15 Displacement of field in record.</SPAN>
+
+	<A NAME="f_field_length_in_bytes"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_length_in_bytes">field_length_in_bytes</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Byte #16 Length of field in bytes.</SPAN>
+
+	<A NAME="f_number_of_decimal_places"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_number_of_decimal_places">number_of_decimal_places</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Byte #17 Number of decimal places.</SPAN>
+
+	<A NAME="f_field_flags"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Byte #18 Field flags.</SPAN>
+		<SPAN CLASS="ekeyword">attribute</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Settings: Field Flags</SPAN>
+
+	<A NAME="f_set_system_column"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_system_column">set_system_column</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set system column onto </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> 0x01 &nbsp;&nbsp;System Column (not visible to user)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_set_bit">set_bit</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set">Set</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_sytem_column_bit">Sytem_column_bit</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_reset_system_column"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset_system_column">reset_system_column</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> reset system column onto </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> 0x01 &nbsp;&nbsp;System Column (not visible to user)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_set_bit">set_bit</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset">Reset</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_sytem_column_bit">Sytem_column_bit</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_nullable"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_nullable">set_nullable</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set nullable onto </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> 0x02 &nbsp;&nbsp;Column can store null values</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_set_bit">set_bit</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set">Set</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_nullable_bit">Nullable_bit</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_reset_nullable"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset_nullable">reset_nullable</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> reset nullable onto </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> 0x02 &nbsp;&nbsp;Column can store null values</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_set_bit">set_bit</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset">Reset</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_nullable_bit">Nullable_bit</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_binary"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_binary">set_binary</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set binary onto </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> 0x04 &nbsp;&nbsp;Binary column (for CHAR and MEMO only)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_set_bit">set_bit</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set">Set</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_binary_bit">Binary_bit</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_reset_binary"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset_binary">reset_binary</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> reset binary onto </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> 0x04 &nbsp;&nbsp;Binary column (for CHAR and MEMO only)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_set_bit">set_bit</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset">Reset</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_binary_bit">Binary_bit</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Settings</SPAN>
+
+	<A NAME="f_set_field_name"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_field_name">set_field_name</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_field_name</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sets </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A><SPAN CLASS="ecomment"> with </SPAN>`a_field_name'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">ten_or_less</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_field_name</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_max_field_name_size">Max_field_name_size</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_field_name</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">field_name_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_field_name</SPAN>
+			<SPAN CLASS="etag">ten_or_less</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_name">field_name</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_max_field_name_size">Max_field_name_size</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_field_type"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_field_type">set_field_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_field_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sets </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A><SPAN CLASS="ecomment"> with </SPAN>`a_field_type'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_field_type</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">field_type_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_field_type</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_displacement"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_displacement">set_displacement</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_displacement</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_displacement">displacement</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sets </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_displacement">displacement</A><SPAN CLASS="ecomment"> with </SPAN>`a_displacement'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_displacement">displacement</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_displacement</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">displacement_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_displacement">displacement</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_displacement</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_field_length_in_bytes"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_field_length_in_bytes">set_field_length_in_bytes</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_field_length_in_bytes</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_length_in_bytes">field_length_in_bytes</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sets </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_length_in_bytes">field_length_in_bytes</A><SPAN CLASS="ecomment"> with </SPAN>`a_field_length_in_bytes'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_length_in_bytes">field_length_in_bytes</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_field_length_in_bytes</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">field_length_in_bytes_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_length_in_bytes">field_length_in_bytes</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_field_length_in_bytes</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_number_of_decimal_places"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set_number_of_decimal_places">set_number_of_decimal_places</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_number_of_decimal_places</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_number_of_decimal_places">number_of_decimal_places</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sets </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_number_of_decimal_places">number_of_decimal_places</A><SPAN CLASS="ecomment"> with </SPAN>`a_number_of_decimal_places'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_number_of_decimal_places">number_of_decimal_places</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_number_of_decimal_places</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">number_of_decimal_places_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_number_of_decimal_places">number_of_decimal_places</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_number_of_decimal_places</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status Report</SPAN>
+
+	<A NAME="f_eiffel_field_type"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_eiffel_field_type">eiffel_field_type</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">G</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Field data type per Eiffel.</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Constants</SPAN>
+
+	<A NAME="f_max_field_name_size"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_max_field_name_size">Max_field_name_size</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">11</SPAN>
+
+	<A NAME="f_field_types"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_types">Field_types</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A> <SPAN CLASS="esymbol">=</SPAN> &quot;WCCYBDTFGILMMNPQVV&quot;
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">1		W &nbsp;&nbsp;- &nbsp;&nbsp;Blob</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">2		C &nbsp;&nbsp;– &nbsp;&nbsp;Character</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">3		C &nbsp;&nbsp;– &nbsp;&nbsp;Character (binary)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">4		Y &nbsp;&nbsp;– &nbsp;&nbsp;Currency</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">5		B &nbsp;&nbsp;– &nbsp;&nbsp;Double</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">6		D &nbsp;&nbsp;– &nbsp;&nbsp;Date</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">7		T &nbsp;&nbsp;– &nbsp;&nbsp;DateTime</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">8		F &nbsp;&nbsp;– &nbsp;&nbsp;Float</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">9		G &nbsp;&nbsp;– &nbsp;&nbsp;General</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">10	I &nbsp;&nbsp;– &nbsp;&nbsp;Integer</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">11	L &nbsp;&nbsp;– &nbsp;&nbsp;Logical</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">12	M &nbsp;&nbsp;– &nbsp;&nbsp;Memo</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">13	M &nbsp;&nbsp;– &nbsp;&nbsp;Memo (binary)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">14	N &nbsp;&nbsp;– &nbsp;&nbsp;Numeric</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">15	P &nbsp;&nbsp;– &nbsp;&nbsp;Picture</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">16	Q &nbsp;&nbsp;- &nbsp;&nbsp;Varbinary</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">17	V &nbsp;&nbsp;- &nbsp;&nbsp;Varchar</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">18	V &nbsp;&nbsp;- &nbsp;&nbsp;Varchar (binary)</SPAN>
+
+	<A NAME="f_field_type_blob"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_blob">Field_type_blob</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+
+	<A NAME="f_field_type_character"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_character">Field_type_character</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+
+	<A NAME="f_field_type_character_binary"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_character_binary">Field_type_character_binary</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">3</SPAN>
+
+	<A NAME="f_field_type_currency"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_currency">Field_type_currency</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">4</SPAN>
+
+	<A NAME="f_field_type_double"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_double">Field_type_double</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">5</SPAN>
+
+	<A NAME="f_field_type_date"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_date">Field_type_date</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">6</SPAN>
+
+	<A NAME="f_field_type_datetime"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_datetime">Field_type_datetime</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">7</SPAN>
+
+	<A NAME="f_field_type_float"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_float">Field_type_float</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">8</SPAN>
+
+	<A NAME="f_field_type_general"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_general">Field_type_general</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">9</SPAN>
+
+	<A NAME="f_field_type_integer"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_integer">Field_type_integer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">10</SPAN>
+
+	<A NAME="f_field_type_logical"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_logical">Field_type_logical</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">11</SPAN>
+
+	<A NAME="f_field_type_memo"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_memo">Field_type_memo</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">12</SPAN>
+
+	<A NAME="f_field_type_memo_binary"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_memo_binary">Field_type_memo_binary</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">13</SPAN>
+
+	<A NAME="f_field_type_numeric"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_numeric">Field_type_numeric</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">14</SPAN>
+
+	<A NAME="f_field_type_picture"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_picture">Field_type_picture</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">15</SPAN>
+
+	<A NAME="f_field_type_varbinary"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_varbinary">Field_type_varbinary</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">16</SPAN>
+
+	<A NAME="f_field_type_varchar"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_varchar">Field_type_varchar</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">17</SPAN>
+
+	<A NAME="f_field_type_varchar_binary"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type_varchar_binary">Field_type_varchar_binary</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">18</SPAN>
+
+	<A NAME="f_integer_specification"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_integer_specification">Integer_specification</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">10</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Refers to which </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_types">Field_types</A><SPAN CLASS="ecomment"> item is used to represent an Integer field type (e.g. #10)</SPAN>
+
+	<A NAME="f_sytem_column_bit"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_sytem_column_bit">Sytem_column_bit</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> The bit in </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment"> to set/reset for system columns.</SPAN>
+
+	<A NAME="f_nullable_bit"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_nullable_bit">Nullable_bit</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">2</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> The bit in </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment"> to set/reset for nullable columns.</SPAN>
+
+	<A NAME="f_binary_bit"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_binary_bit">Binary_bit</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">3</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> The bit in </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_flags">field_flags</A><SPAN CLASS="ecomment"> to set/reset for binary columns.</SPAN>
+
+	<A NAME="f_set"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set">Set</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> What </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set">Set</A><SPAN CLASS="ecomment"> means to features need to </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_set">Set</A><SPAN CLASS="ecomment">.</SPAN>
+
+	<A NAME="f_reset"></A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset">Reset</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> What </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset">Reset</A><SPAN CLASS="ecomment"> means to features need to </SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_reset">Reset</A><SPAN CLASS="ecomment">.</SPAN>
+	
+<SPAN CLASS="ekeyword">invariant</SPAN>
+	<SPAN CLASS="etag">valid_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_types">Field_types</A> <SPAN CLASS="ekeyword">as</SPAN> al_field_types <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="elocal">al_field_types</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_type">field_type</A><SPAN CLASS="esymbol">)</SPAN>
+	<SPAN CLASS="etag">valid_int_specification</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_field_types">Field_types</A> <A CLASS="esymbol" HREF="../base/string_8.html#f_item">[</A><A CLASS="efeature" HREF="../foxpro/fp_field_subrecord.html#f_integer_specification">Integer_specification</A><A CLASS="esymbol" HREF="../base/string_8.html#f_item">]</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="echar">'I'</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../foxpro/fp_field_subrecord.html">FP_FIELD_SUBRECORD</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_field_subrecord_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_field_subrecord_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_field_subrecord"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

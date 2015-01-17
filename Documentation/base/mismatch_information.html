@@ -1,0 +1,241 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Original values of the attributes of a mismatched object."/>
+<meta name="instructions" content="This object will contain the original values of the attributes of a retrieved object for which a mismatched was detected at retrieval time. The value are indexed by the name of the attribute in the stored object. One extra entry is provided to contain the original name of the class in the storing system, indexed by the string 'class'. This allows `correct_mismatch' to determine the original name of its generating class in case class-name translation is in effect."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>mismatch_information Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="mismatch_information_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="mismatch_information_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="mismatch_information"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Original values of the attributes of a mismatched object.&quot;</SPAN>
+	<SPAN CLASS="eitag">instructions</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">This object will contain the original values of the attributes</SPAN>
+		<SPAN CLASS="estring">of a retrieved object for which a mismatched was detected at</SPAN>
+		<SPAN CLASS="estring">retrieval time. The value are indexed by the name of the attribute</SPAN>
+		<SPAN CLASS="estring">in the stored object. One extra entry is provided to contain the</SPAN>
+		<SPAN CLASS="estring">original name of the class in the storing system, indexed by the</SPAN>
+		<SPAN CLASS="estring">string 'class'. This allows </SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_correct_mismatch">correct_mismatch</A><SPAN CLASS="estring"> to determine the</SPAN>
+		<SPAN CLASS="estring">original name of its generating class in case class-name</SPAN>
+		<SPAN CLASS="estring">translation is in effect.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Free implementation of ELKS library&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2012-05-23 21:13:10 -0700 (Wed, 23 May 2012) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 91981 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../base/mismatch_information.html">MISMATCH_INFORMATION</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/hash_table.html">HASH_TABLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">]</SPAN>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/mismatch_information.html#f_default_create">default_create</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/mismatch_information.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/mismatch_corrector.html">MISMATCH_CORRECTOR</A><SPAN CLASS="esymbol">}</SPAN>
+	<A CLASS="efeature" HREF="../base/mismatch_information.html#f_default_create">default_create</A>
+
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/hash_table.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialization</SPAN>
+
+	<A NAME="f_default_create"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_default_create">default_create</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make container with default size</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/hash_table.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">5</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../base/mismatch_information.html#f_set_callback_pointers">Set_callback_pointers</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_class_name"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_class_name">class_name</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Name of generating class which held attribute values</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">check</SPAN>
+				<SPAN CLASS="etag">has_class_entry</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/hash_table.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_type_name_key">Type_name_key</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">check</SPAN>
+					<SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/hash_table.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_type_name_key">Type_name_key</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> r
+			<SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">r</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_stored_version"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_8.html">IMMUTABLE_STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Version associated to </SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_class_name">class_name</A><SPAN CLASS="ecomment"> in the stored system.</SPAN>
+
+	<A NAME="f_current_version"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_8.html">IMMUTABLE_STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Version associated to </SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_class_name">class_name</A><SPAN CLASS="ecomment"> in the current system.</SPAN>
+
+	<A NAME="f_type_name_key"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_type_name_key">Type_name_key</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A> <SPAN CLASS="esymbol">=</SPAN> &quot;_type_name&quot;
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Associated key for retrieving the type name of a mismatch.</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_is_version_mismatched"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_is_version_mismatched">is_version_mismatched</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is the </SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A><SPAN CLASS="ecomment"> different from the current system version?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A> <SPAN CLASS="esymbol">/~</SPAN> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Settings</SPAN>
+
+	<A NAME="f_set_versions"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_set_versions">set_versions</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_stored_version</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_current_version</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A><SPAN CLASS="ecomment"> with </SPAN>`a_stored_version'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A><SPAN CLASS="ecomment"> with </SPAN>`a_current_version'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_stored_version</SPAN>
+			<A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_current_version</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">stored_version_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_stored_version</SPAN>
+			<SPAN CLASS="etag">current_version_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_current_version</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Output</SPAN>
+
+	<A NAME="f_out"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_out">out</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Printable representation of attributes values</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A>
+			<SPAN CLASS="elocal">k</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">20</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_class_name">class_name</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">40</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <A CLASS="efeature" HREF="../base/hash_table.html#f_count">count</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;Attributes of original class &quot;<SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_class_name">class_name</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;: &quot;<SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_integer">append_integer</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot; item&quot;<SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/hash_table.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="enumber">1</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_character">append_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="echar">'s'</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_character">append_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="echar">'%N'</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../base/hash_table.html#f_start">start</A>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<A CLASS="efeature" HREF="../base/hash_table.html#f_after">after</A>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="elocal">k</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/hash_table.html#f_key_for_iteration">key_for_iteration</A>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">k</SPAN> <SPAN CLASS="esymbol">/~</SPAN> <A CLASS="efeature" HREF="../base/mismatch_information.html#f_type_name_key">Type_name_key</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;  &quot;<SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">k</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;Void&quot;<SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">else</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">k</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;: &quot;<SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/hash_table.html#f_item_for_iteration">item_for_iteration</A>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;Void&quot;<SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">else</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append">append</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_out">out</A><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_character">append_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="echar">'%N'</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/hash_table.html#f_forth">forth</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_internal_put"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_internal_put">internal_put</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">value</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">ckey</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Allows run-time to insert items into table</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_key</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_key</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make_from_c">make_from_c</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">ckey</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../base/hash_table.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">value</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_key</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_string_versions"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_set_string_versions">set_string_versions</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_stored_version</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_current_version</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A><SPAN CLASS="ecomment"> with </SPAN>`a_stored_version'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A><SPAN CLASS="ecomment"> with </SPAN>`a_current_version'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_null</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A>
+			<SPAN CLASS="elocal">l_imm</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_8.html">IMMUTABLE_STRING_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">a_stored_version</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="elocal">l_null</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_imm</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make_from_c">make_from_c</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_stored_version</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_imm</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/immutable_string_8.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_imm</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/mismatch_information.html#f_stored_version">stored_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">a_current_version</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="elocal">l_null</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_imm</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make_from_c">make_from_c</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_current_version</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_imm</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/immutable_string_8.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_imm</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/mismatch_information.html#f_current_version">current_version</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_callback_pointers"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_set_callback_pointers">Set_callback_pointers</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sets call-back pointers in the run-time</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<A CLASS="efeature" HREF="../base/mismatch_information.html#f_set_mismatch_information_access">set_mismatch_information_access</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">$</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_clear_all">clear_all</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">$</SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_internal_put">internal_put</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">$</SPAN><A CLASS="efeature" HREF="../base/mismatch_information.html#f_set_string_versions">set_string_versions</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Externals</SPAN>
+
+	<A NAME="f_set_mismatch_information_access"></A><A CLASS="efeature" HREF="../base/mismatch_information.html#f_set_mismatch_information_access">set_mismatch_information_access</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">obj</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">init</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">add</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">set_vers</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C signature (EIF_OBJECT, EIF_PROCEDURE, EIF_PROCEDURE, EIF_PROCEDURE) use &lt;eif_retrieve.h&gt;&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2012, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../base/mismatch_information.html">MISMATCH_INFORMATION</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="mismatch_information_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="mismatch_information_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="mismatch_information"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

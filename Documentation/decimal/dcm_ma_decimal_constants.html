@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Access to decimal math constants and shared context"/>
+<meta name="copyright" content="Copyright (c) 2004, Paul G. Crismer and others."/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2004, Paul G. Crismer and others."/>
+<meta name="license" content="MIT license"/>
+<meta name="details" content="Originally developed by Paul G. Crismer as part of Gobo.  Revised by Jocelyn Fiat for void safety."/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>dcm_ma_decimal_constants Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_constants_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_constants_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="dcm_ma_decimal_constants"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Access to decimal math constants and shared context&quot;</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 2004, Paul G. Crismer and others.&quot;</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 2011, SEL, York University, Toronto and others.&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;MIT License&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2012-06-20 17:11:54 -0700 (Wed, 20 Jun 2012) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 88953 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_constants.html">DCM_MA_DECIMAL_CONSTANTS</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_shared_decimal_context.html">DCM_MA_SHARED_DECIMAL_CONTEXT</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_zero"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Neutral element for &quot;+&quot; and &quot;-&quot;</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_zero">zero</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">zero_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_negative_zero"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_negative_zero">Negative_zero</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Negative zero</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_negative_zero">Negative_zero</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">negative_zero_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_one"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_one">One</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Neutral element for &quot;*&quot; and &quot;/&quot;</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_one">one</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">one_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_minus_one"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_minus_one">Minus_one</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Minus one</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_minus_one">Minus_one</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">minus_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_infinity"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_infinity">Infinity</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Infinity</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_infinity">infinity</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">infinity_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_negative_infinity"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_negative_infinity">Negative_infinity</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Negative infinity</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_negative_infinity">negative_infinity</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">negative_infinity_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_not_a_number"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_not_a_number">Not_a_number</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Not a Number</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_nan">nan</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">not_a_number</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_signaling_not_a_number"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_signaling_not_a_number">Signaling_not_a_number</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Signaling Not a Number</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_zero">Zero</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_snan">snan</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">signaling_not_a_number</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_minimum_integer"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_minimum_integer">Minimum_integer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Minimum value convertible to integer</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">ctx</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_context.html">DCM_MA_DECIMAL_CONTEXT</A>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">ctx</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_context.html#f_make_double_extended">make_double_extended</A>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_make_from_string_ctx">make_from_string_ctx</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_min_value">min_value</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_out">out</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">ctx</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">minimum_integer_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_maximum_integer"></A><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_constants.html#f_maximum_integer">Maximum_integer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/decimal.html">DECIMAL</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Maximum value convertible to integer</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">ctx</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_context.html">DCM_MA_DECIMAL_CONTEXT</A>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">ctx</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/dcm_ma_decimal_context.html#f_make_double_extended">make_double_extended</A>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../decimal/decimal.html#f_make_from_string_ctx">make_from_string_ctx</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_max_value">max_value</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32_ref.html#f_out">out</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">ctx</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">maximum_integer_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 2004, Paul G. Crismer and others.&quot;</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 2011, SEL, York University, Toronto and others.&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;MIT license&quot;</SPAN>
+	<SPAN CLASS="eitag">details</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Originally developed by Paul G. Crismer as part of Gobo. </SPAN>
+		<SPAN CLASS="estring">Revised by Jocelyn Fiat for void safety.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_constants.html">DCM_MA_DECIMAL_CONSTANTS</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_constants_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dcm_ma_decimal_constants_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="dcm_ma_decimal_constants"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

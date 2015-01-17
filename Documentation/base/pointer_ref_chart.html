@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="References to objects containing reference to object meant to be exchanged with non-Eiffel software."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>pointer_ref Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="pointer_ref_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="pointer_ref.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="pointer_ref"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../base/pointer_ref_chart.html">POINTER_REF</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">elks</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> 
+		<SPAN CLASS="estring">&quot;References to objects containing reference to object</SPAN>
+		<SPAN CLASS="estring">meant to be exchanged with non-Eiffel software.&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/hashable_chart.html">HASHABLE</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/refactoring_helper_chart.html">REFACTORING_HELPER</A>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`hash_code' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_hash_code">hash_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`is_default_pointer' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_is_default_pointer">is_default_pointer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_equal' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_is_equal">is_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/pointer_ref_chart.html">POINTER_REF</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_hashable' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_is_hashable">is_hashable</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`item' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_item">item</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+	<SPAN TITLE="`memory_alloc' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_alloc">memory_alloc</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_size</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+	<SPAN TITLE="`memory_calloc' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_calloc">memory_calloc</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_count</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_element_size</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+	<SPAN TITLE="`memory_compare' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_compare">memory_compare</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_size</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`memory_realloc' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_realloc">memory_realloc</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_size</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+	<SPAN TITLE="`out' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_out">out</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`plus' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_plus">plus</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/pointer_ref.html#f_plus">+</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">offset</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A></SPAN>
+	<SPAN TITLE="`to_implement_assertion' was declared in REFACTORING_HELPER"><A CLASS="efeature" HREF="../base/refactoring_helper.html#f_to_implement_assertion">to_implement_assertion</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">comment</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`to_integer_32' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_to_integer_32">to_integer_32</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`to_reference' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_to_reference">to_reference</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_ref_chart.html">POINTER_REF</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`fixme' was declared in REFACTORING_HELPER"><A CLASS="efeature" HREF="../base/refactoring_helper.html#f_fixme">fixme</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">comment</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`memory_copy' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_copy">memory_copy</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_source</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_size</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`memory_free' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_free">memory_free</A></SPAN>
+	<SPAN TITLE="`memory_move' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_move">memory_move</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_source</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_size</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`memory_set' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_memory_set">memory_set</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">val</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_item' is declared in `Current'"><A CLASS="efeature" HREF="../base/pointer_ref.html#f_set_item">set_item</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">p</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer_chart.html">POINTER</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`to_implement' was declared in REFACTORING_HELPER"><A CLASS="efeature" HREF="../base/refactoring_helper.html#f_to_implement">to_implement</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">comment</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="pointer_ref_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="pointer_ref.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="pointer_ref"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Values of time"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="access" content="time"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2009, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>time_value Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="time_value_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="time_value_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="time_value"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Values of time&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2009-01-01 04:38:30 -0800 (Thu, 01 Jan 2009) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 76534 $&quot;</SPAN>
+	<SPAN CLASS="eitag">access</SPAN><SPAN CLASS="esymbol">:</SPAN> time
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../time/time_value.html">TIME_VALUE</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../time/time_measurement.html">TIME_MEASUREMENT</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_hour"></A><A CLASS="efeature" HREF="../time/time_value.html#f_hour">hour</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Hour of the current time</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_hour_mask">Hour_mask</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_shift_right">|&gt;&gt;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_hour_shift">Hour_shift</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_minute"></A><A CLASS="efeature" HREF="../time/time_value.html#f_minute">minute</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Minute of the current time</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_minute_mask">Minute_mask</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_shift_right">|&gt;&gt;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_minute_shift">Minute_shift</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_second">second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Second of the current time</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_second_mask">Second_mask</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_fractional_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Fractional part of </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_fine_second">fine_second</A>
+
+	<A NAME="f_compact_time"></A><A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Hour, minute, second coded.</SPAN>
+
+	<A NAME="f_fine_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_fine_second">fine_second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Representation of second with decimals</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_second">second</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_to_double">to_double</A> <A CLASS="esymbol" HREF="../base/real_64.html#f_plus">+</A> <A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_milli_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_milli_second">milli_second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Millisecond of the current time</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A> <A CLASS="esymbol" HREF="../base/real_64.html#f_product">*</A> <SPAN CLASS="enumber">1000</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_to_double">to_double</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer">truncated_to_integer</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_micro_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_micro_second">micro_second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Microsecond of the current time</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A> <A CLASS="esymbol" HREF="../base/real_64.html#f_product">*</A> <SPAN CLASS="enumber">1000000</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_to_double">to_double</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer">truncated_to_integer</A>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="enumber">1000</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_nano_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_nano_second">nano_second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Nanosecond of the current time</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A> <A CLASS="esymbol" HREF="../base/real_64.html#f_product">*</A> <SPAN CLASS="enumber">1000000000</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_to_double">to_double</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer">truncated_to_integer</A>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="enumber">1000</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Element change</SPAN>
+
+	<A NAME="f_set_hour"></A><A CLASS="efeature" HREF="../time/time_value.html#f_set_hour">set_hour</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_hour">hour</A><SPAN CLASS="ecomment"> to </SPAN>`h'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_hour_mask">Hour_mask</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_bit_not">bit_not</A>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_or">|</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_shift_left">|&lt;&lt;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_hour_shift">Hour_shift</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_minute"></A><A CLASS="efeature" HREF="../time/time_value.html#f_set_minute">set_minute</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_minute">minute</A><SPAN CLASS="ecomment"> to </SPAN>`m'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_minute_mask">Minute_mask</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_bit_not">bit_not</A>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_or">|</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">m</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_shift_left">|&lt;&lt;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_minute_shift">Minute_shift</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_set_second">set_second</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_second">second</A><SPAN CLASS="ecomment"> to </SPAN>`s'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <A CLASS="efeature" HREF="../time/time_value.html#f_second_mask">Second_mask</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_bit_not">bit_not</A>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_value.html#f_compact_time">compact_time</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_or">|</A> <SPAN CLASS="elocal">s</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_fine_second"></A><A CLASS="efeature" HREF="../time/time_value.html#f_set_fine_second">set_fine_second</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_fine_second">fine_second</A><SPAN CLASS="ecomment"> to </SPAN>`s'
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">s_tmp</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">s_tmp</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer">truncated_to_integer</A>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_set_second">set_second</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s_tmp</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN> <A CLASS="esymbol" HREF="../base/real_64.html#f_minus">-</A> <SPAN CLASS="elocal">s_tmp</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/integer_32.html#f_to_double">to_double</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_fractionals"></A><A CLASS="efeature" HREF="../time/time_value.html#f_set_fractionals">set_fractionals</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">f</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A><SPAN CLASS="ecomment"> to </SPAN>`f'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/time_value.html#f_fractional_second">fractional_second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">f</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_hour_mask"></A><A CLASS="efeature" HREF="../time/time_value.html#f_hour_mask">Hour_mask</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">16711680</SPAN>
+
+	<A NAME="f_minute_mask"></A><A CLASS="efeature" HREF="../time/time_value.html#f_minute_mask">Minute_mask</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">65280</SPAN>
+
+	<A NAME="f_second_mask"></A><A CLASS="efeature" HREF="../time/time_value.html#f_second_mask">Second_mask</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">255</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Mask used to extract/set </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_hour">hour</A><SPAN CLASS="ecomment">, </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_minute">minute</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_second">second</A><SPAN CLASS="ecomment">.</SPAN>
+
+	<A NAME="f_hour_shift"></A><A CLASS="efeature" HREF="../time/time_value.html#f_hour_shift">Hour_shift</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">16</SPAN>
+
+	<A NAME="f_minute_shift"></A><A CLASS="efeature" HREF="../time/time_value.html#f_minute_shift">Minute_shift</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">8</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Shift needed to extract/set </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_hour">hour</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../time/time_value.html#f_minute">minute</A><SPAN CLASS="ecomment">.</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2009, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../time/time_value.html">TIME_VALUE</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="time_value_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="time_value_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="time_value"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

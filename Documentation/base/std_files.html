@@ -1,0 +1,649 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Commonly used input and output mechanisms. This class may be used as either ancestor or supplier by classes needing its facilities."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>std_files Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="std_files_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="std_files_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="std_files"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Commonly used input and output mechanisms.</SPAN>
+		<SPAN CLASS="estring">This class may be used as either ancestor or supplier</SPAN>
+		<SPAN CLASS="estring">by classes needing its facilities.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Free implementation of ELKS library&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2012-05-23 21:13:10 -0700 (Wed, 23 May 2012) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 91981 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_input"></A><A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Standard input file</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/console.html">CONSOLE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/console.html#f_make_open_stdin">make_open_stdin</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;stdin&quot;<SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">input_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_output"></A><A CLASS="efeature" HREF="../base/std_files.html#f_output">Output</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Standard output file</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/console.html">CONSOLE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/console.html#f_make_open_stdout">make_open_stdout</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;stdout&quot;<SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">output_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_error"></A><A CLASS="efeature" HREF="../base/std_files.html#f_error">Error</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Standard error file</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/console.html">CONSOLE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/console.html#f_make_open_stderr">make_open_stderr</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;stderr&quot;<SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">error_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_default_output"></A><A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Default output</SPAN>
+
+	<A NAME="f_standard_default"></A><A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Return the </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A><SPAN CLASS="ecomment"> or </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_output">Output</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> if </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A><SPAN CLASS="ecomment"> is Void.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">r</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">r</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">r</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">r</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_output">Output</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">r</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_last_character"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_character">last_character</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8.html">CHARACTER_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last character read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_character">read_character</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_lastchar">lastchar</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_character">last_character</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_lastchar"></A><A CLASS="efeature" HREF="../base/std_files.html#f_lastchar">lastchar</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8.html">CHARACTER_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last character read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_character">read_character</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_character">last_character</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_character">last_character</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_integer"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer">last_integer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last integer read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer">read_integer</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_lastint">lastint</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_32">last_integer_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_integer">last_integer</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_lastint"></A><A CLASS="efeature" HREF="../base/std_files.html#f_lastint">lastint</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last integer read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer">read_integer</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer">last_integer</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_32">last_integer_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_integer">last_integer</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_integer_32"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_32">last_integer_32</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last integer read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer">read_integer</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer">last_integer</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_lastint">lastint</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_integer">last_integer</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_integer_8"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_8">last_integer_8</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_8.html">INTEGER_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 8-bit integer read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_8">read_integer_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_integer_8">last_integer_8</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_integer_16"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_16">last_integer_16</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_16.html">INTEGER_16</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 16-bit integer read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_16">read_integer_16</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_integer_16">last_integer_16</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_integer_64"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_64">last_integer_64</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_64.html">INTEGER_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 8-bit integer read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_64">read_integer_64</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_integer_64">last_integer_64</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_natural_8"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_8">last_natural_8</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 8-bit natural read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_8">read_natural_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_natural_8">last_natural_8</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_natural_16"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_16">last_natural_16</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_16.html">NATURAL_16</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 16-bit natural read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_16">read_natural_16</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_natural_16">last_natural_16</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_natural"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural">last_natural</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_32.html">NATURAL_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 32-bit natural read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_32">read_natural_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_32">last_natural_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_natural_32">last_natural_32</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_natural_32"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_32">last_natural_32</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_32.html">NATURAL_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 32-bit natural read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_32">read_natural_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural">last_natural</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_natural_32">last_natural_32</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_natural_64"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_64">last_natural_64</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_64.html">NATURAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last 64-bit natural read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_64">read_natural_64</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_natural_64">last_natural_64</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_real"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_real">last_real</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_32.html">REAL_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last real read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_real">read_real</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_lastreal">lastreal</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_real">last_real</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_lastreal"></A><A CLASS="efeature" HREF="../base/std_files.html#f_lastreal">lastreal</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_32.html">REAL_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last real read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_real">read_real</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_real">last_real</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_real">last_real</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_string"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last string read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_line">read_line</A><SPAN CLASS="ecomment">,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_stream">read_stream</A><SPAN CLASS="ecomment">, or </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_word">read_word</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_laststring">laststring</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_string">last_string</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_laststring"></A><A CLASS="efeature" HREF="../base/std_files.html#f_laststring">laststring</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last string read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_line">read_line</A><SPAN CLASS="ecomment">,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_stream">read_stream</A><SPAN CLASS="ecomment">, or </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_word">read_word</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_string">last_string</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_double"></A><A CLASS="efeature" HREF="../base/std_files.html#f_last_double">last_double</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last double read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_double">read_double</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_lastdouble">lastdouble</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_double">last_double</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_lastdouble"></A><A CLASS="efeature" HREF="../base/std_files.html#f_lastdouble">lastdouble</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last double read by </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_double">read_double</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_double">last_double</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_double">last_double</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Element change</SPAN>
+
+	<A NAME="f_set_error_default"></A><A CLASS="efeature" HREF="../base/std_files.html#f_set_error_default">set_error_default</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Use standard error as default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_error">Error</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_file_default"></A><A CLASS="efeature" HREF="../base/std_files.html#f_set_file_default">set_file_default</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">f</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Use </SPAN>`f'<SPAN CLASS="ecomment"> as default output.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">valid_argument</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">f</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">file_open_write</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">f</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_is_open_write">is_open_write</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">f</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_output_default"></A><A CLASS="efeature" HREF="../base/std_files.html#f_set_output_default">set_output_default</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Use standard output as default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_output">Output</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_character"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_character">put_character</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8.html">CHARACTER_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`c'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_putchar">putchar</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_character">put_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_putchar"></A><A CLASS="efeature" HREF="../base/std_files.html#f_putchar">putchar</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8.html">CHARACTER_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`c'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_character">put_character</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_character">put_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_string"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_string">put_string</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`s'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_putstring">putstring</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_putstring"></A><A CLASS="efeature" HREF="../base/std_files.html#f_putstring">putstring</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`s'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_string">put_string</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_real"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_real">put_real</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">r</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_32.html">REAL_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`r'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_putreal">putreal</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_real">put_real</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">r</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_putreal"></A><A CLASS="efeature" HREF="../base/std_files.html#f_putreal">putreal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">r</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_32.html">REAL_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`r'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_real">put_real</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_real">put_real</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">r</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_double"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_double">put_double</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`d'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_putdouble">putdouble</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_double">put_double</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_putdouble"></A><A CLASS="efeature" HREF="../base/std_files.html#f_putdouble">putdouble</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`d'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_double">put_double</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_double">put_double</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_integer"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer">put_integer</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_putint">putint</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer_32">put_integer_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_integer">put_integer</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_putint"></A><A CLASS="efeature" HREF="../base/std_files.html#f_putint">putint</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer">put_integer</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer_32">put_integer_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_integer">put_integer</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_integer_32"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer_32">put_integer_32</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer">put_integer</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_putint">putint</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_integer">put_integer</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_integer_8"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer_8">put_integer_8</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_8.html">INTEGER_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_integer_8">put_integer_8</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_integer_16"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer_16">put_integer_16</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_16.html">INTEGER_16</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_integer_16">put_integer_16</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_integer_64"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_integer_64">put_integer_64</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_64.html">INTEGER_64</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_integer_64">put_integer_64</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_natural_8"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_natural_8">put_natural_8</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_8.html">NATURAL_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_natural_8">put_natural_8</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_natural_16"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_natural_16">put_natural_16</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_16.html">NATURAL_16</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_natural_16">put_natural_16</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_natural"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_natural">put_natural</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_32.html">NATURAL_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_natural_32">put_natural_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_natural_32">put_natural_32</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_natural_32"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_natural_32">put_natural_32</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_32.html">NATURAL_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_natural">put_natural</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_natural_32">put_natural_32</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_natural_64"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_natural_64">put_natural_64</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_64.html">NATURAL_64</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`i'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_put_natural_64">put_natural_64</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_boolean"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_boolean">put_boolean</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">b</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`b'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_putbool">putbool</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">b</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/std_files.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;True&quot;<SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/std_files.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;False&quot;<SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_putbool"></A><A CLASS="efeature" HREF="../base/std_files.html#f_putbool">putbool</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">b</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write </SPAN>`b'<SPAN CLASS="ecomment"> at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_boolean">put_boolean</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">b</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/std_files.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;True&quot;<SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/std_files.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;False&quot;<SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_new_line"></A><A CLASS="efeature" HREF="../base/std_files.html#f_put_new_line">put_new_line</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write line feed at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_new_line">new_line</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_new_line">put_new_line</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_new_line"></A><A CLASS="efeature" HREF="../base/std_files.html#f_new_line">new_line</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Write line feed at end of default output.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_put_new_line">put_new_line</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_standard_default">standard_default</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_new_line">put_new_line</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Input</SPAN>
+
+	<A NAME="f_read_integer"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer">read_integer</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 32-bit integer from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer">last_integer</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readint">readint</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_32">read_integer_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_integer">read_integer</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_readint"></A><A CLASS="efeature" HREF="../base/std_files.html#f_readint">readint</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 32-bit integer from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer">last_integer</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer">read_integer</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_32">read_integer_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_integer">read_integer</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_integer_32"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_32">read_integer_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 32-bit integer from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer">last_integer</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer">read_integer</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readint">readint</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_integer">read_integer</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_integer_8"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_8">read_integer_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 8-bit integer from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_8">last_integer_8</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_integer_8">read_integer_8</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_integer_16"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_16">read_integer_16</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 16-bit integer from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_16">last_integer_16</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_integer_16">read_integer_16</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_integer_64"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_integer_64">read_integer_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 64-bit integer from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_integer_64">last_integer_64</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_integer_64">read_integer_64</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_natural_8"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_8">read_natural_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 8-bit natural from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_8">last_natural_8</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_natural_8">read_natural_8</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_natural_16"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_16">read_natural_16</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 16-bit natural from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_16">last_natural_16</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_natural_16">read_natural_16</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_natural"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural">read_natural</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 32-bit natural from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural">last_natural</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_32">read_natural_32</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_natural_32">read_natural_32</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_natural_32"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_32">read_natural_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 32-bit natural from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural">last_natural</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural">read_natural</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_natural_32">read_natural_32</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_natural_64"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_natural_64">read_natural_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new 64-bit natural from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_natural_64">last_natural_64</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_natural_64">read_natural_64</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_real"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_real">read_real</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new real from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_real">last_real</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readreal">readreal</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_real">read_real</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_readreal"></A><A CLASS="efeature" HREF="../base/std_files.html#f_readreal">readreal</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new real from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_real">last_real</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_real">read_real</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_real">read_real</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_double"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_double">read_double</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new double from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_double">last_double</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readdouble">readdouble</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_double">read_double</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_readdouble"></A><A CLASS="efeature" HREF="../base/std_files.html#f_readdouble">readdouble</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new double from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_double">last_double</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_double">read_double</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/plain_text_file.html#f_read_double">read_double</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_line"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_line">read_line</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a line from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readline">readline</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_line">read_line</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">last_string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_readline"></A><A CLASS="efeature" HREF="../base/std_files.html#f_readline">readline</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a line from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_line">read_line</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_line">read_line</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">last_string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_stream"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_stream">read_stream</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">nb_char</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a string of at most </SPAN>`nb_char'<SPAN CLASS="ecomment"> bound characters</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readstream">readstream</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_stream">read_stream</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">nb_char</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">last_string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_readstream"></A><A CLASS="efeature" HREF="../base/std_files.html#f_readstream">readstream</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">nb_char</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a string of at most </SPAN>`nb_char'<SPAN CLASS="ecomment"> bound characters</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_stream">read_stream</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_stream">read_stream</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">nb_char</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">last_string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_word"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_word">read_word</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new word from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readword">readword</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_word">read_word</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">last_string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_readword"></A><A CLASS="efeature" HREF="../base/std_files.html#f_readword">readword</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new word from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_word">read_word</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_word">read_word</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">last_string_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/std_files.html#f_last_string">last_string</A> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_read_character"></A><A CLASS="efeature" HREF="../base/std_files.html#f_read_character">read_character</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new character from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> It will not return until read operation is</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> terminated when enter key is pressed.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_character">last_character</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_character">last_character</A><SPAN CLASS="ecomment"> will also contains platform</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> specific newline character.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_readchar">readchar</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_readchar"></A><A CLASS="efeature" HREF="../base/std_files.html#f_readchar">readchar</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Read a new character from standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> It will not return until read operation is</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> terminated when enter key is pressed.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make result available in </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_character">last_character</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_last_character">last_character</A><SPAN CLASS="ecomment"> will also contains platform</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> specific newline character.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_read_character">read_character</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_to_next_line"></A><A CLASS="efeature" HREF="../base/std_files.html#f_to_next_line">to_next_line</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to next input line on standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_next_line">next_line</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_next_line">next_line</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_next_line"></A><A CLASS="efeature" HREF="../base/std_files.html#f_next_line">next_line</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to next input line on standard input.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_to_next_line">to_next_line</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/std_files.html#f_input">Input</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_next_line">next_line</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2012, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../base/std_files.html">STD_FILES</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="std_files_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="std_files_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="std_files"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

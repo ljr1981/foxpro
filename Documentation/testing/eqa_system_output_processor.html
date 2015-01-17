@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Objects processing output retrieved from a system execution."/>
+<meta name="author" content=""/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2010, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>eqa_system_output_processor Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_system_output_processor_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_system_output_processor_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_system_output_processor"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Objects processing output retrieved from a system execution.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">author</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2013-05-20 16:15:17 -0700 (Mon, 20 May 2013) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 92557 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">deferred</SPAN> <SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../testing/eqa_system_output_processor.html">EQA_SYSTEM_OUTPUT_PROCESSOR</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialization</SPAN>
+
+	<A NAME="f_initialize_buffer"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_initialize_buffer">initialize_buffer</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="ecomment"> with expected line length.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_default_buffer_size">default_buffer_size</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_buffer"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Buffer containing current (partial) line retrieved from system.</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_is_per_character"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_is_per_character">is_per_character</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Should output be processed on a character basis?</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: this can be changed while output is processed.</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Events</SPAN>
+
+	<A NAME="f_on_new_character"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_character">on_new_character</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_character</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8.html">CHARACTER_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Called when </SPAN>`a_character'<SPAN CLASS="ecomment"> has been addended to </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: if </SPAN>`a_character'<SPAN CLASS="ecomment"> is a new line character, buffer will be wiped out after</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_character">on_new_character</A><SPAN CLASS="ecomment"> has returned.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">per_character</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_is_per_character">is_per_character</A>
+			<SPAN CLASS="etag">buffer_not_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A>
+			<SPAN CLASS="etag">a_character_is_last</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_character</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_on_new_line"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_line">on_new_line</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Called when </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="ecomment"> represents a complete read line last retrieved from process.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="ecomment"> will be wiped out after </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_line">on_new_line</A><SPAN CLASS="ecomment"> has returned.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_line">on_new_line</A><SPAN CLASS="ecomment"> is also called when process exits and </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="ecomment"> contains a partial line.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">not_is_per_character</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_is_per_character">is_per_character</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../testing/eqa_system_execution.html">EQA_SYSTEM_EXECUTION</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_execution_process.html">EQA_SYSTEM_EXECUTION_PROCESS</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_append_output"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_append_output">append_output</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_output</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_8.html">READABLE_STRING_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Append </SPAN>`a_output'<SPAN CLASS="ecomment"> to </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="ecomment"> and notify </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_character">on_new_character</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_line">on_new_line</A><SPAN CLASS="ecomment"> accordingly.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_output_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_output</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8.html">CHARACTER_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">a_output</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="elocal">c</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_output</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">c</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="echar">'%R'</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">c</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="echar">'%N'</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_is_per_character">is_per_character</A> <SPAN CLASS="ekeyword">then</SPAN>
+						<A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_line">on_new_line</A>
+						<A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_wipe_out">wipe_out</A>
+					<SPAN CLASS="ekeyword">else</SPAN>
+						<A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_append_character">append_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">)</SPAN>
+						<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_is_per_character">is_per_character</A> <SPAN CLASS="ekeyword">then</SPAN>
+							<A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_character">on_new_character</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">)</SPAN>
+							<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">c</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="echar">'%N'</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+								<A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_wipe_out">wipe_out</A>
+							<SPAN CLASS="ekeyword">end</SPAN>
+						<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_flush_buffer"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_flush_buffer">flush_buffer</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Process any remaining output in </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_is_per_character">is_per_character</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_on_new_line">on_new_line</A>
+				<A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/string_8.html#f_wipe_out">wipe_out</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">buffer_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Constants</SPAN>
+
+	<A NAME="f_default_buffer_size"></A><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_default_buffer_size">default_buffer_size</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Default capacity for </SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">100</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">invariant</SPAN>
+	<SPAN CLASS="etag">buffer_contains_no_new_lines</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="echar">'%N'</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <A CLASS="efeature" HREF="../testing/eqa_system_output_processor.html#f_buffer">buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="echar">'%R'</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2010, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../testing/eqa_system_output_processor.html">EQA_SYSTEM_OUTPUT_PROCESSOR</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_system_output_processor_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_system_output_processor_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_system_output_processor"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,206 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Objects representing delayed calls to a function, with some arguments possibly still open.  Note: Features are the same as those of ROUTINE, Twith `apply' made effective, and the addition Tof `last_result' and `item'."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2014, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>function Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="function"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Objects representing delayed calls to a function,</SPAN>
+		<SPAN CLASS="estring">with some arguments possibly still open.</SPAN>
+		
+		<SPAN CLASS="estring">Note: Features are the same as those of ROUTINE,</SPAN>
+		<SPAN CLASS="estring">	with </SPAN><A CLASS="efeature" HREF="../base/function.html#f_apply">apply</A><SPAN CLASS="estring"> made effective, and the addition</SPAN>
+		<SPAN CLASS="estring">	of </SPAN><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A><SPAN CLASS="estring"> and </SPAN><A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="estring">.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Free implementation of ELKS library&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2014-01-28 14:35:23 -0800 (Tue, 28 Jan 2014) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 94109 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../base/function.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A> <SPAN CLASS="ekeyword">end</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/routine.html">ROUTINE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">]</SPAN>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/function.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/function.html#f_copy">copy</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN>
+	<A CLASS="efeature" HREF="../base/routine.html#f_set_rout_disp">set_rout_disp</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_last_result"></A><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Result of last call, if any</SPAN>
+
+	<A NAME="f_call"></A><A CLASS="efeature" HREF="../base/function.html#f_call">call</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Call routine with </SPAN>`args'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_item"></A><A CLASS="efeature" HREF="../base/function.html#f_item">item</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/function.html#f_item">()</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Result of calling function with </SPAN>`args'<SPAN CLASS="ecomment"> as operands.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">valid_operands</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_valid_operands">valid_operands</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_closed_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_closed_operands">closed_operands</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">c</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_closed_operands">closed_operands</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">c</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">l_closed_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">c</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_count">count</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/function.html#f_fast_item">fast_item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/routine.html#f_encaps_rout_disp">encaps_rout_disp</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_calc_rout_addr">calc_rout_addr</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">$</SPAN><A CLASS="efeature" HREF="../base/routine.html#f_closed_operands">closed_operands</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/pointer_ref.html#f_item">to_pointer</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">$</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/pointer_ref.html#f_item">to_pointer</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_routine_id">routine_id</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_is_basic">is_basic</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_written_type_id_inline_agent">written_type_id_inline_agent</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_closed_count</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_open_count">open_count</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">$</SPAN><A CLASS="efeature" HREF="../base/routine.html#f_open_map">open_map</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/pointer_ref.html#f_item">to_pointer</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_apply"></A><A CLASS="efeature" HREF="../base/function.html#f_apply">apply</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Call function with </SPAN><A CLASS="efeature" HREF="../base/routine.html#f_operands">operands</A><SPAN CLASS="ecomment"> as last set.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/routine.html#f_operands">operands</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Comparison</SPAN>
+
+	<A NAME="f_is_equal"></A><A CLASS="efeature" HREF="../base/function.html#f_is_equal">is_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is associated function the same as the one</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> associated with </SPAN>`other'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/routine.html#f_is_equal">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A> <SPAN CLASS="esymbol">~</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Duplication</SPAN>
+
+	<A NAME="f_copy"></A><A CLASS="efeature" HREF="../base/function.html#f_copy">copy</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Use same function as </SPAN>`other'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">other</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Current</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="ekeyword" HREF="../base/routine.html#f_copy">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Obsolete</SPAN>
+
+	<A NAME="f_eval"></A><A CLASS="efeature" HREF="../base/function.html#f_eval">eval</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN>
+		<SPAN CLASS="ekeyword">obsolete</SPAN> &quot;Please use `item' instead&quot;
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Result of evaluating function for </SPAN>`args'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">valid_operands</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_valid_operands">valid_operands</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Removal</SPAN>
+
+	<A NAME="f_clear_last_result"></A><A CLASS="efeature" HREF="../base/function.html#f_clear_last_result">clear_last_result</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Reset content of </SPAN><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A><SPAN CLASS="ecomment"> to its default value.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_result</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_result</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Extended operations</SPAN>
+
+	<A NAME="f_flexible_item"></A><A CLASS="efeature" HREF="../base/function.html#f_flexible_item">flexible_item</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Result of calling function with </SPAN>`a'<SPAN CLASS="ecomment"> as arguments.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Compared to </SPAN><A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="ecomment"> the type of </SPAN>`a'<SPAN CLASS="ecomment"> may be different from </SPAN>`{OPEN_ARGS}'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">valid_operands</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_valid_operands">valid_operands</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">default_arguments</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="elocal">a</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">default_arguments</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">check</SPAN>
+					<SPAN CLASS="etag">from_precondition</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_new_tuple_from_tuple">new_tuple_from_tuple</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> x
+				<SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">x</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_fast_item"></A><A CLASS="efeature" HREF="../base/function.html#f_fast_item">fast_item</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_rout_disp</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_calc_rout_addr</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_closed_operands</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_operands</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_routine_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_is_basic</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_class_id_inline_agent</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_closed_count</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_open_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_open_map</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C inline use %&quot;eif_rout_obj.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;[
+				#ifdef WORKBENCH
+					$$_result_type result;
+					if ($a_rout_disp != 0) {
+						return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_POINTER, EIF_REFERENCE, EIF_REFERENCE)) $a_rout_disp)(
+							$a_calc_rout_addr, $a_closed_operands, $a_operands).$$_result_value;
+					} else {
+						rout_obj_call_function_dynamic (
+							$a_routine_id,
+							$a_is_basic,
+							$a_class_id_inline_agent,
+							$a_closed_operands,
+							$a_closed_count,
+							$a_operands,
+							$a_open_count,
+							$a_open_map, 
+							&#38;result);
+						return result;
+					}
+				#else
+					return (FUNCTION_CAST($$_result_type, (EIF_POINTER, EIF_REFERENCE, EIF_REFERENCE)) $a_rout_disp)(
+						$a_calc_rout_addr, $a_closed_operands, $a_operands);
+				#endif
+			]<SPAN CLASS="estring">&quot;</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2014, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../base/function.html">FUNCTION</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="function"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

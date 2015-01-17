@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Generic Specification"/>
+<meta name="synopsis" content="A FoxPro table structure specification has two primary parts:  T(1) DBF Table Header Specification {FP_HEADER} T(2) DBF-subrecord Field Specification {FP_FIELD_SUBRECORD} T Current enclosed features and operations common to both of the above. While it would normally be too early to note this relationship of descendent classes, the VFP DBF table structure specification is stable enough to allow this note documentation to appear here. It is here to orient you to the ultimate goal of this class.  Moreover, there are essentially three ways to get the specifcation from Current:  (1) `out'TTTTTWhere {ANY}.out is redefined and hooked  TTTTTTTup to `specification_now'. (2) `specification_now'TTWhere any date-sensitive content of the TTTTTTTheader is based on {DATE}.make_now (3) `specification_on_date'TWhere any date-sensitive content of the TTTTTTTheader is based on CCYYMMDD from client.  Finally, the notion of specification is that of a structure as represented by features and a specification {STRING} output, where the output is precisely as needed by Visual FoxPro to open and utilize a file resulting from Current as a DBF (i.e. this specification is used to produce a DBF file)."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>fp_spec Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_spec_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_spec_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_spec"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Generic Specification</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">synopsis</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">A FoxPro table structure specification has two primary parts:</SPAN>
+		
+		<SPAN CLASS="estring">	(1) DBF Table Header Specification </SPAN><A CLASS="eclass" HREF="../foxpro/fp_header.html">FP_HEADER</A>
+		<SPAN CLASS="estring">	(2) DBF-subrecord Field Specification </SPAN><A CLASS="eclass" HREF="../foxpro/fp_field_subrecord.html">FP_FIELD_SUBRECORD</A>
+		<SPAN CLASS="estring">	</SPAN>
+		<SPAN CLASS="estring">Current enclosed features and operations common to both of</SPAN>
+		<SPAN CLASS="estring">the above. While it would normally be too early to note this</SPAN>
+		<SPAN CLASS="estring">relationship of descendent classes, the VFP DBF table structure</SPAN>
+		<SPAN CLASS="estring">specification is stable enough to allow this note documentation</SPAN>
+		<SPAN CLASS="estring">to appear here. It is here to orient you to the ultimate goal</SPAN>
+		<SPAN CLASS="estring">of this class.</SPAN>
+		
+		<SPAN CLASS="estring">Moreover, there are essentially three ways to get the specifcation</SPAN>
+		<SPAN CLASS="estring">from Current:</SPAN>
+		
+		<SPAN CLASS="estring">(1) </SPAN><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_out">out</A><SPAN CLASS="estring">					Where </SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_out">out</A><SPAN CLASS="estring"> is redefined and hooked </SPAN>
+		<SPAN CLASS="estring">							up to </SPAN><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_now">specification_now</A><SPAN CLASS="estring">.</SPAN>
+		<SPAN CLASS="estring">(2) </SPAN><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_now">specification_now</A><SPAN CLASS="estring">		Where any date-sensitive content of the</SPAN>
+		<SPAN CLASS="estring">							header is based on </SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../time/date.html">DATE</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_make_now">make_now</A>
+		<SPAN CLASS="estring">(3) </SPAN><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_on_date">specification_on_date</A><SPAN CLASS="estring">	Where any date-sensitive content of the</SPAN>
+		<SPAN CLASS="estring">							header is based on CCYYMMDD from client.</SPAN>
+		
+		<SPAN CLASS="estring">Finally, the notion of specification is that of a structure as</SPAN>
+		<SPAN CLASS="estring">represented by features and a specification </SPAN><SPAN CLASS="estring">{</SPAN><SPAN CLASS="estring">STRING</SPAN><SPAN CLASS="estring">}</SPAN><SPAN CLASS="estring"> output, where</SPAN>
+		<SPAN CLASS="estring">the output is precisely as needed by Visual FoxPro to open and</SPAN>
+		<SPAN CLASS="estring">utilize a file resulting from Current as a DBF (i.e. this</SPAN>
+		<SPAN CLASS="estring">specification is used to produce a DBF file).</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2015-01-16 08:59:42 -0500 (Fri, 16 Jan 2015) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 10596 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">deferred</SPAN> <SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../foxpro/fp_spec.html">FP_SPEC</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/any.html">ANY</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_out"></A><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_out">out</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_out">out</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New string containing terse printable representation</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> of current object</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Repurposed to output the </SPAN><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_now">specification_now</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_now">specification_now</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_specification_now"></A><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_now">specification_now</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_out">out</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Specification of Current based on moment of call.</SPAN>
+		<SPAN CLASS="ekeyword">deferred</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_specification_on_date"></A><A CLASS="efeature" HREF="../foxpro/fp_spec.html#f_specification_on_date">specification_on_date</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date.html">DATE</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Specification based on </SPAN>`a_date'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">deferred</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../foxpro/fp_spec.html">FP_SPEC</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_spec_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_spec_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_spec"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

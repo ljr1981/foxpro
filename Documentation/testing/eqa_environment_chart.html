@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Objects that provide settings for executing an {EQA_TEST_SET}. A settings conists of an key-value pair of type {STRING}. The settings are once per thread, meaning that any {EQA_ENVIRONMENT} instances will have the same state if they are accessed in the same thread."/>
+<meta name="author" content=""/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2013, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>eqa_environment Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_environment_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_environment.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_environment"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../testing/eqa_environment_chart.html">EQA_ENVIRONMENT</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">testing</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> 
+		<SPAN CLASS="estring">&quot;Objects that provide settings for executing an </SPAN><A CLASS="eclass" HREF="../testing/eqa_test_set_chart.html">EQA_TEST_SET</A><SPAN CLASS="estring">. A settings conists of an</SPAN>
+		<SPAN CLASS="estring">key-value pair of type </SPAN><SPAN CLASS="estring">{</SPAN><SPAN CLASS="estring">STRING</SPAN><SPAN CLASS="estring">}</SPAN><SPAN CLASS="estring">.</SPAN>
+		<SPAN CLASS="estring">The settings are once per thread, meaning that any </SPAN><A CLASS="eclass" HREF="../testing/eqa_environment_chart.html">EQA_ENVIRONMENT</A><SPAN CLASS="estring"> instances will have</SPAN>
+		<SPAN CLASS="estring">the same state if they are accessed in the same thread.&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/any_chart.html">ANY</A>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`item' is declared in `Current'"><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_item">item</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_key</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_32_chart.html">IMMUTABLE_STRING_32</A></SPAN>
+	<SPAN TITLE="`item_attached' is declared in `Current'"><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_item_attached">item_attached</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_key</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">an_asserter</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_assertions_chart.html">EQA_ASSERTIONS</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_32_chart.html">IMMUTABLE_STRING_32</A></SPAN>
+	<SPAN TITLE="`item_not_empty' is declared in `Current'"><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_item_not_empty">item_not_empty</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_key</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">an_asserter</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_assertions_chart.html">EQA_ASSERTIONS</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_32_chart.html">IMMUTABLE_STRING_32</A></SPAN>
+	<SPAN TITLE="`substitute' is declared in `Current'"><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_substitute">substitute</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_line</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32_chart.html">STRING_32</A></SPAN>
+	<SPAN TITLE="`substitute_recursive' is declared in `Current'"><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_substitute_recursive">substitute_recursive</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_line</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32_chart.html">STRING_32</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`put' is declared in `Current'"><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_put">put</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_value</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_key</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_environment_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_environment.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_environment"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

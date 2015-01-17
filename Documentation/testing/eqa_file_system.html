@@ -1,0 +1,364 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Objects creating directories and files in a system test set environment."/>
+<meta name="author" content=""/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>eqa_file_system Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_file_system_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_file_system_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_file_system"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Objects creating directories and files in a system test set environment.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">author</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2013-05-20 16:15:17 -0700 (Mon, 20 May 2013) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 92557 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../testing/eqa_file_system.html">EQA_FILE_SYSTEM</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialization</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_make">make</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">an_asserter</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_asserter">asserter</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize </SPAN>`Current'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`an_asserter'<SPAN CLASS="ecomment">: Asserter used to raise an exception to report unexpected behaviour.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">an_asserter_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">an_asserter</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_asserter">asserter</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">an_asserter</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_asserter"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_asserter">asserter</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_assertions.html">EQA_ASSERTIONS</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Asserter used to raise an exception to report unexpected behaviour.</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Command</SPAN>
+
+	<A NAME="f_copy_file"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_copy_file">copy_file</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/file.html">FILE</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_env</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_environment.html">EQA_ENVIRONMENT</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/file.html">FILE</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_substitute</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Append lines of file </SPAN>`a_src'<SPAN CLASS="ecomment">, with environment</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> variables substituted according to </SPAN>`a_env'<SPAN CLASS="ecomment"> (but</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> only if </SPAN>`substitute'<SPAN CLASS="ecomment"> is true) to</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> file </SPAN>`a_dest'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">source_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_src</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">destination_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_dest</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">environment_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_env</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">source_is_closed</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_is_closed">is_closed</A>
+			<SPAN CLASS="etag">destination_is_closed</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_is_closed">is_closed</A>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_line</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_open_read">open_read</A>
+				<SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_open_write">open_write</A>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_line">read_line</A>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">a_substitute</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">l_line</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_env</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_substitute">substitute</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_string">last_string</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_as_string_8_conversion">as_string_8_conversion</A>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<SPAN CLASS="elocal">l_line</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_string">last_string</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_line</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_new_line">new_line</A>
+				<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">l_line</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_put_string">put_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_line</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="elocal">a_src</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_close">close</A>
+			<SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_flush">flush</A>
+			<SPAN CLASS="elocal">a_dest</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_close">close</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Query: Path</SPAN>
+
+	<A NAME="f_build_path"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_path">build_path</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_dir</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_path.html">EQA_SYSTEM_PATH</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Build an absolute path name given a base directory and an optional path</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_dir'<SPAN CLASS="ecomment">: A base dir in form of an absolute path.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_path'<SPAN CLASS="ecomment">: A relative path to append to </SPAN>`a_dir'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: Absolute path that results from appending items in </SPAN>`a_path'<SPAN CLASS="ecomment"> to </SPAN>`a_dir'
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_dir_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_dir</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">a_dir_not_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_dir</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_is_empty">is_empty</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_partial_path">build_partial_path</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_dir</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_build_path_from_key"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_path_from_key">build_path_from_key</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_key</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_path.html">EQA_SYSTEM_PATH</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Build an absolte path name given the key of an defined absolte path</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: will raise exception if value for </SPAN>`a_key'<SPAN CLASS="ecomment"> is not defined.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_key'<SPAN CLASS="ecomment">: Key for which an absolute base dir is defined in </SPAN><A CLASS="eclass" HREF="../testing/eqa_environment.html">EQA_ENVIRONMENT</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_path'<SPAN CLASS="ecomment">: An optional relative path to append to the resulting path.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: Absolute path that results from appending items in </SPAN>`a_path'<SPAN CLASS="ecomment"> to base dir.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_key_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_key</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">a_key_not_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_key</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_is_empty">is_empty</A>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_environment</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_environment.html">EQA_ENVIRONMENT</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_environment</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_partial_path">build_partial_path</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_environment</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_environment.html#f_item_attached">item_attached</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_key</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_asserter">asserter</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_build_source_path"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_source_path">build_source_path</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_path.html">EQA_SYSTEM_PATH</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Build the actual path name relative to the source directory for given path</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: will raise exception if </SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../testing/eqa_system_test_set.html">EQA_SYSTEM_TEST_SET</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_test_set.html#f_source_path_key">source_path_key</A><SPAN CLASS="ecomment"> is not defined.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_path'<SPAN CLASS="ecomment">: Optional path for which path name should be built.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: Path name relative to source directory.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_path_from_key">build_path_from_key</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../testing/eqa_system_test_set.html">EQA_SYSTEM_TEST_SET</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_test_set.html#f_source_path_key">source_path_key</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_build_target_path"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_target_path">build_target_path</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_path.html">EQA_SYSTEM_PATH</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Build the actual path name relative to the target directory for given path.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: will raise exception if </SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../testing/eqa_system_test_set.html">EQA_SYSTEM_TEST_SET</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_target_path_key">target_path_key</A><SPAN CLASS="ecomment"> is not defined.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_path'<SPAN CLASS="ecomment">: Optional path for which path name should be built</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: Path name relative to target directory.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_path_from_key">build_path_from_key</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../testing/eqa_system_test_set.html">EQA_SYSTEM_TEST_SET</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_target_path_key">target_path_key</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Query: Content</SPAN>
+
+	<A NAME="f_has_same_content_as_string"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_has_same_content_as_string">has_same_content_as_string</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_path.html">EQA_SYSTEM_PATH</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_8.html">READABLE_STRING_8</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Does target file for path have same content as given string?</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_path'<SPAN CLASS="ecomment">: Path relative to </SPAN>`target_directory'<SPAN CLASS="ecomment"> of file</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_string'<SPAN CLASS="ecomment">: String to be compared with content of file</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: True if file has same content as </SPAN>`a_string'<SPAN CLASS="ecomment">, False otherwise</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: if file does not exists or is not readable an exception is raised.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_path_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_path</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">a_path_not_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_path.html#f_is_empty">is_empty</A>
+			<SPAN CLASS="etag">a_string_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_string</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_filename</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_target_path">build_target_path</A>
+			<SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_filename</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_target_path">build_target_path</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_make_with_name">make_with_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_filename</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_assert">assert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;file_exists&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_exists">exists</A><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_assert">assert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;file_readable&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_is_readable">is_readable</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_open_read">open_read</A>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_string</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_count">count</A>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">l_count</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_string</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_character">last_character</A>
+				<SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">l_count</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="elocal">l_file</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_close">close</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_has_same_content_as_path"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_has_same_content_as_path">has_same_content_as_path</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_first_path</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_second_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_path.html">EQA_SYSTEM_PATH</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do target files for given paths have the same content?</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_first'<SPAN CLASS="ecomment">: Relative path of first file.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_second'<SPAN CLASS="ecomment">: Relative path of second file.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: True if both files existed and are readable and have identical content, False</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: if files do not exist or are not readable an exception is raised.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_first_path_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_first_path</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">a_first_path_not_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_first_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_path.html#f_is_empty">is_empty</A>
+			<SPAN CLASS="etag">a_second_path_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_second_path</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">a_second_path_not_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_second_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_path.html#f_is_empty">is_empty</A>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_filename1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_filename2</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_target_path">build_target_path</A>
+			<SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_filename1</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_target_path">build_target_path</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_first_path</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_filename2</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_target_path">build_target_path</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_second_path</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_make_with_name">make_with_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_filename1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_make_with_name">make_with_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_filename2</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_assert">assert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;file1_exists&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_exists">exists</A><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_assert">assert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;file2_exists&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_exists">exists</A><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_assert">assert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;file1_readable&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/sequence.html#f_readable">readable</A><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_assert">assert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;file2_readable&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/sequence.html#f_readable">readable</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_open_read">open_read</A>
+			<SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_open_read">open_read</A>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+				<SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_character">last_character</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_medium.html#f_last_character">last_character</A>
+				<SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+				<SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_read_character">read_character</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_end_of_file">end_of_file</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="elocal">l_file1</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_close">close</A>
+			<SPAN CLASS="elocal">l_file2</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_close">close</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_executable_file_exists"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_executable_file_exists">executable_file_exists</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> If file </SPAN>`s'<SPAN CLASS="ecomment"> does not exist or is not a file or</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> is not executable, string describing the</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> problem. &nbsp;Void otherwise</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">f</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/raw_file.html">RAW_FILE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">f</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_make_with_name">make_with_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">f</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_exists">exists</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A><SPAN CLASS="esymbol">}</SPAN>&quot;file &quot; <A CLASS="esymbol" HREF="../base/string_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN> <A CLASS="esymbol" HREF="../base/string_32.html#f_plus">+</A> &quot; not found&quot;
+				<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">f</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_is_plain">is_plain</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A><SPAN CLASS="esymbol">}</SPAN>&quot;file &quot; <A CLASS="esymbol" HREF="../base/string_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN> <A CLASS="esymbol" HREF="../base/string_32.html#f_plus">+</A> &quot; not a plain file&quot;
+				<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">f</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/file.html#f_is_executable">is_executable</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A><SPAN CLASS="esymbol">}</SPAN>&quot;file &quot; <A CLASS="esymbol" HREF="../base/string_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN> <A CLASS="esymbol" HREF="../base/string_32.html#f_plus">+</A> &quot; not executable&quot;
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A><SPAN CLASS="esymbol">}</SPAN>&quot;file (Void file name) not found&quot;
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Query</SPAN>
+
+	<A NAME="f_build_partial_path"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_build_partial_path">build_partial_path</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../testing/eqa_system_path.html">EQA_SYSTEM_PATH</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_prefix</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_strip</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Build a partial path name relative to to a given directory.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_path'<SPAN CLASS="ecomment">: Path for which path name should be built</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_prefix'<SPAN CLASS="ecomment">: Absolute directory name to which </SPAN>`a_path'<SPAN CLASS="ecomment"> is relative.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_strip'<SPAN CLASS="ecomment">: Number of items at the end of </SPAN>`a_path'<SPAN CLASS="ecomment"> to be neglected.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: Path name relative to target directory.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_prefix_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_prefix</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">a_strip_not_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_strip</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">a_stip_not_too_large</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_strip</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="elocal">a_path</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="elocal">a_strip</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_path.html#f_count">count</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/path.html">PATH</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/path.html#f_make_from_string">make_from_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_prefix</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">a_path</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+					<SPAN CLASS="elocal">l_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_path.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="elocal">a_strip</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">l_count</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<SPAN CLASS="elocal">l_path</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/path.html#f_extended">extended</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_system_path.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_32.html#f_make_from_string">make_from_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_path</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/path.html#f_name">name</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Basic</SPAN>
+
+	<A NAME="f_delete_directory_tree"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_delete_directory_tree">delete_directory_tree</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_dir_name</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Try to delete the directory tree rooted at</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_dir_name'<SPAN CLASS="ecomment">. &nbsp;Ignore any errors</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">directory_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_dir_name</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_dir</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/directory.html">DIRECTORY</A>
+			<SPAN CLASS="elocal">l_retried</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">l_retried</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_dir</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/directory.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_dir_name</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">l_dir</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/directory.html#f_recursive_delete">recursive_delete</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">rescue</SPAN>
+			<SPAN CLASS="elocal">l_retried</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">retry</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_assert"></A><SPAN CLASS="ekeyword">frozen</SPAN> <A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_assert">assert</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_condition</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Assert </SPAN>`a_condition'<SPAN CLASS="ecomment"> using asserter from current test set.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_tag_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_tag</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_asserter">asserter</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_assertions.html#f_assert">assert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_tag</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_condition</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Constants</SPAN>
+
+	<A NAME="f_source_directory_key"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_source_directory_key">Source_directory_key</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A> <SPAN CLASS="esymbol">=</SPAN> &quot;SOURCE_DIRECTORY&quot;
+
+	<A NAME="f_target_directory_key"></A><A CLASS="efeature" HREF="../testing/eqa_file_system.html#f_target_directory_key">Target_directory_key</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_32.html">STRING_32</A> <SPAN CLASS="esymbol">=</SPAN> &quot;EQA_TARGET_DIRECTORY&quot;
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2012, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../testing/eqa_file_system.html">EQA_FILE_SYSTEM</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_file_system_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_file_system_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_file_system"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Concrete of an external iteration cursor for {HASH_TABLE}."/>
+<meta name="library" content="EiffelBase: Library of reusable components for Eiffel."/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="copyright" content="Copyright (c) 1984-2011, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>hash_table_iteration_cursor Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="hash_table_iteration_cursor_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="hash_table_iteration_cursor.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="hash_table_iteration_cursor"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../base/hash_table_iteration_cursor_chart.html">HASH_TABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">K</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/hashable_chart.html">HASHABLE</A><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">elks</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Concrete of an external iteration cursor for </SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/hash_table_chart.html">HASH_TABLE</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="estring">.&quot;</SPAN>
+	<SPAN CLASS="eitag">create</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/indexable_iteration_cursor_chart.html">INDEXABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/table_iteration_cursor_chart.html">TABLE_ITERATION_CURSOR</A><SPAN CLASS="echar">*</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">K</SPAN><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`after' is declared in `Current'"><A CLASS="efeature" HREF="../base/hash_table_iteration_cursor.html#f_after">after</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`cursor_index' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_cursor_index">cursor_index</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`decremented' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_decremented">decremented</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/indexable_iteration_cursor.html#f_decremented">-</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_step">step</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/hash_table_iteration_cursor_chart.html">HASH_TABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">K</SPAN><SPAN CLASS="esymbol">]</SPAN></SPAN>
+	<SPAN TITLE="`first_index' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_first_index">first_index</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`incremented' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_incremented">incremented</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/indexable_iteration_cursor.html#f_incremented">+</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_step">step</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/hash_table_iteration_cursor_chart.html">HASH_TABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">K</SPAN><SPAN CLASS="esymbol">]</SPAN></SPAN>
+	<SPAN TITLE="`is_first' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_is_first">is_first</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_last' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_is_last">is_last</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_reversed' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_is_reversed">is_reversed</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_valid' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_is_valid">is_valid</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`item' is declared in `Current'"><A CLASS="efeature" HREF="../base/hash_table_iteration_cursor.html#f_item">item</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">G</SPAN></SPAN>
+	<SPAN TITLE="`iteration_position' was declared in INDEXABLE_ITERATION_CURSOR as `target_index'"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_target_index">iteration_position</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`key' is declared in `Current'"><A CLASS="efeature" HREF="../base/hash_table_iteration_cursor.html#f_key">key</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">K</SPAN></SPAN>
+	<SPAN TITLE="`last_index' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_last_index">last_index</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`new_cursor' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_new_cursor">new_cursor</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/indexable_iteration_cursor_chart.html">INDEXABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN></SPAN>
+	<SPAN TITLE="`reversed' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_reversed">reversed</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/indexable_iteration_cursor.html#f_reversed">-</A><SPAN CLASS="esymbol">&quot;</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/hash_table_iteration_cursor_chart.html">HASH_TABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">K</SPAN><SPAN CLASS="esymbol">]</SPAN></SPAN>
+	<SPAN TITLE="`step' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_step">step</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`version' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_version">version</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_32_chart.html">NATURAL_32</A></SPAN>
+	<SPAN TITLE="`with_step' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_with_step">with_step</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_step">step</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/hash_table_iteration_cursor_chart.html">HASH_TABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">K</SPAN><SPAN CLASS="esymbol">]</SPAN></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`forth' is declared in `Current'"><A CLASS="efeature" HREF="../base/hash_table_iteration_cursor.html#f_forth">forth</A></SPAN>
+	<SPAN TITLE="`reverse' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_reverse">reverse</A></SPAN>
+	<SPAN TITLE="`set_step' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_set_step">set_step</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_step">step</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`start' was declared in INDEXABLE_ITERATION_CURSOR"><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_start">start</A></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="hash_table_iteration_cursor_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="hash_table_iteration_cursor.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="hash_table_iteration_cursor"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

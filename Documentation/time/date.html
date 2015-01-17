@@ -1,0 +1,645 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Absolute dates"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="access" content="date"/>
+<meta name="eis" content="name=DATE / TIME to STRING Conversion, src=$(ISE_DOC_UUID)/88972ba4-694b-8558-b0c8-87b1fc40afc4, tag=EiffelTime"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2009, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>date Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="date"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Absolute dates&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2009-07-01 02:00:56 -0700 (Wed, 01 Jul 2009) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 79533 $&quot;</SPAN>
+	<SPAN CLASS="eitag">access</SPAN><SPAN CLASS="esymbol">:</SPAN> date
+	<SPAN CLASS="eitag">eis</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;name=DATE / TIME to STRING Conversion&quot;</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="estring">&quot;src=$(ISE_DOC_UUID)/88972ba4-694b-8558-b0c8-87b1fc40afc4&quot;</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="estring">&quot;tag=EiffelTime&quot;</SPAN>
+	<SPAN CLASS="eitag">eis</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;name=Obtaining a DATE from a DATE_TIME and vice versa&quot;</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="estring">&quot;src=$(ISE_DOC_UUID)/195849fc-1a9c-d734-2d2b-acae78133886#Obtaining_a_DATE_from_a_DATE_TIME_and_vice_versa&quot;</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="estring">&quot;tag=EiffelTime&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../time/date.html">DATE</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../time/absolute.html">ABSOLUTE</A>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_is_less">is_less</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../time/date_value.html">DATE_VALUE</A>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../base/comparable.html#f_is_equal">is_equal</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../time/date_validity_checker.html">DATE_VALIDITY_CHECKER</A>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../base/comparable.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../base/debug_output.html">DEBUG_OUTPUT</A>
+		<SPAN CLASS="ekeyword">export</SPAN>
+			<SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">all</SPAN>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../base/comparable.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_month_day_year">make_month_day_year</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_day_month_year">make_day_month_year</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_now">make_now</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_now_utc">make_now_utc</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_by_days">make_by_days</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_from_string_default">make_from_string_default</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_from_string_default_with_base">make_from_string_default_with_base</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_from_string">make_from_string</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_from_string_with_base">make_from_string_with_base</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_by_compact_date">make_by_compact_date</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../time/date.html#f_make_by_ordered_compact_date">make_by_ordered_compact_date</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialization</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../time/date.html#f_make">make</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="ecomment">, </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A><SPAN CLASS="ecomment"> to </SPAN>`y'<SPAN CLASS="ecomment">, </SPAN>`m'<SPAN CLASS="ecomment">, </SPAN>`d'<SPAN CLASS="ecomment"> respectively.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">correct_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_is_correct_date">is_correct_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date_value.html#f_set_date">set_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">year_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">y</SPAN>
+			<SPAN CLASS="etag">month_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">day_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">d</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_month_day_year"></A><A CLASS="efeature" HREF="../time/date.html#f_make_month_day_year">make_month_day_year</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="ecomment">, </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="ecomment"> to </SPAN>`m'<SPAN CLASS="ecomment">, </SPAN>`d'<SPAN CLASS="ecomment"> and </SPAN>`y'<SPAN CLASS="ecomment"> respectively.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">correct_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_is_correct_date">is_correct_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">year_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">y</SPAN>
+			<SPAN CLASS="etag">month_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">day_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">d</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_day_month_year"></A><A CLASS="efeature" HREF="../time/date.html#f_make_day_month_year">make_day_month_year</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A><SPAN CLASS="ecomment">, </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="ecomment"> to </SPAN>`d'<SPAN CLASS="ecomment">, </SPAN>`m'<SPAN CLASS="ecomment"> and </SPAN>`y'<SPAN CLASS="ecomment"> respectively.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">correct_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_is_correct_date">is_correct_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">year_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">y</SPAN>
+			<SPAN CLASS="etag">month_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">day_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">d</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_now"></A><A CLASS="efeature" HREF="../time/date.html#f_make_now">make_now</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set the current object to today's date.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/c_date.html">C_DATE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_date</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/c_date.html#f_year_now">year_now</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/c_date.html#f_month_now">month_now</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/c_date.html#f_day_now">day_now</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_now_utc"></A><A CLASS="efeature" HREF="../time/date.html#f_make_now_utc">make_now_utc</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set the current object to today's date in utc format.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/c_date.html">C_DATE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/c_date.html#f_make_utc">make_utc</A>
+			<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/c_date.html#f_year_now">year_now</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/c_date.html#f_month_now">month_now</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/c_date.html#f_day_now">day_now</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_by_days"></A><A CLASS="efeature" HREF="../time/date.html#f_make_by_days">make_by_days</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set the current date with the number of days </SPAN>`n'<SPAN CLASS="ecomment"> since </SPAN><A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">4</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">59</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="elocal">j</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">4</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_mod">mod</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">146097</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">4</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">3</SPAN>
+			<SPAN CLASS="elocal">y</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">100</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">146097</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1461</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">5</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_mod">mod</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1461</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">4</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">4</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">3</SPAN>
+			<SPAN CLASS="elocal">m</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">153</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">d</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_mod">mod</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">153</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">5</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">5</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">m</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">10</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">m</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">3</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="elocal">m</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">9</SPAN>
+				<SPAN CLASS="elocal">y</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">y</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="elocal">y</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">y</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1600</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">days_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">n</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_from_string_default"></A><A CLASS="efeature" HREF="../time/date.html#f_make_from_string_default">make_from_string_default</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize from a &quot;standard&quot; string of form</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (For 2-digit year specifications, the current century is used as</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> base century.)</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">s_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">date_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_date_valid">date_valid</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make_from_string">make_from_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_from_string_default_with_base"></A><A CLASS="efeature" HREF="../time/date.html#f_make_from_string_default_with_base">make_from_string_default_with_base</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">base</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize from a &quot;standard&quot; string of form</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="ecomment"> with base century </SPAN>`base'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">s_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">base_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">base</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">base</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="enumber">100</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="etag">date_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_date_valid_with_base">date_valid_with_base</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">base</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make_from_string_with_base">make_from_string_with_base</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">base</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_from_string"></A><A CLASS="efeature" HREF="../time/date.html#f_make_from_string">make_from_string</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize from a &quot;standard&quot; string of form</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`code'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (For 2-digit year specifications, the current century is used as</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> base century.)</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">s_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">c_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">code</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">date_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_date_valid">date_valid</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">code_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_time_code_string.html">DATE_TIME_CODE_STRING</A>
+			<SPAN CLASS="elocal">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date.html">DATE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">code_string</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time_code_string.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">date</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">code_string</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time_code_string.html#f_create_date">create_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_from_string_with_base"></A><A CLASS="efeature" HREF="../time/date.html#f_make_from_string_with_base">make_from_string_with_base</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">base</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize from a &quot;standard&quot; string of form</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`code'<SPAN CLASS="ecomment"> with base century </SPAN>`base'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">s_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">c_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">code</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">base_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">base</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">base</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="enumber">100</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="etag">date_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_date_valid_with_base">date_valid_with_base</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">base</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">code_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_time_code_string.html">DATE_TIME_CODE_STRING</A>
+			<SPAN CLASS="elocal">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date.html">DATE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">code_string</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time_code_string.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">code_string</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time_code_string.html#f_set_base_century">set_base_century</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">base</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">date</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">code_string</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time_code_string.html#f_create_date">create_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_by_compact_date"></A><A CLASS="efeature" HREF="../time/date.html#f_make_by_compact_date">make_by_compact_date</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c_d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">obsolete</SPAN> &quot;Use `make_by_ordered_compact_date' instead. But be careful in your update since `compact_date' and `ordered_compact_date' do not have the same encoding.&quot;
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize from a </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_compact_date">compact_date</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">c_d_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_compact_date_valid">compact_date_valid</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c_d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date_value.html#f_set_private_internal_compact_date">set_private_internal_compact_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c_d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">compact_date_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_or">|</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_shift_left">|&lt;&lt;</A> <SPAN CLASS="enumber">16</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_or">|</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_shift_left">|&lt;&lt;</A> <SPAN CLASS="enumber">24</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">c_d</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_by_ordered_compact_date"></A><A CLASS="efeature" HREF="../time/date.html#f_make_by_ordered_compact_date">make_by_ordered_compact_date</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c_d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialize from a </SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_ordered_compact_date">ordered_compact_date</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">c_d_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_validity_checker.html#f_ordered_compact_date_valid">ordered_compact_date_valid</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c_d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date_value.html#f_set_internal_ordered_compact_date">set_internal_ordered_compact_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c_d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">ordered_compact_date_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_ordered_compact_date">ordered_compact_date</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">c_d</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_origin"></A><A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date.html">DATE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Origin date</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1600</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Comparison</SPAN>
+
+	<A NAME="f_is_less"></A><A CLASS="efeature" HREF="../time/date.html#f_is_less">is_less</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../time/date.html#f_is_less">&lt;</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is the current date before </SPAN>`other'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_current</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_current</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_ordered_compact_date">ordered_compact_date</A>
+			<SPAN CLASS="elocal">l_other</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_ordered_compact_date">ordered_compact_date</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_current</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="elocal">l_other</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_current</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="elocal">l_other</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_current</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <SPAN CLASS="enumber">65535</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_other</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_bit_and">&#38;</A> <SPAN CLASS="enumber">65535</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Measurement</SPAN>
+
+	<A NAME="f_duration"></A><A CLASS="efeature" HREF="../time/date.html#f_duration">duration</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_duration.html">DATE_DURATION</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Definite duration elapsed since </SPAN><A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_make_by_days">make_by_days</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_days_from">days_from</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">definite_result</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_definite">definite</A>
+			<SPAN CLASS="etag">duration_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Current</SPAN> <A CLASS="esymbol" HREF="../time/absolute.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/interval.html#f_duration">duration</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_days"></A><A CLASS="efeature" HREF="../time/date.html#f_days">days</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of days elapsed since </SPAN><A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days_from">days_from</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/date.html#f_origin">Origin</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_duration</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_duration">duration</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_day">day</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_leap_year"></A><A CLASS="efeature" HREF="../time/date.html#f_leap_year">leap_year</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is the current year a leap year?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_is_leap_year">is_leap_year</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_days_at_month"></A><A CLASS="efeature" HREF="../time/date.html#f_days_at_month">days_at_month</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of days from the beginning of the year</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> until the beginning of the current month</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_month</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days_at_months">Days_at_months</A> <A CLASS="esymbol" HREF="../base/special.html#f_at">@</A> <SPAN CLASS="elocal">l_month</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_month</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">2</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <A CLASS="efeature" HREF="../time/date.html#f_leap_year">leap_year</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">positive_result</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_year_day"></A><A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of days from the beginning of the year</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days_at_month">days_at_month</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">result_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../time/date.html#f_days_in_year">days_in_year</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_week_of_year"></A><A CLASS="efeature" HREF="../time/date.html#f_week_of_year">week_of_year</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of weeks from the beginning of the year</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> The first week of the year begins on the first sunday of the year</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> The week number before the first sunday of the year is 0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_day_of_the_week">day_of_the_week</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_day_of_january_1st">day_of_january_1st</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/date.html#f_day_of_the_week">day_of_the_week</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_week">Days_in_week</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_year_day">year_day</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/date.html#f_day_of_the_week">day_of_the_week</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../time/date.html#f_day_of_january_1st">day_of_january_1st</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_week">Days_in_week</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">positive_result</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">result_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <A CLASS="efeature" HREF="../time/date_constants.html#f_max_weeks_in_year">Max_weeks_in_year</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_days_in_year"></A><A CLASS="efeature" HREF="../time/date.html#f_days_in_year">days_in_year</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of days in the current year</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_leap_year">leap_year</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_leap_year">Days_in_leap_year</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_non_leap_year">Days_in_non_leap_year</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">valid_result</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_leap_year">leap_year</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_leap_year">Days_in_leap_year</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../time/date.html#f_leap_year">leap_year</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_non_leap_year">Days_in_non_leap_year</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_day_of_the_week"></A><A CLASS="efeature" HREF="../time/date.html#f_day_of_the_week">day_of_the_week</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of day from the beginning of the week</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> sunday is 1, etc.., saturday is 7</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_utility.html#f_mod">mod</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">7</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">day_of_the_week_range</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">8</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_day_of_january_1st"></A><A CLASS="efeature" HREF="../time/date.html#f_day_of_january_1st">day_of_january_1st</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Day of the week of january 1st of the current year</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">january_1st</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date.html">DATE</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">january_1st</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">january_1st</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_day_of_the_week">day_of_the_week</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">day_of_the_week_definition</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">8</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_days_from"></A><A CLASS="efeature" HREF="../time/date.html#f_days_from">days_from</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Days between the current year and year </SPAN>`y'
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_year</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_year</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_year</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_non_leap_year">Days_in_non_leap_year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_year</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">4</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">4</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_year</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">100</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">100</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_year</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">400</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">400</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Conversion</SPAN>
+
+	<A NAME="f_to_date_time"></A><A CLASS="efeature" HREF="../time/date.html#f_to_date_time">to_date_time</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_time.html">DATE_TIME</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Date-time version, with a zero time component</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time.html#f_make_by_date">make_by_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Basic operations</SPAN>
+
+	<A NAME="f_plus"></A><A CLASS="efeature" HREF="../time/date.html#f_plus">plus</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../time/date.html#f_plus">+</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_duration.html">DATE_DURATION</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date.html">DATE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sum to current date the duration </SPAN>`d'
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> if duration not define, add years and then months and then days.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">d_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">d</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_twin">twin</A>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_add">add</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">definite_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_definite">definite</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../time/absolute.html#f_minus">-</A> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/interval.html#f_duration">duration</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_add"></A><A CLASS="efeature" HREF="../time/date.html#f_add">add</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_duration.html">DATE_DURATION</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Adds </SPAN>`d'<SPAN CLASS="ecomment"> to the current date.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> if </SPAN>`d'<SPAN CLASS="ecomment"> is not definite, add years and months and then days.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">d_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">d</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_definite">definite</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date.html#f_day_add">day_add</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_day">day</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../time/date.html#f_year_month_add">year_month_add</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_year">year</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_month">month</A><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../time/date.html#f_day_add">day_add</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_day">day</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_relative_duration"></A><A CLASS="efeature" HREF="../time/date.html#f_relative_duration">relative_duration</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_duration.html">DATE_DURATION</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Duration from </SPAN>`other'<SPAN CLASS="ecomment"> to the current date</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_make_by_days">make_by_days</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date.html#f_days">days</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_to_canonical">to_canonical</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_set_origin_date">set_origin_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_twin">twin</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">exact_duration</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN> <A CLASS="esymbol" HREF="../time/date.html#f_plus">+</A> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/comparable.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="etag">canonical_duration</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_canonical">canonical</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="etag">origin_date_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_equal">equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_duration.html#f_origin_date">origin_date</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_day_forth"></A><A CLASS="efeature" HREF="../time/date.html#f_day_forth">day_forth</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to next day.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> days is from the origin, day is current.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_measurement.html#f_days_in_month">days_in_month</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../time/date.html#f_month_forth">month_forth</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">days_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_day_back"></A><A CLASS="efeature" HREF="../time/date.html#f_day_back">day_back</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to previous day.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date.html#f_month_back">month_back</A>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_measurement.html#f_days_in_month">days_in_month</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">days_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_day_add"></A><A CLASS="efeature" HREF="../time/date.html#f_day_add">day_add</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`d'<SPAN CLASS="ecomment"> days to the current date.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_make_by_days">make_by_days</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">d</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">days_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_days">days</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">d</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_month_forth"></A><A CLASS="efeature" HREF="../time/date.html#f_month_forth">month_forth</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to next month.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Can move days backward if next month has less days than the</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> current month.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">days_in_new_month</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_months_in_year">Months_in_year</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_month">set_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../time/date.html#f_year_forth">year_forth</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="elocal">days_in_new_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">days_in_new_month</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">days_in_new_month</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_month">set_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_month_back"></A><A CLASS="efeature" HREF="../time/date.html#f_month_back">month_back</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to previous month.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Can move days backward if previous month has less days than the</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> current month.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">days_in_new_month</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_month">set_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_months_in_year">Months_in_year</A><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../time/date.html#f_year_back">year_back</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="elocal">days_in_new_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">days_in_new_month</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">days_in_new_month</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_month">set_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_month_add"></A><A CLASS="efeature" HREF="../time/date.html#f_month_add">month_add</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`m'<SPAN CLASS="ecomment"> months to the current date.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Can move days backward.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">new_month</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">new_year</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">days_in_new_month</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_old_month</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_old_day</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_old_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A>
+			<SPAN CLASS="elocal">new_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/time_utility.html#f_mod">mod</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_old_month</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_months_in_year">Months_in_year</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="elocal">new_year</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../time/time_utility.html#f_div">div</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_old_month</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_months_in_year">Months_in_year</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">days_in_new_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">new_month</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">new_year</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_old_day</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_old_day</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">days_in_new_month</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_date">set_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">new_year</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">new_month</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">days_in_new_month</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_date">set_date</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">new_year</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">new_month</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_old_day</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_year_forth"></A><A CLASS="efeature" HREF="../time/date.html#f_year_forth">year_forth</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to next year.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> May cut the 29th february.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_year</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_month</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_days_in_month</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A>
+			<SPAN CLASS="elocal">l_year</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A>
+			<SPAN CLASS="elocal">l_days_in_month</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_month</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_year</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">l_days_in_month</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_days_in_month</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../time/date_value.html#f_set_year">set_year</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_year</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">year_increased</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_year_back"></A><A CLASS="efeature" HREF="../time/date.html#f_year_back">year_back</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to previous year.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> May cut the 29th february.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../time/date_value.html#f_set_year">set_year</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">year_decreased</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_year_add"></A><A CLASS="efeature" HREF="../time/date.html#f_year_add">year_add</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`y'<SPAN CLASS="ecomment"> years to the current date.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> May cut the 29th february.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../time/date_value.html#f_set_day">set_day</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_days_in_i_th_month">days_in_i_th_month</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../time/date_value.html#f_set_year">set_year</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">year_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">y</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_year_month_add"></A><A CLASS="efeature" HREF="../time/date.html#f_year_month_add">year_month_add</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`y'<SPAN CLASS="ecomment"> years and </SPAN>`m'<SPAN CLASS="ecomment"> months to the current date.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Check the number of days after.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../time/date.html#f_month_add">month_add</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">y</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <A CLASS="efeature" HREF="../time/date_constants.html#f_months_in_year">Months_in_year</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Output</SPAN>
+
+	<A NAME="f_debug_output"></A><A CLASS="efeature" HREF="../time/date.html#f_debug_output">debug_output</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Printable representation of </SPAN>`Current'<SPAN CLASS="ecomment"> with &quot;standard&quot;</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Form: </SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../time/date.html">DATE</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../time/date.html#f_out">out</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_formatted_out">formatted_out</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_out"></A><A CLASS="efeature" HREF="../time/date.html#f_out">out</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Printable representation of </SPAN>`Current'<SPAN CLASS="ecomment"> with &quot;standard&quot;</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Form: </SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../time/date.html">DATE</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../time/date.html#f_debug_output">debug_output</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../time/date.html#f_formatted_out">formatted_out</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../time/date_constants.html#f_date_default_format_string">date_default_format_string</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_formatted_out"></A><A CLASS="efeature" HREF="../time/date.html#f_formatted_out">formatted_out</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Printable representation of </SPAN>`Current'<SPAN CLASS="ecomment"> with &quot;standard&quot;</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Form: </SPAN>`s'
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">s_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_time_code_string.html">DATE_TIME_CODE_STRING</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">code</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time_code_string.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">code</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time_code_string.html#f_create_date_string">create_date_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_days_at_months"></A><A CLASS="efeature" HREF="../time/date.html#f_days_at_months">Days_at_months</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/special.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Array containing number of days from the end of</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> the year to each month of a non-leap year</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">&lt;&lt;</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">31</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">59</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">90</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">120</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">151</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">181</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">212</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">243</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">273</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">304</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">334</SPAN> <SPAN CLASS="esymbol">&gt;&gt;</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">count_is_months_in_year</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../time/date_constants.html#f_months_in_year">Months_in_year</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">invariant</SPAN>
+	<SPAN CLASS="etag">day_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+	<SPAN CLASS="etag">day_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_day">day</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../time/date_measurement.html#f_days_in_month">days_in_month</A>
+	<SPAN CLASS="etag">month_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+	<SPAN CLASS="etag">month_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_month">month</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../time/date_constants.html#f_months_in_year">Months_in_year</A>
+	<SPAN CLASS="etag">year_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">65535</SPAN>
+	<SPAN CLASS="etag">year_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../time/date_value.html#f_year">year</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2009, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../time/date.html">DATE</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="date_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="date"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

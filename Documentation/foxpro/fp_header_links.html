@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="FoxPro Header Specification"/>
+<meta name="specification" content="TTByte offsetTTDescription TT-----------TT--------------------------------------- TT#0TTTTFile type: 0x01 TTTTTTFoxBASE: 0x02 TTTTTTFoxBASE+/Dbase III plus, no memo: 0x2F TTTTTTVisual FoxPro: 0x30 TTTTTTVisual FoxPro, autoincrement enabled: 0x31 TTTTTTVisual FoxPro, Varchar, Varbinary, or Blob-enabled: 0x42 TTTTTTdBASE IV SQL table files, no memo: 0x62 TTTTTTdBASE IV SQL system files, no memo: 0x82 TTTTTTFoxBASE+/dBASE III PLUS, with memo: 0x8A TTTTTTdBASE IV with memo: 0xCA TTTTTTdBASE IV SQL table files, with memo: 0xF4 TTTTTTFoxPro 2.x (or earlier) with memo: 0xFA TTTTTT TT1 - 3TTTLast update (YYMMDD) TT TT4 ?128//147/ 7TTTNumber of records in file TT TT8 ?128//147/ 9TTTPosition of first data record TT TT10 ?128//147/ 11TTTLength of one data record, including delete flag TT TT12 ?128//147/ 27TTTReserved  TT28TTTTTable flags:  TTTTTT0x01   file has a structural .cdx  TTTTTT0x02   file has a Memo field  TTTTTT0x04   file is a database (.dbc) This byte can contain the sum of  TTTTTTTTany of the above values. For example, the value  TTTTTT0x03 indicates the table has a structural .cdx and a Memo field. TT TT29TTTTCode page mark TT TT30 ?128//147/ 31TTTReserved, contains 0x00 TT TT32 ?128//147/ nTTTField subrecords The number of fields determines  TTTTTTthe number of field subrecords. One field subrecord  TTTTTTexists for each field in the table.  TTn+1TTTTHeader record terminator (0x0D) TT TTn+2 to n+264TA 263-byte range that contains the backlink,  TTTTTTwhich is the relative path of an associated  TTTTTTdatabase (.dbc) file, information. If the first  TTTTTTbyte is 0x00, the file is not associated with a  TTTTTTdatabase. Therefore, database files always contain  TTTTTT0x00."/>
+<meta name="eis" content="name=foxpro_header_specification, protocol=URI, tag=external, src=http://msdn.microsoft.com/en-us/library/st4a0s68(VS.80).aspx"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>fp_header Relations</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_header_chart.html">Chart</A></TD>
+<TD CLASS="nolink2">Relations</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_header.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_header"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../foxpro/fp_header_links.html">FP_HEADER</A>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../foxpro/fp_byte_helper_links.html">FP_BYTE_HELPER</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_spec_links.html">FP_SPEC</A><SPAN CLASS="echar">*</SPAN>
+
+<SPAN CLASS="ekeyword">Clients</SPAN>
+	<A CLASS="eclass" HREF="../foxpro/fp_dbf_reader_links.html">FP_DBF_READER</A>
+	<A CLASS="eclass" HREF="../tests/fp_dbf_reader_test_set_links.html">FP_DBF_READER_TEST_SET</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_dbf_writer_links.html">FP_DBF_WRITER</A>
+	<A CLASS="eclass" HREF="../tests/fp_dbf_writer_test_set_links.html">FP_DBF_WRITER_TEST_SET</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_header_links.html">FP_HEADER</A>
+	<A CLASS="eclass" HREF="../tests/fp_header_test_set_links.html">FP_HEADER_TEST_SET</A>
+
+<SPAN CLASS="ekeyword">Suppliers</SPAN>
+	<A CLASS="eclass" HREF="../base/arrayed_list_links.html">ARRAYED_LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/boolean_links.html">BOOLEAN</A>
+	<A CLASS="eclass" HREF="../base/character_8_links.html">CHARACTER_8</A>
+	<A CLASS="eclass" HREF="../time/date_links.html">DATE</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_constants_links.html">FP_CONSTANTS</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_links.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <A CLASS="eclass" HREF="../base/any_links.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../foxpro/fp_header_links.html">FP_HEADER</A>
+	<A CLASS="eclass" HREF="../base/indexable_iteration_cursor_links.html">INDEXABLE_ITERATION_CURSOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/integer_32_links.html">INTEGER_32</A>
+	<A CLASS="eclass" HREF="../base/integer_interval_links.html">INTEGER_INTERVAL</A>
+	<A CLASS="eclass" HREF="../base/iteration_cursor_links.html">ITERATION_CURSOR</A><SPAN CLASS="echar">*</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/natural_8_links.html">NATURAL_8</A>
+	<A CLASS="eclass" HREF="../base/string_8_links.html">STRING_8</A>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_header_chart.html">Chart</A></TD>
+<TD CLASS="nolink2">Relations</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="fp_header.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="fp_header"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

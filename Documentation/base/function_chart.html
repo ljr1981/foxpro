@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Objects representing delayed calls to a function, with some arguments possibly still open.  Note: Features are the same as those of ROUTINE, Twith `apply' made effective, and the addition Tof `last_result' and `item'."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2014, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>function Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="function"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../base/function_chart.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple_chart.html">TUPLE</A> <SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A> <SPAN CLASS="ekeyword">end</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">elks</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> 
+		<SPAN CLASS="estring">&quot;Objects representing delayed calls to a function,</SPAN>
+		<SPAN CLASS="estring">with some arguments possibly still open.</SPAN>
+		
+		<SPAN CLASS="estring">Note: Features are the same as those of ROUTINE,</SPAN>
+		<SPAN CLASS="estring">with </SPAN><SPAN CLASS="estring">`apply'</SPAN><SPAN CLASS="estring"> made effective, and the addition</SPAN>
+		<SPAN CLASS="estring">of </SPAN><SPAN CLASS="estring">`last_result'</SPAN><SPAN CLASS="estring"> and </SPAN><SPAN CLASS="estring">`item'</SPAN><SPAN CLASS="estring">.&quot;</SPAN>
+	<SPAN CLASS="eitag">create</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_set_rout_disp">set_rout_disp</A>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/routine_chart.html">ROUTINE</A><SPAN CLASS="echar">*</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple_chart.html">TUPLE</A> <SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A> <SPAN CLASS="ekeyword">end</SPAN><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`callable' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_callable">Callable</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`flexible_item' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_flexible_item">flexible_item</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple_chart.html">TUPLE</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN></SPAN>
+	<SPAN TITLE="`hash_code' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_hash_code">hash_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`is_equal' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_is_equal">is_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/function_chart.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_hashable' was declared in HASHABLE"><A CLASS="efeature" HREF="../base/hashable.html#f_is_hashable">is_hashable</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`is_target_closed' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_is_target_closed">is_target_closed</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`item' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_item">item</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/function.html#f_item">()</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN></SPAN>
+	<SPAN TITLE="`last_result' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN></SPAN>
+	<SPAN TITLE="`open_count' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_open_count">open_count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`operands' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_operands">operands</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN></SPAN>
+	<SPAN TITLE="`postcondition' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_postcondition">postcondition</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_operands">operands</A><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`precondition' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_precondition">precondition</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_operands">operands</A><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`target' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_target">target</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_chart.html">ANY</A></SPAN>
+	<SPAN TITLE="`valid_operands' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_valid_operands">valid_operands</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple_chart.html">TUPLE</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`valid_target' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_valid_target">valid_target</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple_chart.html">TUPLE</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`adapt' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_adapt">adapt</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/function_chart.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`apply' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_apply">apply</A></SPAN>
+	<SPAN TITLE="`call' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_call">call</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`clear_last_result' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_clear_last_result">clear_last_result</A></SPAN>
+	<SPAN TITLE="`copy' is declared in `Current'"><A CLASS="efeature" HREF="../base/function.html#f_copy">copy</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="eclass" HREF="../base/function_chart.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">RESULT_TYPE</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`flexible_call' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_flexible_call">flexible_call</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple_chart.html">TUPLE</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_operands' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_set_operands">set_operands</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">args</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_target' was declared in ROUTINE"><A CLASS="efeature" HREF="../base/routine.html#f_set_target">set_target</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_target</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/routine.html#f_target">target</A><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="function.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="function"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

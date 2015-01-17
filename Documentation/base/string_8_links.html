@@ -1,0 +1,193 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Sequences of 8-bit characters, accessible through integer indices in a contiguous range."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2014, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>string_8 Relations</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_8_chart.html">Chart</A></TD>
+<TD CLASS="nolink2">Relations</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_8.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="string_8"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../base/string_8_links.html">STRING_8</A>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/indexable_links.html">INDEXABLE</A><SPAN CLASS="echar">*</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">H</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <A CLASS="eclass" HREF="../base/integer_32_links.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/mismatch_corrector_links.html">MISMATCH_CORRECTOR</A>
+	<A CLASS="eclass" HREF="../base/readable_string_8_links.html">READABLE_STRING_8</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/resizable_links.html">RESIZABLE</A><SPAN CLASS="echar">*</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/string_general_links.html">STRING_GENERAL</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/to_special_links.html">TO_SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">T</SPAN><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">Descendants</SPAN>
+	<SPAN CLASS="neclass">KL_STRING</SPAN>
+
+<SPAN CLASS="ekeyword">Clients</SPAN>
+	<A CLASS="eclass" HREF="../base/abstract_special_links.html">ABSTRACT_SPECIAL</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/any_links.html">ANY</A>
+	<A CLASS="eclass" HREF="../base/arguments_links.html">ARGUMENTS</A>
+	<A CLASS="eclass" HREF="../base/character_32_ref_links.html">CHARACTER_32_REF</A>
+	<A CLASS="eclass" HREF="../base/character_8_ref_links.html">CHARACTER_8_REF</A>
+	<A CLASS="eclass" HREF="../time/code_validity_checker_links.html">CODE_VALIDITY_CHECKER</A>
+	<A CLASS="eclass" HREF="../base/com_failure_links.html">COM_FAILURE</A>
+	<A CLASS="eclass" HREF="../base/console_links.html">CONSOLE</A>
+	<A CLASS="eclass" HREF="../base/c_string_links.html">C_STRING</A>
+	<A CLASS="eclass" HREF="../time/date_time_code_links.html">DATE_TIME_CODE</A>
+	<A CLASS="eclass" HREF="../time/date_time_code_string_links.html">DATE_TIME_CODE_STRING</A>
+	<A CLASS="eclass" HREF="../time/date_time_parser_links.html">DATE_TIME_PARSER</A>
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_links.html">DCM_MA_DECIMAL_COEFFICIENT</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_coefficient_imp_links.html">DCM_MA_DECIMAL_COEFFICIENT_IMP</A>
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_context_links.html">DCM_MA_DECIMAL_CONTEXT</A>
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_parser_links.html">DCM_MA_DECIMAL_PARSER</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../decimal/dcm_ma_decimal_text_parser_links.html">DCM_MA_DECIMAL_TEXT_PARSER</A>
+	<A CLASS="eclass" HREF="../decimal/decimal_links.html">DECIMAL</A>
+	<A CLASS="eclass" HREF="../base/directory_links.html">DIRECTORY</A>
+	<A CLASS="eclass" HREF="../gobo_time/dt_date_links.html">DT_DATE</A>
+	<A CLASS="eclass" HREF="../gobo_time/dt_date_time_value_links.html">DT_DATE_TIME_VALUE</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../gobo_time/dt_date_value_links.html">DT_DATE_VALUE</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../gobo_time/dt_time_links.html">DT_TIME</A>
+	<A CLASS="eclass" HREF="../gobo_time/dt_time_value_links.html">DT_TIME_VALUE</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../testing/eqa_evaluator_links.html">EQA_EVALUATOR</A>
+	<A CLASS="eclass" HREF="../testing/eqa_file_system_links.html">EQA_FILE_SYSTEM</A>
+	<A CLASS="eclass" HREF="../testing/eqa_partial_result_links.html">EQA_PARTIAL_RESULT</A>
+	<A CLASS="eclass" HREF="../testing/eqa_system_execution_process_links.html">EQA_SYSTEM_EXECUTION_PROCESS</A>
+	<A CLASS="eclass" HREF="../testing/eqa_system_output_processor_links.html">EQA_SYSTEM_OUTPUT_PROCESSOR</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../testing/eqa_test_invocation_exception_links.html">EQA_TEST_INVOCATION_EXCEPTION</A>
+	<A CLASS="eclass" HREF="../testing/eqa_test_output_buffer_links.html">EQA_TEST_OUTPUT_BUFFER</A>
+	<A CLASS="eclass" HREF="../base/exception_links.html">EXCEPTION</A>
+	<A CLASS="eclass" HREF="../base/execution_environment_links.html">EXECUTION_ENVIRONMENT</A>
+	<A CLASS="eclass" HREF="../base/file_links.html">FILE</A><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">FILE_HANDLE</SPAN>
+	<A CLASS="eclass" HREF="../time/find_separator_facility_links.html">FIND_SEPARATOR_FACILITY</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_dbf_reader_links.html">FP_DBF_READER</A>
+	<A CLASS="eclass" HREF="../tests/fp_dbf_reader_test_set_links.html">FP_DBF_READER_TEST_SET</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_dbf_writer_links.html">FP_DBF_WRITER</A>
+	<A CLASS="eclass" HREF="../foxpro/fp_field_subrecord_links.html">FP_FIELD_SUBRECORD</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <A CLASS="eclass" HREF="../base/any_links.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../foxpro/fp_header_links.html">FP_HEADER</A>
+	<A CLASS="eclass" HREF="../tests/fp_header_test_set_links.html">FP_HEADER_TEST_SET</A>
+	<A CLASS="eclass" HREF="../tests/fp_hex_helper_links.html">FP_HEX_HELPER</A>
+	<A CLASS="eclass" HREF="../base/hexadecimal_string_to_integer_converter_links.html">HEXADECIMAL_STRING_TO_INTEGER_CONVERTER</A>
+	<SPAN CLASS="neclass">INET4_ADDRESS</SPAN>
+	<SPAN CLASS="neclass">INET6_ADDRESS</SPAN>
+	<SPAN CLASS="neclass">INET_ADDRESS</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">INET_ADDRESS_FACTORY</SPAN>
+	<SPAN CLASS="neclass">INET_ADDRESS_IMPL_V4</SPAN>
+	<SPAN CLASS="neclass">INET_ADDRESS_IMPL_V6</SPAN>
+	<A CLASS="eclass" HREF="../base/integer_16_ref_links.html">INTEGER_16_REF</A>
+	<A CLASS="eclass" HREF="../base/integer_32_ref_links.html">INTEGER_32_REF</A>
+	<A CLASS="eclass" HREF="../base/integer_64_ref_links.html">INTEGER_64_REF</A>
+	<A CLASS="eclass" HREF="../base/integer_8_ref_links.html">INTEGER_8_REF</A>
+	<A CLASS="eclass" HREF="../time/interval_links.html">INTERVAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <A CLASS="eclass" HREF="../time/absolute_links.html">ABSOLUTE</A><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/ise_exception_manager_links.html">ISE_EXCEPTION_MANAGER</A>
+	<A CLASS="eclass" HREF="../testing/itp_constant_links.html">ITP_CONSTANT</A>
+	<A CLASS="eclass" HREF="../testing/itp_interpreter_links.html">ITP_INTERPRETER</A>
+	<A CLASS="eclass" HREF="../testing/itp_variable_links.html">ITP_VARIABLE</A>
+	<SPAN CLASS="neclass">KI_CHARACTER_INPUT_STREAM</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">KI_CHARACTER_OUTPUT_STREAM</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">KI_TEXT_OUTPUT_STREAM</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">KL_INTEGER_ROUTINES</SPAN>
+	<SPAN CLASS="neclass">KL_STRING_ROUTINES</SPAN>
+	<A CLASS="eclass" HREF="../base/mismatch_corrector_links.html">MISMATCH_CORRECTOR</A>
+	<A CLASS="eclass" HREF="../base/mismatch_information_links.html">MISMATCH_INFORMATION</A>
+	<A CLASS="eclass" HREF="../base/native_string_links.html">NATIVE_STRING</A>
+	<A CLASS="eclass" HREF="../base/natural_16_ref_links.html">NATURAL_16_REF</A>
+	<A CLASS="eclass" HREF="../base/natural_32_ref_links.html">NATURAL_32_REF</A>
+	<A CLASS="eclass" HREF="../base/natural_64_ref_links.html">NATURAL_64_REF</A>
+	<A CLASS="eclass" HREF="../base/natural_8_ref_links.html">NATURAL_8_REF</A>
+	<SPAN CLASS="neclass">NETWORK_STREAM_SOCKET</SPAN>
+	<A CLASS="eclass" HREF="../base/path_links.html">PATH</A>
+	<A CLASS="eclass" HREF="../base/plain_text_file_links.html">PLAIN_TEXT_FILE</A>
+	<SPAN CLASS="neclass">PROCESS_IMP</SPAN>
+	<A CLASS="eclass" HREF="../base/raw_file_links.html">RAW_FILE</A>
+	<A CLASS="eclass" HREF="../base/readable_string_32_links.html">READABLE_STRING_32</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/readable_string_8_links.html">READABLE_STRING_8</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/reflected_object_links.html">REFLECTED_OBJECT</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/reflector_links.html">REFLECTOR</A>
+	<A CLASS="eclass" HREF="../base/reflector_helper_links.html">REFLECTOR_HELPER</A>
+	<A CLASS="eclass" HREF="../base/routine_links.html">ROUTINE</A><SPAN CLASS="echar">*</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">BASE_TYPE</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_links.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="egeneric">OPEN_ARGS</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple_links.html">TUPLE</A> <SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A> <SPAN CLASS="ekeyword">end</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<SPAN CLASS="neclass">RT_DBG_ATTRIBUTE_RECORD</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_links.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+	<SPAN CLASS="neclass">RT_DBG_CALL_RECORD</SPAN>
+	<SPAN CLASS="neclass">RT_DBG_EXECUTION_RECORDER</SPAN>
+	<SPAN CLASS="neclass">RT_DBG_FIELD_RECORD</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_links.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+	<SPAN CLASS="neclass">RT_DBG_INTERNAL</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">RT_DBG_LOCAL_RECORD</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_links.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+	<SPAN CLASS="neclass">RT_DBG_VALUE_RECORD</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">RT_EXTENSION</SPAN>
+	<SPAN CLASS="neclass">RT_EXTENSION_COMMON</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">SOCKET</SPAN><SPAN CLASS="echar">*</SPAN>
+	<SPAN CLASS="neclass">SOCKET_RESOURCES</SPAN>
+	<A CLASS="eclass" HREF="../base/special_links.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">T</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/string_8_links.html">STRING_8</A>
+	<A CLASS="eclass" HREF="../base/string_to_integer_convertor_links.html">STRING_TO_INTEGER_CONVERTOR</A>
+	<A CLASS="eclass" HREF="../base/string_to_numeric_convertor_links.html">STRING_TO_NUMERIC_CONVERTOR</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/string_to_real_convertor_links.html">STRING_TO_REAL_CONVERTOR</A>
+	<A CLASS="eclass" HREF="../test_set_helper/test_set_helper_links.html">TEST_SET_HELPER</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/tuple_links.html">TUPLE</A>
+	<A CLASS="eclass" HREF="../base/type_links.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<SPAN CLASS="neclass">UC_CHARACTER</SPAN>
+	<SPAN CLASS="neclass">UC_STRING</SPAN>
+	<SPAN CLASS="neclass">UC_UNICODE_ROUTINES</SPAN>
+	<SPAN CLASS="neclass">UC_UTF16_ROUTINES</SPAN>
+	<SPAN CLASS="neclass">UC_UTF32_ROUTINES</SPAN>
+	<SPAN CLASS="neclass">UC_UTF8_ROUTINES</SPAN>
+	<A CLASS="eclass" HREF="../base/utf_converter_links.html">UTF_CONVERTER</A>
+	<SPAN CLASS="neclass">WEL_DLL</SPAN>
+	<SPAN CLASS="neclass">WEL_PIPE</SPAN>
+
+<SPAN CLASS="ekeyword">Suppliers</SPAN>
+	<A CLASS="eclass" HREF="../base/arrayed_list_links.html">ARRAYED_LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/boolean_links.html">BOOLEAN</A>
+	<A CLASS="eclass" HREF="../base/character_8_links.html">CHARACTER_8</A>
+	<A CLASS="eclass" HREF="../base/c_string_links.html">C_STRING</A>
+	<A CLASS="eclass" HREF="../base/integer_16_links.html">INTEGER_16</A>
+	<A CLASS="eclass" HREF="../base/integer_32_links.html">INTEGER_32</A>
+	<A CLASS="eclass" HREF="../base/integer_64_links.html">INTEGER_64</A>
+	<A CLASS="eclass" HREF="../base/integer_8_links.html">INTEGER_8</A>
+	<A CLASS="eclass" HREF="../base/natural_16_links.html">NATURAL_16</A>
+	<A CLASS="eclass" HREF="../base/natural_32_links.html">NATURAL_32</A>
+	<A CLASS="eclass" HREF="../base/natural_64_links.html">NATURAL_64</A>
+	<A CLASS="eclass" HREF="../base/natural_8_links.html">NATURAL_8</A>
+	<A CLASS="eclass" HREF="../base/platform_links.html">PLATFORM</A>
+	<A CLASS="eclass" HREF="../base/pointer_links.html">POINTER</A>
+	<A CLASS="eclass" HREF="../base/readable_string_8_links.html">READABLE_STRING_8</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/real_32_links.html">REAL_32</A>
+	<A CLASS="eclass" HREF="../base/real_64_links.html">REAL_64</A>
+	<A CLASS="eclass" HREF="../base/special_links.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">T</SPAN><SPAN CLASS="esymbol">]</SPAN>
+	<A CLASS="eclass" HREF="../base/string_8_links.html">STRING_8</A>
+	<A CLASS="eclass" HREF="../base/string_8_searcher_links.html">STRING_8_SEARCHER</A>
+	<A CLASS="eclass" HREF="../base/string_general_links.html">STRING_GENERAL</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../base/system_string_links.html">SYSTEM_STRING</A>
+	<A CLASS="eclass" HREF="../base/system_string_factory_links.html">SYSTEM_STRING_FACTORY</A>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_8_chart.html">Chart</A></TD>
+<TD CLASS="nolink2">Relations</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_8.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="string_8"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

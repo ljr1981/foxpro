@@ -1,0 +1,946 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Lists implemented by resizable arrays"/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="names" content="sequence"/>
+<meta name="representation" content="array"/>
+<meta name="access" content="index, cursor, membership"/>
+<meta name="size" content="fixed"/>
+<meta name="contents" content="generic"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>arrayed_list Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="arrayed_list_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="arrayed_list_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="arrayed_list"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Lists implemented by resizable arrays&quot;</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Free implementation of ELKS library&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">names</SPAN><SPAN CLASS="esymbol">:</SPAN> sequence
+	<SPAN CLASS="eitag">representation</SPAN><SPAN CLASS="esymbol">:</SPAN> array
+	<SPAN CLASS="eitag">access</SPAN><SPAN CLASS="esymbol">:</SPAN> index<SPAN CLASS="esymbol">,</SPAN> cursor<SPAN CLASS="esymbol">,</SPAN> membership
+	<SPAN CLASS="eitag">size</SPAN><SPAN CLASS="esymbol">:</SPAN> fixed
+	<SPAN CLASS="eitag">contents</SPAN><SPAN CLASS="esymbol">:</SPAN> generic
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2012-05-23 21:13:10 -0700 (Wed, 23 May 2012) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 91981 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/to_special.html">TO_SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+		<SPAN CLASS="ekeyword">rename</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_put">put</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_put">array_put</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_at">at</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_at">array_at</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_item">item</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_item">array_item</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_valid_index">valid_index</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_valid_index">array_valid_index</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_copy">copy</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../base/resizable.html">RESIZABLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_copy">copy</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../base/dynamic_list.html">DYNAMIC_LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_i_th">put_i_th</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_force">force</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_is_inserted">is_inserted</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_copy">copy</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_first">first</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_last">last</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_swap">swap</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_wipe_out">wipe_out</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_at">at</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_go_i_th">go_i_th</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_move">move</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_prunable">prunable</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_start">start</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_finish">finish</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_prune">prune</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_remove">remove</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_left">put_left</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_merge_left">merge_left</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_merge_right">merge_right</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_duplicate">duplicate</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_prune_all">prune_all</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_has">has</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_search">search</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_append">append</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_valid_index">valid_index</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_copy">copy</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_for_all">for_all</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_there_exists">there_exists</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_do_all">do_all</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_do_if">do_if</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../base/mismatch_corrector.html">MISMATCH_CORRECTOR</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_copy">copy</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_correct_mismatch">correct_mismatch</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/arrayed_list.html#f_make">make</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../base/arrayed_list.html#f_make_filled">make_filled</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../base/arrayed_list.html#f_make_from_array">make_from_array</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialization</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_make">make</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Allocate list with </SPAN>`n'<SPAN CLASS="ecomment"> items.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (</SPAN>`n'<SPAN CLASS="ecomment"> may be zero for empty list.)</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">valid_number_of_items</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">n</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_make_empty">make_empty</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">correct_position</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/list.html#f_before">before</A>
+			<SPAN CLASS="etag">is_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_filled"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_make_filled">make_filled</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Allocate list with </SPAN>`n'<SPAN CLASS="ecomment"> items.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (</SPAN>`n'<SPAN CLASS="ecomment"> may be zero for empty list.)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> This list will be full.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">valid_number_of_items</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">n</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">has_default</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_has_default">has_default</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_make_filled_area">make_filled_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_default">default</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">correct_position</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/list.html#f_before">before</A>
+			<SPAN CLASS="etag">filled</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/bounded.html#f_full">full</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_from_array"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_make_from_array">make_from_array</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/array.html">ARRAY</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create list from array </SPAN>`a'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">array_exists</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">shared</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_area">area</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area</A>
+			<SPAN CLASS="etag">correct_position</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/list.html#f_before">before</A>
+			<SPAN CLASS="etag">filled</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/array.html#f_count">count</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_area"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_area">area</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/special.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access to internal storage of ARRAYED_LIST</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_item"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">G</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Current item</SPAN>
+		<SPAN CLASS="ekeyword">require else</SPAN>
+			<SPAN CLASS="etag">index_is_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_valid_index">valid_index</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_i_th"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/arrayed_list.html#f_i_th">[]</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_i_th">put_i_th</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Item at </SPAN>`i'<SPAN CLASS="ecomment">-th position</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_at">at</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_at"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_at">at</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/arrayed_list.html#f_at">@</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_i_th">put_i_th</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Item at </SPAN>`i'<SPAN CLASS="ecomment">-th position</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_first"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_first">first</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Item at first position</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_last">last</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_first">first</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Item at last position</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_index"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Index of </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="ecomment">, if valid.</SPAN>
+
+	<A NAME="f_cursor"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_cursor">cursor</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/arrayed_list_cursor.html">ARRAYED_LIST_CURSOR</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Current cursor position</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list_cursor.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_has"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_has">has</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Does current include </SPAN>`v'<SPAN CLASS="ecomment">?</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (Reference or object equality,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> based on </SPAN><A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A><SPAN CLASS="ecomment">.)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">nb</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="elocal">nb</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">nb</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="ekeyword">Result</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">~</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">nb</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="ekeyword">Result</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_to_array"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_to_array">to_array</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/array.html">ARRAY</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Share content to be used as an ARRAY.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note that although the content is shared, it might</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> not be shared when a resizing occur in either ARRAY or Current.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/array.html#f_make_from_special">make_from_special</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">to_array_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">array_lower_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/array.html#f_lower">lower</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">array_upper_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/array.html#f_upper">upper</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+			<SPAN CLASS="etag">shared_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_area">area</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Iteration</SPAN>
+
+	<A NAME="f_do_all"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_do_all">do_all</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">action</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/procedure.html">PROCEDURE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Apply </SPAN>`action'<SPAN CLASS="ecomment"> to every item, from first to last.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Semantics not guaranteed if </SPAN>`action'<SPAN CLASS="ecomment"> changes the structure;</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> in such a case, apply iterator to clone of structure instead.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_do_all_in_bounds">do_all_in_bounds</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">action</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_do_if"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_do_if">do_if</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">action</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/procedure.html">PROCEDURE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">test</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/function.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Apply </SPAN>`action'<SPAN CLASS="ecomment"> to every item that satisfies </SPAN>`test'<SPAN CLASS="ecomment">, from first to last.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Semantics not guaranteed if </SPAN>`action'<SPAN CLASS="ecomment"> or </SPAN>`test'<SPAN CLASS="ecomment"> changes the structure;</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> in such a case, apply iterator to clone of structure instead.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_do_if_in_bounds">do_if_in_bounds</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">action</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">test</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_there_exists"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_there_exists">there_exists</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">test</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/function.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is </SPAN>`test'<SPAN CLASS="ecomment"> true for at least one item?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_there_exists_in_bounds">there_exists_in_bounds</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">test</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_for_all"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_for_all">for_all</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">test</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/function.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is </SPAN>`test'<SPAN CLASS="ecomment"> true for all items?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_for_all_in_bounds">for_all_in_bounds</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">test</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_do_all_with_index"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_do_all_with_index">do_all_with_index</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">action</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/procedure.html">PROCEDURE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Apply </SPAN>`action'<SPAN CLASS="ecomment"> to every item, from first to last.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`action'<SPAN CLASS="ecomment"> receives item and its index.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Semantics not guaranteed if </SPAN>`action'<SPAN CLASS="ecomment"> changes the structure;</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> in such a case, apply iterator to clone of structure instead.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">action_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">action</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">nb</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<SPAN CLASS="elocal">j</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_lower">Lower</A>
+				<SPAN CLASS="elocal">nb</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">nb</SPAN>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="elocal">action</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/procedure.html#f_call">call</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">j</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">j</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_do_if_with_index"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_do_if_with_index">do_if_with_index</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">action</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/procedure.html">PROCEDURE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">test</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/function.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Apply </SPAN>`action'<SPAN CLASS="ecomment"> to every item that satisfies </SPAN>`test'<SPAN CLASS="ecomment">, from first to last.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`action'<SPAN CLASS="ecomment"> and </SPAN>`test'<SPAN CLASS="ecomment"> receive the item and its index.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Semantics not guaranteed if </SPAN>`action'<SPAN CLASS="ecomment"> or </SPAN>`test'<SPAN CLASS="ecomment"> changes the structure;</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> in such a case, apply iterator to clone of structure instead.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">action_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">action</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">test_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">test</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">nb</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<SPAN CLASS="elocal">j</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_lower">Lower</A>
+				<SPAN CLASS="elocal">nb</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">nb</SPAN>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">test</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/function.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">action</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/procedure.html#f_call">call</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">j</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="elocal">j</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">j</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Measurement</SPAN>
+
+	<A NAME="f_lower"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_lower">Lower</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Lower bound for accessing list items via indexes</SPAN>
+
+	<A NAME="f_upper"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_upper">upper</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Upper bound for accessing list items via indexes</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_count"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of items</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_capacity"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_capacity">capacity</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of items that may be stored</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Comparison</SPAN>
+
+	<A NAME="f_is_equal"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_is_equal">is_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is array made of the same items as </SPAN>`other'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">other</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Current</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">from</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+						<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_lower">Lower</A>
+					<SPAN CLASS="ekeyword">until</SPAN>
+						<A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_upper">upper</A>
+					<SPAN CLASS="ekeyword">loop</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">~</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+						<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_same_items">same_items</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_prunable"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_prunable">prunable</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> May items be removed? (Answer: yes.)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_valid_cursor"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_valid_cursor">valid_cursor</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">p</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/cursor.html">CURSOR</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Can the cursor be moved to position </SPAN>`p'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/arrayed_list_cursor.html">ARRAYED_LIST_CURSOR</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">p</SPAN> <SPAN CLASS="ekeyword">as</SPAN> al_c <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/chain.html#f_valid_cursor_index">valid_cursor_index</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">al_c</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list_cursor.html#f_index">index</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_valid_index"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_valid_index">valid_index</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is </SPAN>`i'<SPAN CLASS="ecomment"> a valid index?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_inserted"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_is_inserted">is_inserted</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Has </SPAN>`v'<SPAN CLASS="ecomment"> been inserted at the end by the most recent </SPAN><A CLASS="efeature" HREF="../base/chain.html#f_put">put</A><SPAN CLASS="ecomment"> or</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_extend">extend</A><SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_last">last</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted_semistrict">or else</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/chain.html#f_off">off</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_all_default"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_all_default">all_default</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Are all items set to default values?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">has_default</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_has_default">has_default</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_filled_with">filled_with</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_default">default</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_upper">upper</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Cursor movement</SPAN>
+
+	<A NAME="f_move"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_move">move</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor </SPAN>`i'<SPAN CLASS="ecomment"> positions.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">i</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">elseif</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_start"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_start">start</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor to first position if any.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">after_when_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <A CLASS="efeature" HREF="../base/list.html#f_after">after</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_finish"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_finish">finish</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor to last position if any.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">before_when_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <A CLASS="efeature" HREF="../base/list.html#f_before">before</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_forth"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_forth">forth</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor one position forward.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_back"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_back">back</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor one position backward.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_go_i_th"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_go_i_th">go_i_th</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor to </SPAN>`i'<SPAN CLASS="ecomment">-th position.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_go_to"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_go_to">go_to</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">p</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/cursor.html">CURSOR</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor to position </SPAN>`p'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/arrayed_list_cursor.html">ARRAYED_LIST_CURSOR</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">p</SPAN> <SPAN CLASS="ekeyword">as</SPAN> al_c <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">al_c</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list_cursor.html#f_index">index</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">check</SPAN>
+					<SPAN CLASS="etag">correct_cursor_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_search"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_search">search</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move to first position (at or after current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> position) where </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="ecomment"> and </SPAN>`v'<SPAN CLASS="ecomment"> are equal.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> If structure does not include </SPAN>`v'<SPAN CLASS="ecomment"> ensure that</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/linear.html#f_exhausted">exhausted</A><SPAN CLASS="ecomment"> will be true.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (Reference or object equality,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> based on </SPAN><A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A><SPAN CLASS="ecomment">.)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">nb</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_found</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="elocal">nb</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/comparable.html#f_max">max</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">nb</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="elocal">l_found</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<SPAN CLASS="elocal">l_found</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">~</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">nb</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="elocal">l_found</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<SPAN CLASS="elocal">l_found</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_found</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Element change</SPAN>
+
+	<A NAME="f_put_front"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_front">put_front</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`v'<SPAN CLASS="ecomment"> to the beginning.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do not move cursor.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_extend">extend</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_insert">insert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_i_th"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_i_th">put_i_th</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Replace </SPAN>`i'<SPAN CLASS="ecomment">-th entry, if in index interval, by </SPAN>`v'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_force"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_force">force</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`v'<SPAN CLASS="ecomment"> to end.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do not move cursor.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_extend">extend</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_aliased_resized_area">aliased_resized_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../base/resizable.html#f_additional_space">additional_space</A><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_area</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_extend">extend</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_extend"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_extend">extend</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`v'<SPAN CLASS="ecomment"> to end.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do not move cursor.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Was declared in </SPAN><A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A><SPAN CLASS="ecomment"> as synonym of </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_force">force</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_aliased_resized_area">aliased_resized_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../base/resizable.html#f_additional_space">additional_space</A><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_area</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_extend">extend</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_left"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_left">put_left</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`v'<SPAN CLASS="ecomment"> to the left of current position.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do not move cursor.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/list.html#f_after">after</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_extend">extend</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_insert">insert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_put_right"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_right">put_right</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`v'<SPAN CLASS="ecomment"> to the right of current position.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do not move cursor.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_extend">extend</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_insert">insert</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_replace"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_replace">replace</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_first">first</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Replace current item by </SPAN>`v'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_i_th">put_i_th</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_merge_left"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_merge_left">merge_left</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Merge </SPAN>`other'<SPAN CLASS="ecomment"> into current structure before cursor.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">old_index</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">old_other_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">old_index</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A>
+			<SPAN CLASS="elocal">old_other_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_merge_right">merge_right</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">old_index</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">old_other_count</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_merge_right"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_merge_right">merge_right</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Merge </SPAN>`other'<SPAN CLASS="ecomment"> into current structure after cursor.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_new_count</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_old_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/finite.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">l_old_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+				<SPAN CLASS="elocal">l_new_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_old_count</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_new_count</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_aliased_resized_area">aliased_resized_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_new_count</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_insert_data">insert_data</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_wipe_out">wipe_out</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_append"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_append">append</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/sequence.html">SEQUENCE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Append a copy of </SPAN>`s'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">old_count</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">new_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">s</SPAN> <SPAN CLASS="ekeyword">as</SPAN> al <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">c</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">al</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">c</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">old_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+					<SPAN CLASS="elocal">new_count</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">old_count</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">al</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">new_count</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+						<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_aliased_resized_area">aliased_resized_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">new_count</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_copy_data">copy_data</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">al</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">old_count</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="ekeyword" HREF="../base/chain.html#f_append">Precursor</A> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/dynamic_list.html">DYNAMIC_LIST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Resizing</SPAN>
+
+	<A NAME="f_grow"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_grow">grow</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Change the capacity to at least </SPAN>`i'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_aliased_resized_area">aliased_resized_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_resize"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_resize">resize</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">new_capacity</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Resize list so that it can contain</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> at least </SPAN>`n'<SPAN CLASS="ecomment"> items. Do not lose any item.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">resizable</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/resizable.html#f_resizable">resizable</A>
+			<SPAN CLASS="etag">new_capacity_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">new_capacity</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_capacity">capacity</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_grow">grow</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">new_capacity</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">capacity_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_capacity">capacity</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="elocal">new_capacity</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_trim"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_trim">trim</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Decrease </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_capacity">capacity</A><SPAN CLASS="ecomment"> to the minimum value.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Apply to reduce allocated storage.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">n</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">n</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_aliased_resized_area">aliased_resized_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">same_items</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_to_array">to_array</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/array.html#f_same_items">same_items</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_to_array">to_array</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Duplication</SPAN>
+
+	<A NAME="f_copy"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_copy">copy</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Reinitialize by copying all the items of </SPAN>`other'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (This is also used by </SPAN><A CLASS="efeature" HREF="../base/any.html#f_clone">clone</A><SPAN CLASS="ecomment">.)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">other</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Current</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/any.html#f_standard_copy">standard_copy</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../base/to_special.html#f_set_area">set_area</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_twin">twin</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">equal_areas</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A> <SPAN CLASS="esymbol">~</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Removal</SPAN>
+
+	<A NAME="f_prune"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_prune">prune</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Remove first occurrence of </SPAN>`v'<SPAN CLASS="ecomment">, if any,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> after cursor position.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor to right neighbor.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (or </SPAN><A CLASS="efeature" HREF="../base/list.html#f_after">after</A><SPAN CLASS="ecomment"> if no right neighbor or </SPAN>`v'<SPAN CLASS="ecomment"> does not occur)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/list.html#f_before">before</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<A CLASS="efeature" HREF="../base/list.html#f_after">after</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted_semistrict">or else</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A> <SPAN CLASS="esymbol">~</SPAN> <SPAN CLASS="elocal">v</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<A CLASS="efeature" HREF="../base/arrayed_list.html#f_forth">forth</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<A CLASS="efeature" HREF="../base/list.html#f_after">after</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted_semistrict">or else</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">v</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<A CLASS="efeature" HREF="../base/arrayed_list.html#f_forth">forth</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/list.html#f_after">after</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_remove">remove</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_remove"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_remove">remove</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Remove current item.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Move cursor to right neighbor</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (or </SPAN><A CLASS="efeature" HREF="../base/list.html#f_after">after</A><SPAN CLASS="ecomment"> if no right neighbor)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_move_data">move_data</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_remove_tail">remove_tail</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">index</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_prune_all"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_prune_all">prune_all</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Remove all occurrences of </SPAN>`v'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (Reference or object equality,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> based on </SPAN><A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A><SPAN CLASS="ecomment">.)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">nb</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">offset</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">res</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="elocal">obj_cmp</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">obj_cmp</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="elocal">l_area</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<SPAN CLASS="elocal">nb</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="elocal">nb</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="elocal">offset</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">offset</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">offset</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">obj_cmp</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">res</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">~</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">else</SPAN>
+						<SPAN CLASS="elocal">res</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">res</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">offset</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">offset</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+					<SPAN CLASS="ekeyword">else</SPAN>
+						<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_remove_tail">remove_tail</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">offset</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">ensure then</SPAN>
+			<SPAN CLASS="etag">is_after</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/list.html#f_after">after</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_remove_left"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_remove_left">remove_left</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Remove item to the left of cursor position.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do not move cursor.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_remove">remove</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_remove_right"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_remove_right">remove_right</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Remove item to the right of cursor position</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Do not move cursor</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_remove">remove</A>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_wipe_out"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_wipe_out">wipe_out</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Remove all items.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_wipe_out">wipe_out</A>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Transformation</SPAN>
+
+	<A NAME="f_swap"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_swap">swap</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Exchange item at </SPAN>`i'<SPAN CLASS="ecomment">-th position with item</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> at cursor position.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">old_item</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">old_item</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_replace">replace</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">old_item</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Retrieval</SPAN>
+
+	<A NAME="f_correct_mismatch"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_correct_mismatch">correct_mismatch</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Attempt to correct object mismatch using </SPAN><A CLASS="efeature" HREF="../base/mismatch_corrector.html#f_mismatch_information">Mismatch_information</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/mismatch_corrector.html#f_mismatch_information">Mismatch_information</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;area_v2&quot;<SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/special.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/mismatch_corrector.html#f_mismatch_information">Mismatch_information</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;area&quot;<SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_area <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/mismatch_corrector.html#f_mismatch_information">Mismatch_information</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;count&quot;<SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_count <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/mismatch_corrector.html#f_mismatch_information">Mismatch_information</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;object_comparison&quot;<SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_comp <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/mismatch_corrector.html#f_mismatch_information">Mismatch_information</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;index&quot;<SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_index <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_make_empty">make_empty</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_count</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">l_count</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_extend">extend</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_area</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/container.html#f_object_comparison">object_comparison</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_comp</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_index</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="ekeyword" HREF="../base/mismatch_corrector.html#f_correct_mismatch">Precursor</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Duplication</SPAN>
+
+	<A NAME="f_duplicate"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_duplicate">duplicate</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Copy of sub-list beginning at current position</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> and having min (</SPAN>`n'<SPAN CLASS="ecomment">, </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A><SPAN CLASS="ecomment"> - </SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A><SPAN CLASS="ecomment"> + 1) items.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">end_pos</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/list.html#f_after">after</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_new_filled_list">new_filled_list</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="elocal">end_pos</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/comparable.html#f_min">min</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">n</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_new_filled_list">new_filled_list</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">end_pos</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_copy_data">copy_data</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">end_pos</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Inapplicable</SPAN>
+
+	<A NAME="f_new_chain"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_new_chain">new_chain</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Unused</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_force_i_th"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_force_i_th">force_i_th</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">pos</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_grow">grow</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../base/resizable.html#f_additional_space">additional_space</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_force">force</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">pos</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_insert"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_insert">insert</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_item">item</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">pos</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`v'<SPAN CLASS="ecomment"> at </SPAN>`pos'<SPAN CLASS="ecomment">, moving subsequent items</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> to the right.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">index_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">pos</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A>
+			<SPAN CLASS="etag">index_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">pos</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_capacity">capacity</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/arrayed_list.html#f_grow">grow</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../base/resizable.html#f_additional_space">additional_space</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../base/to_special.html#f_area">area_v2</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_move_data">move_data</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">pos</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">pos</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="elocal">pos</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../base/arrayed_list.html#f_put_i_th">put_i_th</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">pos</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">new_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">index_unchanged</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_index">index</A>
+			<SPAN CLASS="etag">insertion_done</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_i_th">i_th</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">pos</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">v</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_new_filled_list"></A><A CLASS="efeature" HREF="../base/arrayed_list.html#f_new_filled_list">new_filled_list</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New list with </SPAN>`n'<SPAN CLASS="ecomment"> elements.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">n_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">n</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">n</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">new_filled_list_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">new_filled_list_count_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/arrayed_list.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">new_filled_list_before</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/list.html#f_before">before</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">invariant</SPAN>
+	<SPAN CLASS="etag">prunable</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_prunable">prunable</A>
+	<SPAN CLASS="etag">starts_from_one</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/arrayed_list.html#f_lower">Lower</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2012, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../base/arrayed_list.html">ARRAYED_LIST</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="arrayed_list_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="arrayed_list_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="arrayed_list"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

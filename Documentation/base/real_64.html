@@ -1,0 +1,211 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Real values, double precision"/>
+<meta name="external_name" content="System.Double"/>
+<meta name="assembly" content="mscorlib"/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>real_64 Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="real_64_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="real_64_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="real_64"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Real values, double precision&quot;</SPAN>
+	<SPAN CLASS="eitag">external_name</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;System.Double&quot;</SPAN>
+	<SPAN CLASS="eitag">assembly</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;mscorlib&quot;</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Free implementation of ELKS library&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2012-05-23 21:13:10 -0700 (Wed, 23 May 2012) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 91981 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">frozen</SPAN> <SPAN CLASS="ekeyword">expanded</SPAN> <SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/real_64_ref.html">REAL_64_REF</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_is_less">is_less</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_is_nan">is_nan</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_is_negative_infinity">is_negative_infinity</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_is_positive_infinity">is_positive_infinity</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer">truncated_to_integer</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer_64">truncated_to_integer_64</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_real">truncated_to_real</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_ceiling_real_64">ceiling_real_64</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_floor_real_64">floor_real_64</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_plus">plus</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_minus">minus</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_product">product</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_quotient">quotient</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_power">power</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_opposite">opposite</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_identity">identity</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/real_64.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../base/real_64_ref.html#f_make_from_reference">make_from_reference</A>
+
+<SPAN CLASS="ekeyword">convert</SPAN>
+	<A CLASS="efeature" HREF="../base/real_64_ref.html#f_make_from_reference">make_from_reference</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/real_64_ref.html">REAL_64_REF</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Comparison</SPAN>
+
+	<A NAME="f_is_less"></A><A CLASS="efeature" HREF="../base/real_64.html#f_is_less">is_less</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_is_less">&lt;</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is </SPAN>`other'<SPAN CLASS="ecomment"> greater than current double?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_is_less">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status Report</SPAN>
+
+	<A NAME="f_is_nan"></A><A CLASS="efeature" HREF="../base/real_64.html#f_is_nan">is_nan</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is current the representation of </SPAN><A CLASS="efeature" HREF="../base/real_64_ref.html#f_nan">nan</A><SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_is_nan">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_negative_infinity"></A><A CLASS="efeature" HREF="../base/real_64.html#f_is_negative_infinity">is_negative_infinity</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is current the representation of </SPAN><A CLASS="efeature" HREF="../base/real_64_ref.html#f_negative_infinity">negative_infinity</A><SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_is_negative_infinity">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_positive_infinity"></A><A CLASS="efeature" HREF="../base/real_64.html#f_is_positive_infinity">is_positive_infinity</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is current the representation of </SPAN><A CLASS="efeature" HREF="../base/real_64_ref.html#f_positive_infinity">positive_infinity</A><SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_is_positive_infinity">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Conversion</SPAN>
+
+	<A NAME="f_truncated_to_integer"></A><A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer">truncated_to_integer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Integer part (Same sign, largest absolute</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> value no greater than current object's)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_truncated_to_integer">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_truncated_to_integer_64"></A><A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_integer_64">truncated_to_integer_64</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_64.html">INTEGER_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Integer part (Same sign, largest absolute</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> value no greater than current object's)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_truncated_to_integer_64">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_truncated_to_real"></A><A CLASS="efeature" HREF="../base/real_64.html#f_truncated_to_real">truncated_to_real</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_32.html">REAL_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Real part (Same sign, largest absolute</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> value no greater than current object's)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_truncated_to_real">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_ceiling_real_64"></A><A CLASS="efeature" HREF="../base/real_64.html#f_ceiling_real_64">ceiling_real_64</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Smallest integral value no smaller than current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_ceiling_real_64">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_floor_real_64"></A><A CLASS="efeature" HREF="../base/real_64.html#f_floor_real_64">floor_real_64</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Greatest integral value no greater than current object</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_floor_real_64">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Basic operations</SPAN>
+
+	<A NAME="f_plus"></A><A CLASS="efeature" HREF="../base/real_64.html#f_plus">plus</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_plus">+</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sum with </SPAN>`other'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_plus">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_minus"></A><A CLASS="efeature" HREF="../base/real_64.html#f_minus">minus</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_minus">-</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Result of subtracting </SPAN>`other'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_minus">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_product"></A><A CLASS="efeature" HREF="../base/real_64.html#f_product">product</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_product">*</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Product with </SPAN>`other'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_product">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_quotient"></A><A CLASS="efeature" HREF="../base/real_64.html#f_quotient">quotient</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_quotient">/</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Division by </SPAN>`other'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_quotient">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_power"></A><A CLASS="efeature" HREF="../base/real_64.html#f_power">power</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_power">^</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Current double to the power </SPAN>`other'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_power">Precursor</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_identity"></A><A CLASS="efeature" HREF="../base/real_64.html#f_identity">identity</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_identity">+</A><SPAN CLASS="esymbol">&quot;</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Unary plus</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_identity">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_opposite"></A><A CLASS="efeature" HREF="../base/real_64.html#f_opposite">opposite</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../base/real_64.html#f_opposite">-</A><SPAN CLASS="esymbol">&quot;</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Unary minus</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_opposite">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Output</SPAN>
+
+	<A NAME="f_out"></A><A CLASS="efeature" HREF="../base/real_64.html#f_out">out</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Printable representation of double value</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/real_64_ref.html#f_out">Precursor</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2012, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../base/real_64.html">REAL_64</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="real_64_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="real_64_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="real_64"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

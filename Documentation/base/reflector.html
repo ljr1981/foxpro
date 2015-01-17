@@ -1,0 +1,505 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Access to internal object properties. This class may be used as ancestor by classes needing its facilities."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2013, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>reflector Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="reflector_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="reflector_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="reflector"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Access to internal object properties.</SPAN>
+		<SPAN CLASS="estring">This class may be used as ancestor by classes needing its facilities.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Free implementation of ELKS library&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2013-09-06 21:45:47 -0700 (Fri, 06 Sep 2013) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 92917 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../base/reflector.html">REFLECTOR</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/reflector_helper.html">REFLECTOR_HELPER</A>
+
+	<A CLASS="eclass" HREF="../base/reflector_constants.html">REFLECTOR_CONSTANTS</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Conformance</SPAN>
+
+	<A NAME="f_type_conforms_to"></A><A CLASS="efeature" HREF="../base/reflector.html#f_type_conforms_to">type_conforms_to</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">type2</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Does </SPAN>`type1'<SPAN CLASS="ecomment"> conform to </SPAN>`type2'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type1_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type1</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">type2_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type2</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_type_conforms_to">type_conforms_to</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type1</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">type2</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_field_conforms_to"></A><A CLASS="efeature" HREF="../base/reflector.html#f_field_conforms_to">field_conforms_to</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_source_type</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_field_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Does </SPAN>`a_source_type'<SPAN CLASS="ecomment"> conform to </SPAN>`a_field_type'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_source_type_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_source_type</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">a_field_type_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_field_type</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_type_conforms_to">type_conforms_to</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_source_type</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_detachable_type">detachable_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_field_type</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Creation</SPAN>
+
+	<A NAME="f_dynamic_type_from_string"></A><A CLASS="efeature" HREF="../base/reflector.html#f_dynamic_type_from_string">dynamic_type_from_string</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">class_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Dynamic type corresponding to </SPAN>`class_type'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> If no dynamic type available, returns -1.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">class_type_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">class_type</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">class_type_not_empty</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">class_type</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_general.html#f_is_empty">is_empty</A>
+			<SPAN CLASS="etag">is_valid_type_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/reflector_helper.html#f_is_valid_type_string">is_valid_type_string</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">class_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_cstr</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/c_string.html">C_STRING</A>
+			<SPAN CLASS="elocal">l_table</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_internal_dynamic_type_string_table">Internal_dynamic_type_string_table</A>
+			<SPAN CLASS="elocal">l_pre_ecma_status</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_table</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_internal_dynamic_type_string_table">Internal_dynamic_type_string_table</A>
+			<SPAN CLASS="elocal">l_table</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_search">search</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">class_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_table</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_found">found</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_table</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_found_item">found_item</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_cstr</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/c_string.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">class_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">l_pre_ecma_status</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_pre_ecma_mapping_status">pre_ecma_mapping_status</A>
+				<SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_set_pre_ecma_mapping">set_pre_ecma_mapping</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/reflector_helper.html#f_is_pre_ecma_mapping_disabled">is_pre_ecma_mapping_disabled</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_type_id_from_name">type_id_from_name</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_cstr</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/c_string.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_set_pre_ecma_mapping">set_pre_ecma_mapping</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_pre_ecma_status</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">l_table</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">class_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">dynamic_type_from_string_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">-1</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../base/reflector_constants.html#f_none_type">None_type</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted">or</A> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_new_instance_of"></A><A CLASS="efeature" HREF="../base/reflector.html#f_new_instance_of">new_instance_of</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New instance of dynamic </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: returned object is not initialized and may</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> hence violate its invariant.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`type_id'<SPAN CLASS="ecomment"> cannot represent a SPECIAL type, use</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/reflector.html#f_new_special_any_instance">new_special_any_instance</A><SPAN CLASS="ecomment"> instead.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">not_special_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/reflector.html#f_is_special_type">is_special_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_c_new_instance_of">c_new_instance_of</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">not_special_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/special.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="etag">dynamic_type_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_generating_type">generating_type</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">type_id</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_new_special_any_instance"></A><A CLASS="efeature" HREF="../base/reflector.html#f_new_special_any_instance">new_special_any_instance</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">count</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/special.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New instance of dynamic </SPAN>`type_id'<SPAN CLASS="ecomment"> that represents</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> a SPECIAL with </SPAN>`count'<SPAN CLASS="ecomment"> element. To create a SPECIAL of</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> basic type, use </SPAN>`SPECIAL'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">count_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">count</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">special_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_is_special_any_type">is_special_any_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_make_empty">make_empty</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">count</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../base/reflector.html#f_c_set_dynamic_type">c_set_dynamic_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">dynamic_type_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_generating_type">generating_type</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">type_id</SPAN>
+			<SPAN CLASS="etag">count_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">capacity_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_capacity">capacity</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">count</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_new_tuple_from_special"></A><A CLASS="efeature" HREF="../base/reflector.html#f_new_tuple_from_special">new_tuple_from_special</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">values</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/special.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New instance of a tuple of type </SPAN>`type_id'<SPAN CLASS="ecomment"> filled with </SPAN>`values'<SPAN CLASS="ecomment"> if all types of items are suitable.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Void'<SPAN CLASS="ecomment"> if some items from </SPAN>`values'<SPAN CLASS="ecomment"> are inappropriate for a tuple of type </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">is_tuple_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_is_tuple_type">is_tuple_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_c_new_tuple_instance_of">c_new_tuple_instance_of</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_count">count</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="elocal">values</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/special.html#f_count">count</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted_semistrict">or else</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">values</SPAN> <A CLASS="esymbol" HREF="../base/special.html#f_item">[</A><SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><A CLASS="esymbol" HREF="../base/special.html#f_item">]</A>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_valid_type_for_index">valid_type_for_index</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/tuple.html#f_item">[</A><SPAN CLASS="elocal">i</SPAN><A CLASS="esymbol" HREF="../base/tuple.html#f_item">]</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN>
+					<SPAN CLASS="ekeyword">else</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">dynamic_type_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_generating_type">generating_type</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">type_id</SPAN>
+			<SPAN CLASS="etag">values_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="ekeyword">across</SPAN>
+					<SPAN CLASS="enumber">1</SPAN> <A CLASS="esymbol" HREF="../base/integer_32_ref.html#f_interval">|..|</A> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_count">count</A> <SPAN CLASS="ekeyword">as</SPAN> k
+				<SPAN CLASS="ekeyword">all</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">k</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">values</SPAN> <A CLASS="esymbol" HREF="../base/special.html#f_item">[</A><SPAN CLASS="elocal">k</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_item">item</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN><A CLASS="esymbol" HREF="../base/special.html#f_item">]</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_new_tuple_from_tuple"></A><A CLASS="efeature" HREF="../base/reflector.html#f_new_tuple_from_tuple">new_tuple_from_tuple</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New instance of a tuple of type </SPAN>`type_id'<SPAN CLASS="ecomment"> filled with values fom </SPAN>`source'<SPAN CLASS="ecomment"> if all value types are suitable.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Void'<SPAN CLASS="ecomment"> if some values from </SPAN>`source'<SPAN CLASS="ecomment"> are inappropriate for a tuple of type </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">is_tuple_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_is_tuple_type">is_tuple_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_c_new_tuple_instance_of">c_new_tuple_instance_of</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_count">count</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="elocal">source</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_count">count</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">source</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_object_comparison">object_comparison</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_compare_objects">compare_objects</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">from</SPAN>
+				<SPAN CLASS="ekeyword">until</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_disjuncted_semistrict">or else</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+				<SPAN CLASS="ekeyword">loop</SPAN>
+					<SPAN CLASS="elocal">v</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">source</SPAN> <A CLASS="esymbol" HREF="../base/tuple.html#f_item">[</A><SPAN CLASS="elocal">i</SPAN><A CLASS="esymbol" HREF="../base/tuple.html#f_item">]</A>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_valid_type_for_index">valid_type_for_index</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">v</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/tuple.html#f_item">[</A><SPAN CLASS="elocal">i</SPAN><A CLASS="esymbol" HREF="../base/tuple.html#f_item">]</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">v</SPAN>
+					<SPAN CLASS="ekeyword">else</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="elocal">i</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="enumber">1</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">dynamic_type_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/any.html#f_generating_type">generating_type</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">type_id</SPAN>
+			<SPAN CLASS="etag">object_comparison_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_object_comparison">object_comparison</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">source</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_object_comparison">object_comparison</A>
+			<SPAN CLASS="etag">values_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="ekeyword">across</SPAN>
+					<SPAN CLASS="enumber">1</SPAN> <A CLASS="esymbol" HREF="../base/integer_32_ref.html#f_interval">|..|</A> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_count">count</A> <SPAN CLASS="ekeyword">as</SPAN> k
+				<SPAN CLASS="ekeyword">all</SPAN>
+					<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_item">item</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">k</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_item">item</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">source</SPAN> <A CLASS="esymbol" HREF="../base/tuple.html#f_item">[</A><SPAN CLASS="elocal">k</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/indexable_iteration_cursor.html#f_item">item</A><A CLASS="esymbol" HREF="../base/tuple.html#f_item">]</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_type_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_type_of_type">type_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Associated TYPE instance for an object of type id </SPAN>`type_id'
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_c_new_type_instance_of">c_new_type_instance_of</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_is_special_any_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_is_special_any_type">is_special_any_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is type represented by </SPAN>`type_id'<SPAN CLASS="ecomment"> represent</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> a SPECIAL </SPAN><SPAN CLASS="ecomment">[XX]</SPAN><SPAN CLASS="ecomment"> where XX is a reference type.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C signature (EIF_INTEGER): EIF_BOOLEAN use %&quot;eif_internal.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;eif_special_any_type&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_special_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_is_special_type">is_special_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is type represented by </SPAN>`type_id'<SPAN CLASS="ecomment"> represent</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> a SPECIAL </SPAN><SPAN CLASS="ecomment">[XX]</SPAN><SPAN CLASS="ecomment"> where XX is a reference type</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> or a basic type.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C signature (EIF_INTEGER): BOOLEAN use %&quot;eif_internal.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;eif_is_special_type&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_tuple_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_is_tuple_type">is_tuple_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is type represented by </SPAN>`type_id'<SPAN CLASS="ecomment"> represent a TUPLE?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C signature (EIF_INTEGER): BOOLEAN use %&quot;eif_internal.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;eif_is_tuple_type&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_attached_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_is_attached_type">is_attached_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is </SPAN>`a_type_id'<SPAN CLASS="ecomment"> an attached type?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_type_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_is_attached_type">is_attached_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_field_transient_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_is_field_transient_of_type">is_field_transient_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is </SPAN>`i'<SPAN CLASS="ecomment">-th field of </SPAN>`object'<SPAN CLASS="ecomment"> a transient attribute?</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> I.e. an attribute that does not need to be stored?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_type_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">index_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">index_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/reflector.html#f_field_count_of_type">field_count_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_is_field_transient_of_type">is_field_transient_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_field_expanded_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_is_field_expanded_of_type">is_field_expanded_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is </SPAN>`i'<SPAN CLASS="ecomment">-th field of type </SPAN>`a_type_id'<SPAN CLASS="ecomment"> a user-defined expanded attribute?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_type_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">index_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">index_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/reflector.html#f_field_count_of_type">field_count_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_is_field_expanded_of_type">is_field_expanded_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_class_name_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_class_name_of_type">class_name_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Name of class associated with dynamic type </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_generator_of_type">generator_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_type_name_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_type_name_of_type">type_name_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Name of </SPAN>`type_id'<SPAN CLASS="ecomment">'s generating type (type of which </SPAN>`type_id'
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> is a direct instance).</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_generating_type_of_type">generating_type_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_attached_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_attached_type">attached_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Attached version of </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_attached_type">attached_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">unchanged_if_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_is_attached_type">is_attached_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="elocal">type_id</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_detachable_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_detachable_type">detachable_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Detachable version of </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_detachable_type">detachable_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">unchanged_if_detachable</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/reflector.html#f_is_attached_type">is_attached_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="elocal">type_id</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_generic_count_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_generic_count_of_type">generic_count_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of generic parameter in </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_generic_parameter_count">generic_parameter_count</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_generic_dynamic_type_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_generic_dynamic_type_of_type">generic_dynamic_type_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Dynamic type of generic parameter of </SPAN>`type_id'<SPAN CLASS="ecomment"> at position </SPAN>`i'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">type_id_generic</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_generic_count_of_type">generic_count_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">i_valid</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/reflector.html#f_generic_count_of_type">generic_count_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_eif_gen_param_id">eif_gen_param_id</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">dynamic_type_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_storable_version_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_storable_version_of_type">storable_version_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_8.html">IMMUTABLE_STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Storable version if any specified.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_result</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_null</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/reflector.html#f_id_to_storable_version">Id_to_storable_version</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_search">search</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_id_to_storable_version">Id_to_storable_version</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_found">found</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_id_to_storable_version">Id_to_storable_version</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_found_item">found_item</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="elocal">l_result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_storable_version_of_type">storable_version_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="elocal">l_null</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make_from_c">make_from_c</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_result</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/immutable_string_8.html#f_is_empty">is_empty</A> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/reflector.html#f_id_to_storable_version">Id_to_storable_version</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_field_name_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_field_name_of_type">field_name_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Name of </SPAN>`i'<SPAN CLASS="ecomment">-th field of dynamic type </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">index_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">index_small_enought</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/reflector.html#f_field_count_of_type">field_count_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make_from_c">make_from_c</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_field_name_of_type">field_name_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_field_type_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_field_type_of_type">field_type_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Abstract type of </SPAN>`i'<SPAN CLASS="ecomment">-th field of dynamic type </SPAN>`type_id'
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">index_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">index_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/reflector.html#f_field_count_of_type">field_count_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_field_type_of_type">field_type_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">field_type_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_field_static_type_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_field_static_type_of_type">field_static_type_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Static type of declared </SPAN>`i'<SPAN CLASS="ecomment">-th field of dynamic type </SPAN>`type_id'
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">index_large_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="etag">index_small_enough</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">i</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <A CLASS="efeature" HREF="../base/reflector.html#f_field_count_of_type">field_count_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_field_static_type_of_type">field_static_type_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">i</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">field_type_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Version</SPAN>
+
+	<A NAME="f_compiler_version"></A><A CLASS="efeature" HREF="../base/reflector.html#f_compiler_version">compiler_version</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Measurement</SPAN>
+
+	<A NAME="f_field_count_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_field_count_of_type">field_count_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of logical fields in dynamic type </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">type_id_nonnegative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C macro signature (EIF_INTEGER): EIF_INTEGER use %&quot;eif_internal.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;ei_count_field_of_type&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_persistent_field_count_of_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_persistent_field_count_of_type">persistent_field_count_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Number of logical fields in dynamic type </SPAN>`type_id'<SPAN CLASS="ecomment"> that are not transient.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_type_non_negative</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_type_id</SPAN> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/ise_runtime.html">ISE_RUNTIME</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/ise_runtime.html#f_persistent_field_count_of_type">persistent_field_count_of_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_type_id</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_internal_dynamic_type_string_table"></A><A CLASS="efeature" HREF="../base/reflector.html#f_internal_dynamic_type_string_table">Internal_dynamic_type_string_table</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_table.html">STRING_TABLE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Table of dynamic type indexed by type name</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">100</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">internal_dynamic_type_string_table_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_id_to_storable_version"></A><A CLASS="efeature" HREF="../base/reflector.html#f_id_to_storable_version">Id_to_storable_version</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/hash_table.html">HASH_TABLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/immutable_string_8.html">IMMUTABLE_STRING_8</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Buffer for </SPAN><A CLASS="efeature" HREF="../base/reflector.html#f_storable_version_of_type">storable_version_of_type</A><SPAN CLASS="ecomment"> lookups index by type_id.</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">100</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">id_to_storable_version_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_c_new_instance_of"></A><A CLASS="efeature" HREF="../base/reflector.html#f_c_new_instance_of">c_new_instance_of</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New instance of dynamic </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: returned object is not initialized and may</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> hence violate its invariant.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`type_id'<SPAN CLASS="ecomment"> cannot represent a SPECIAL type, use</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/reflector.html#f_new_special_any_instance">new_special_any_instance</A><SPAN CLASS="ecomment"> instead.	</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C macro use %&quot;eif_macros.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;RTLNSMART&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_c_new_tuple_instance_of"></A><A CLASS="efeature" HREF="../base/reflector.html#f_c_new_tuple_instance_of">c_new_tuple_instance_of</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New instance of tuple of type </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: returned object is not initialized and may</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> hence violate its invariant.</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C macro use %&quot;eif_macros.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;RTLNT&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_c_new_type_instance_of"></A><A CLASS="efeature" HREF="../base/reflector.html#f_c_new_type_instance_of">c_new_type_instance_of</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type_id</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> New instance of TYPE for object of type </SPAN>`type_id'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C macro use %&quot;eif_macros.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;RTLNTY&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_c_set_dynamic_type"></A><A CLASS="efeature" HREF="../base/reflector.html#f_c_set_dynamic_type">c_set_dynamic_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">obj</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/special.html">SPECIAL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">dtype</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN>`obj'<SPAN CLASS="ecomment"> dynamic type to </SPAN>`dtype'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;built_in static&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2013, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../base/reflector.html">REFLECTOR</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="reflector_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="reflector_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="reflector"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

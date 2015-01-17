@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="TTTObjects that are able to run tests in a protected environment and provide information whether TTTthe test has failed or succeeded.  TTTNote: Evaluator is not able to recover from all exceptions. Tests causing seg-faults or out-of- TTT      memory exceptions might put evaluator in an unstable state."/>
+<meta name="author" content="fivaa"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>eqa_test_evaluator Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_test_evaluator_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_test_evaluator_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_test_evaluator"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">			Objects that are able to run tests in a protected environment and provide information whether</SPAN>
+		<SPAN CLASS="estring">			the test has failed or succeeded.</SPAN>
+		
+		<SPAN CLASS="estring">			Note: Evaluator is not able to recover from all exceptions. Tests causing seg-faults or out-of-</SPAN>
+		<SPAN CLASS="estring">			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memory exceptions might put evaluator in an unstable state.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">author</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;fivaa&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2013-05-20 16:15:17 -0700 (Mon, 20 May 2013) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 92557 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../testing/eqa_test_evaluator.html">EQA_TEST_EVALUATOR</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="egeneric">G</SPAN> <SPAN CLASS="esymbol">-&gt;</SPAN> <A CLASS="eclass" HREF="../testing/eqa_test_set.html">EQA_TEST_SET</A> <SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_default_create">default_create</A> <SPAN CLASS="ekeyword">end</SPAN><SPAN CLASS="esymbol">]</SPAN>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/execution_environment.html">EXECUTION_ENVIRONMENT</A>
+
+	<A CLASS="eclass" HREF="../base/exceptions.html">EXCEPTIONS</A>
+		<SPAN CLASS="ekeyword">rename</SPAN>
+			<A CLASS="efeature" HREF="../base/exceptions.html#f_class_name">class_name</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../base/exceptions.html#f_class_name">exception_class_name</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../base/internal.html">INTERNAL</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_buffer"></A><A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_buffer">Buffer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_test_output_buffer.html">EQA_TEST_OUTPUT_BUFFER</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Buffer for recording output</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_output_buffer.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">2048</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Execution</SPAN>
+
+	<A NAME="f_execute"></A><SPAN CLASS="ekeyword">frozen</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_execute">execute</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_routine</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/procedure.html">PROCEDURE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../testing/eqa_test_set.html">EQA_TEST_SET</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_partial_result.html">EQA_PARTIAL_RESULT</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Run full test sequence for given test set and test procedure. This includes invoking </SPAN>`set_up'
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> on the </SPAN><SPAN CLASS="ecomment">{</SPAN><SPAN CLASS="ecomment">TEST_SET</SPAN><SPAN CLASS="ecomment">}</SPAN><SPAN CLASS="ecomment"> instance, then calling the procedure providing the test set as an operand</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> and finally invoking </SPAN>`tear_down'<SPAN CLASS="ecomment"> on the test set.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Note: If an exception occurs, </SPAN>`last_exception'<SPAN CLASS="ecomment"> will be True and </SPAN>`last_exception'<SPAN CLASS="ecomment"> will provide</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the raised exception. If the exception occurs during </SPAN>`set_up'<SPAN CLASS="ecomment">, both the procedure and</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>`tear_down'<SPAN CLASS="ecomment"> will not be invoked. If the exception occurs during the actual test</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;procedure, </SPAN>`tear_down'<SPAN CLASS="ecomment"> still gets invoked. If both the test procedure and </SPAN>`tear_down'
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise an exception only the test procedure exception will be stored.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_routine'<SPAN CLASS="ecomment">: Agent which invokes actual test routine.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_start_date</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../time/date_time.html">DATE_TIME</A>
+			<SPAN CLASS="elocal">l_creator</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/function.html">FUNCTION</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../testing/eqa_test_set.html">EQA_TEST_SET</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="elocal">l_prepare</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_test</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_clean</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_execute_test_stage">execute_test_stage</A>
+			<SPAN CLASS="elocal">l_old</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/plain_text_file.html">PLAIN_TEXT_FILE</A>
+			<SPAN CLASS="elocal">l_old_work_dir</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/path.html">PATH</A>
+			<SPAN CLASS="elocal">l_operands</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../testing/eqa_test_set.html">EQA_TEST_SET</A><SPAN CLASS="esymbol">]</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_old_work_dir</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/execution_environment.html#f_current_working_path">current_working_path</A>
+			<SPAN CLASS="elocal">l_old</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_io">Io</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_default_output">default_output</A>
+			<A CLASS="efeature" HREF="../base/any.html#f_io">Io</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_set_file_default">set_file_default</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_buffer">Buffer</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_creator</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">agent</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="egeneric">G</SPAN>
+				<SPAN CLASS="ekeyword">do</SPAN>
+					<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_start_date</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../time/date_time.html#f_make_now">make_now</A>
+			<SPAN CLASS="elocal">l_prepare</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_execute_test_stage">execute_test_stage</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_creator</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">l_prepare</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_invocation_response.html#f_is_exceptional">is_exceptional</A> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="elocal">l_creator</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/function.html#f_last_result">last_result</A> <SPAN CLASS="ekeyword">as</SPAN> l_test_set <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">l_operands</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_routine</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/routine.html#f_empty_operands">empty_operands</A>
+				<SPAN CLASS="ekeyword">check</SPAN>
+					<SPAN CLASS="etag">valid_operand_count</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">l_operands</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_count">count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+					<SPAN CLASS="etag">valid_operand</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">l_operands</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_valid_type_for_index">valid_type_for_index</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_test_set</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="elocal">l_operands</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/tuple.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_test_set</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">l_test</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_execute_test_stage">execute_test_stage</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">agent</SPAN> <SPAN CLASS="elocal">a_routine</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/procedure.html#f_call">call</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_operands</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">l_clean</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_execute_test_stage">execute_test_stage</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">agent</SPAN> <SPAN CLASS="elocal">l_test_set</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_clean">clean</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_test</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_invocation_response.html#f_is_exceptional">is_exceptional</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../testing/eqa_result.html">EQA_RESULT</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_result.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_start_date</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_prepare</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_test</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_clean</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_buffer">Buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_output_buffer.html#f_formatted_content">formatted_content</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_partial_result.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_start_date</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_prepare</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_buffer">Buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_output_buffer.html#f_formatted_content">formatted_content</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_old</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/any.html#f_io">Io</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_set_output_default">set_output_default</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/any.html#f_io">Io</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/std_files.html#f_set_file_default">set_file_default</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_old</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../base/execution_environment.html#f_change_working_path">change_working_path</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_old_work_dir</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_buffer">Buffer</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_output_buffer.html#f_wipe_out">wipe_out</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">result_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_execute_test_stage"></A><A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_execute_test_stage">execute_test_stage</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_procedure</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/routine.html">ROUTINE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/any.html">ANY</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_test_invocation_response.html">EQA_TEST_INVOCATION_RESPONSE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Execute one stage of a test execution and return the corresponding invocation response.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`a_procedure'<SPAN CLASS="ecomment">: Procedure to call.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`Result'<SPAN CLASS="ecomment">: Invocation response describing the outcome of calling </SPAN>`a_procedure'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_procedure_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_procedure</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">a_procedure_expects_not_operands</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_procedure</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/routine.html#f_valid_operands">valid_operands</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Void</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_response</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_evaluator.html#f_execute_test_stage">execute_test_stage</A>
+			<SPAN CLASS="elocal">l_iexcept</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_test_invocation_exception.html">EQA_TEST_INVOCATION_EXCEPTION</A>
+			<SPAN CLASS="elocal">l_test_set_name</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">l_response</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">a_procedure</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/routine.html#f_call">call</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Void</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_response</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_invocation_response.html#f_make">make</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_response</SPAN>
+		<SPAN CLASS="ekeyword">rescue</SPAN>
+			<SPAN CLASS="ekeyword">check</SPAN>
+					<SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="efeature" HREF="../base/exception_manager_factory.html#f_exception_manager">Exception_manager</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception_manager.html#f_last_exception">last_exception</A> <SPAN CLASS="ekeyword">as</SPAN> l_exception
+			<SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">l_test_set_name</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/reflector.html#f_class_name_of_type">class_name_of_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><SPAN CLASS="egeneric">G</SPAN><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_iexcept</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_invocation_exception.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_exception</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_test_set_name</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="ekeyword">Void</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_response</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../testing/eqa_test_invocation_response.html#f_make_exceptional">make_exceptional</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_iexcept</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">retry</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2012, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">5949 Hollister Ave., Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../testing/eqa_test_evaluator.html">EQA_TEST_EVALUATOR</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_test_evaluator_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="eqa_test_evaluator_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="eqa_test_evaluator"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

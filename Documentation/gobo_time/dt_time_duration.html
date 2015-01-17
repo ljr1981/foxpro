@@ -1,0 +1,457 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Time durations"/>
+<meta name="remark" content="Do not take leap seconds into account"/>
+<meta name="library" content="Gobo Eiffel Time Library"/>
+<meta name="copyright" content="Copyright (c) 2000-2005, Eric Bezault and others"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>dt_time_duration Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dt_time_duration_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dt_time_duration_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="dt_time_duration"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Time durations&quot;</SPAN>
+	<SPAN CLASS="eitag">remark</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Do not take leap seconds into account&quot;</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Gobo Eiffel Time Library&quot;</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 2000-2005, Eric Bezault and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;MIT License&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2012-08-22 12:54:13 -0700 (Wed, 22 Aug 2012) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 89387 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../gobo_time/dt_time_duration.html">DT_TIME_DURATION</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../gobo_time/dt_duration.html">DT_DURATION</A>
+		<SPAN CLASS="ekeyword">rename</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_duration.html#f_absolute_time">absolute_time</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_time">time</A>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_value.html#f_out">out</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_time">time</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../gobo_time/dt_time_value.html">DT_TIME_VALUE</A>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_equal">is_equal</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../gobo_time/dt_gregorian_calendar.html">DT_GREGORIAN_CALENDAR</A>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_value.html#f_out">out</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_equal">is_equal</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<SPAN CLASS="neclass">KL_IMPORTED_ANY_ROUTINES</SPAN>
+		<SPAN CLASS="ekeyword">undefine</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_value.html#f_out">out</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_equal">is_equal</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make">make</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_precise">make_precise</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_canonical">make_canonical</A><SPAN CLASS="esymbol">,</SPAN>
+	<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_precise_canonical">make_precise_canonical</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Initialization</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make">make</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create a new time duration.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<SPAN CLASS="etag">minute_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">second_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<SPAN CLASS="etag">millisecond_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_precise"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_precise">make_precise</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">ms</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create a new time duration with millisecond precision.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<SPAN CLASS="etag">minute_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">second_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<SPAN CLASS="etag">millisecond_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_canonical"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_canonical">make_canonical</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create a canonical time duration.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">fs</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">s</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="elocal">s</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">is_canonical</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_canonical">is_canonical</A>
+			<SPAN CLASS="etag">second_count_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second_count">second_count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<SPAN CLASS="etag">millisecond_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_make_precise_canonical"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_precise_canonical">make_precise_canonical</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">ms</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create a canonical time duration</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> with millisecond precision.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">fs</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">ms</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="elocal">ms</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="enumber">1000</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="enumber">1000</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">ms</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="enumber">1000</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">ms</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="enumber">1000</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN>
+				<SPAN CLASS="elocal">fs</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_remainder">\\</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN>
+				<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">fs</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">is_canonical</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_canonical">is_canonical</A>
+			<SPAN CLASS="etag">millisecond_count_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_is_canonical"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_canonical">is_canonical</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Has current duration a canonical form?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">1000</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">-1000</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">positive_definition</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">1000</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="etag">negative_definition</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_implication">implies</A> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_less_equal">&lt;=</A> <SPAN CLASS="enumber">0</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted">and</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater">&gt;</A> <SPAN CLASS="enumber">-1000</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_hour"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Hour part</SPAN>
+
+	<A NAME="f_minute"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Minute part</SPAN>
+
+	<A NAME="f_second"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Second part</SPAN>
+
+	<A NAME="f_millisecond"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Millisecond part</SPAN>
+
+	<A NAME="f_second_count"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second_count">second_count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Total number of seconds</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/comparable.html#f_is_greater_equal">&gt;=</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="enumber">1000</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_minus">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_integer_quotient">//</A> <SPAN CLASS="enumber">1000</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">definition</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="nefeature">Integer_</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">div</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">1000</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_millisecond_count"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Total number of milliseconds</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="enumber">1000</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">definition</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Minutes_in_hour</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="nefeature">Seconds_in_minute</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="esymbol">)</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_product">*</A> <SPAN CLASS="enumber">1000</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_hash_code"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hash_code">hash_code</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Hash code</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Result</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_time"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_time">time</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_time</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../gobo_time/dt_time.html">DT_TIME</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../gobo_time/dt_time.html">DT_TIME</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Addition of current duration to </SPAN>`a_time'
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> (Create a new object at each call.)</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_time</SPAN> <A CLASS="esymbol" HREF="../gobo_time/dt_absolute_time.html#f_plus">+</A> <SPAN CLASS="ekeyword">Current</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status setting</SPAN>
+
+	<A NAME="f_set_canonical"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_canonical">set_canonical</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set time duration to be canonical.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_precise_canonical">make_precise_canonical</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">is_canonical</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_canonical">is_canonical</A>
+			<SPAN CLASS="etag">same_duration</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">old</SPAN> <SPAN CLASS="nefeature">cloned_object</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Setting</SPAN>
+
+	<A NAME="f_set_hour_minute_second"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_hour_minute_second">set_hour_minute_second</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="ecomment"> to </SPAN>`h'<SPAN CLASS="ecomment">, </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="ecomment"> to </SPAN>`m'<SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="ecomment"> to </SPAN>`s'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<SPAN CLASS="etag">minute_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">second_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<SPAN CLASS="etag">millisecond_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_precise_hour_minute_second"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_precise_hour_minute_second">set_precise_hour_minute_second</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">ms</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="ecomment"> to </SPAN>`h'<SPAN CLASS="ecomment">, </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="ecomment"> to </SPAN>`m'<SPAN CLASS="ecomment">,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="ecomment"> to </SPAN>`s'<SPAN CLASS="ecomment"> and </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="ecomment"> to </SPAN>`ms'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<SPAN CLASS="etag">minute_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">second_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<SPAN CLASS="etag">millisecond_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_hour"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_hour">set_hour</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="ecomment"> to </SPAN>`h'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">h</SPAN>
+			<SPAN CLASS="etag">same_minute</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A>
+			<SPAN CLASS="etag">same_second</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A>
+			<SPAN CLASS="etag">same_millisecond</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_minute"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_minute">set_minute</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="ecomment"> to </SPAN>`m'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">minute_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">same_hour</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A>
+			<SPAN CLASS="etag">same_second</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A>
+			<SPAN CLASS="etag">same_millisecond</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_second"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_second">set_second</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="ecomment"> to </SPAN>`s'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">second_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">s</SPAN>
+			<SPAN CLASS="etag">same_hour</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A>
+			<SPAN CLASS="etag">same_minute</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A>
+			<SPAN CLASS="etag">same_millisecond</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_millisecond"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_millisecond">set_millisecond</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">ms</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="ecomment"> to </SPAN>`ms'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">same_hour</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A>
+			<SPAN CLASS="etag">same_minute</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A>
+			<SPAN CLASS="etag">same_second</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A>
+			<SPAN CLASS="etag">millisecond_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Element change</SPAN>
+
+	<A NAME="f_add_hours_minutes_seconds"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_hours_minutes_seconds">add_hours_minutes_seconds</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`h'<SPAN CLASS="ecomment"> hours, </SPAN>`m'<SPAN CLASS="ecomment"> minutes and </SPAN>`s'<SPAN CLASS="ecomment"> seconds</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> to current duration.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">h</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">h</SPAN>
+			<SPAN CLASS="etag">minute_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">second_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_add_precise_hours_minutes_seconds"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_precise_hours_minutes_seconds">add_precise_hours_minutes_seconds</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">ms</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`h'<SPAN CLASS="ecomment"> hours, </SPAN>`m'<SPAN CLASS="ecomment"> minutes, </SPAN>`s'<SPAN CLASS="ecomment"> seconds and</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> </SPAN>`ms'<SPAN CLASS="ecomment"> milliseconds to current duration.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">h</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">h</SPAN>
+			<SPAN CLASS="etag">minute_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN>
+			<SPAN CLASS="etag">second_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN>
+			<SPAN CLASS="etag">millisecond_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_add_hours"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_hours">add_hours</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">h</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`h'<SPAN CLASS="ecomment"> hours to current duration.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">h</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">hour_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">h</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_add_minutes"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_minutes">add_minutes</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">m</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`m'<SPAN CLASS="ecomment"> minutes to current duration.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">minute_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">m</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_add_seconds"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_seconds">add_seconds</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`s'<SPAN CLASS="ecomment"> seconds to current duration.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">second_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">s</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_add_milliseconds"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_milliseconds">add_milliseconds</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">ms</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Add </SPAN>`ms'<SPAN CLASS="ecomment"> milliseconds to current duration.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">millisecond_added</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">old</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_plus">+</A> <SPAN CLASS="elocal">ms</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Basic operations</SPAN>
+
+	<A NAME="f_plus"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_plus">plus</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../gobo_time/dt_time_duration.html#f_plus">+</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Sum of current duration with </SPAN>`other'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="nefeature">cloned_object</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_precise_hours_minutes_seconds">add_precise_hours_minutes_seconds</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_minus"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minus">minus</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../gobo_time/dt_time_duration.html#f_minus">-</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Difference with </SPAN>`other'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="nefeature">cloned_object</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_add_precise_hours_minutes_seconds">add_precise_hours_minutes_seconds</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_opposite"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_opposite">opposite</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../gobo_time/dt_time_duration.html#f_opposite">-</A><SPAN CLASS="esymbol">&quot;</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Unary minus</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="nefeature">cloned_object</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_set_precise_hour_minute_second">set_precise_hour_minute_second</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="esymbol" HREF="../base/integer_32.html#f_opposite">-</A> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Comparison</SPAN>
+
+	<A NAME="f_is_less"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_less">is_less</A> <SPAN CLASS="ekeyword">alias</SPAN> <SPAN CLASS="esymbol">&quot;</SPAN><A CLASS="esymbol" HREF="../gobo_time/dt_time_duration.html#f_is_less">&lt;</A><SPAN CLASS="esymbol">&quot;</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is current time duration less than </SPAN>`other'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A> <A CLASS="esymbol" HREF="../base/integer_32.html#f_is_less">&lt;</A> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_equal"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_equal">is_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is current time duration equal to </SPAN>`other'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="nefeature">Any_</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">same_types</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_same_time_duration">same_time_duration</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_same_time_duration"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_same_time_duration">same_time_duration</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">other</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../gobo_time/dt_time_duration.html">DT_TIME_DURATION</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is current time duration equal to </SPAN>`other'<SPAN CLASS="ecomment">?</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">other_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">other</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">definition</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">other</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Conversion</SPAN>
+
+	<A NAME="f_to_date_time_duration"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_to_date_time_duration">to_date_time_duration</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../gobo_time/dt_date_time_duration.html">DT_DATE_TIME_DURATION</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Date time duration equivalent to current time duration</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_date_time_duration.html#f_make_precise">make_precise</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">date_time_duration_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">year_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_date_duration.html#f_year">year</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">month_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_date_duration.html#f_month">month</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">day_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_date_duration.html#f_day">day</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="etag">hour_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_hour">hour</A>
+			<SPAN CLASS="etag">minute_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_minute">minute</A>
+			<SPAN CLASS="etag">second_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_second">second</A>
+			<SPAN CLASS="etag">millisecond_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond">millisecond</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_to_canonical"></A><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_to_canonical">to_canonical</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <SPAN CLASS="ekeyword">Current</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Canonical version of current time duration</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_make_precise_canonical">make_precise_canonical</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_millisecond_count">millisecond_count</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">canonical_duration_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="etag">is_canonical</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_canonical">is_canonical</A>
+			<SPAN CLASS="etag">same_duration</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../gobo_time/dt_time_duration.html#f_is_equal">is_equal</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Current</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../gobo_time/dt_time_duration.html">DT_TIME_DURATION</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dt_time_duration_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="dt_time_duration_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="dt_time_duration"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

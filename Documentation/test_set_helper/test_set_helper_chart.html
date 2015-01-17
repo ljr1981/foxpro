@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="title" content="Eiffel Auto-Test Testing Helper"/>
+<meta name="description" content="Testing Helper Class"/>
+<meta name="purpose" content="To provide additional assert features for various forms of common boolean comparisons."/>
+<meta name="how" content="By providing assertions that not only take various expected Vs. actual values and compare them together, but to report in a context-meaningful way on those differences. For example: When reporting the dif between two strings, one wants to know either the first place where they differ (location)--seeing a range of characters at the point of the difference, or simply that one string has data and the other does not. Numbers are evaluated differently, even to where various types of number difs are reported differently."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>test_set_helper Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="test_set_helper_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="test_set_helper.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="test_set_helper"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">deferred</SPAN> <SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../test_set_helper/test_set_helper_chart.html">TEST_SET_HELPER</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">test_set_helper</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Testing Helper Class&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../testing/eqa_test_set_chart.html">EQA_TEST_SET</A><SPAN CLASS="echar">*</SPAN>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`asserter' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_asserter">asserter</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_new_asserter">new_asserter</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../testing/eqa_assertions_chart.html">EQA_ASSERTIONS</A></SPAN>
+	<SPAN TITLE="`environment' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_environment">environment</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../testing/eqa_environment_chart.html">EQA_ENVIRONMENT</A></SPAN>
+	<SPAN TITLE="`file_system' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_file_system">file_system</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_new_file_system">new_file_system</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../testing/eqa_file_system_chart.html">EQA_FILE_SYSTEM</A></SPAN>
+	<SPAN TITLE="`is_prepared' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_is_prepared">is_prepared</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`string_for_display' is declared in `Current'"><A CLASS="efeature" HREF="../test_set_helper/test_set_helper.html#f_string_for_display">string_for_display</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_string</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A></SPAN>
+	<SPAN TITLE="`target_path_key' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_target_path_key">Target_path_key</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`test_name_key' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_test_name_key">Test_name_key</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`testing_directory_key' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_testing_directory_key">Testing_directory_key</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`assert' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_assert">assert</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_condition</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`assert_32' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_assert_32">assert_32</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_condition</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`assert_case_insensitive_strings_equal' is declared in `Current'"><A CLASS="efeature" HREF="../test_set_helper/test_set_helper.html#f_assert_case_insensitive_strings_equal">assert_case_insensitive_strings_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_base_tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_expected_value</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_actual_value</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`assert_decimal_values_equal' is declared in `Current'"><A CLASS="efeature" HREF="../test_set_helper/test_set_helper.html#f_assert_decimal_values_equal">assert_decimal_values_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_base_tag</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_string_value</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_decimal_value</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../decimal/decimal_chart.html">DECIMAL</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`assert_equals' is declared in `Current'"><A CLASS="efeature" HREF="../test_set_helper/test_set_helper.html#f_assert_equals">assert_equals</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_base_tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_expected_value</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_actual_value</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../test_set_helper/test_set_helper.html#f_assert_equal_anchor">assert_equal_anchor</A><SPAN CLASS="esymbol">]</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`assert_list_contents_same' is declared in `Current'"><A CLASS="efeature" HREF="../test_set_helper/test_set_helper.html#f_assert_list_contents_same">assert_list_contents_same</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_base_tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_expected_container</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_actual_container</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/list_chart.html">LIST</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/any_chart.html">ANY</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`assert_strings_equal' is declared in `Current'"><A CLASS="efeature" HREF="../test_set_helper/test_set_helper.html#f_assert_strings_equal">assert_strings_equal</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_base_tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_expected_value</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_actual_value</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_asserter' was declared in EQA_TEST_SET"><A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_set_asserter">set_asserter</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../testing/eqa_test_set.html#f_asserter">asserter</A><SPAN CLASS="esymbol">]</SPAN> <A CLASS="eclass" HREF="../testing/eqa_assertions_chart.html">EQA_ASSERTIONS</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="test_set_helper_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="test_set_helper.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="test_set_helper"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

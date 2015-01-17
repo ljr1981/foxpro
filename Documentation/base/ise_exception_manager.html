@@ -1,0 +1,551 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Exception manager.  The manager handles all common operations of exception mechanism and interaction with the ISE runtime."/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="library" content="EiffelBase: Library of reusable components for Eiffel."/>
+<meta name="copyright" content="Copyright (c) 1984-2008, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 356 Storke Road, Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>ise_exception_manager Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="ise_exception_manager_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="ise_exception_manager_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="ise_exception_manager"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Exception manager. </SPAN>
+		<SPAN CLASS="estring">The manager handles all common operations of exception mechanism and interaction with the ISE runtime.</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">legal</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">status</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;See notice at end of class.&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Date: 2013-05-20 16:15:17 -0700 (Mon, 20 May 2013) $&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;$Revision: 92557 $&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../base/ise_exception_manager.html">ISE_EXCEPTION_MANAGER</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../base/exception_manager.html">EXCEPTION_MANAGER</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_raise">raise</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignore">ignore</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_catch">catch</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_set_is_ignored">set_is_ignored</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_ignorable">is_ignorable</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_raisable">is_raisable</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_ignored">is_ignored</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_caught">is_caught</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_type_of_code">type_of_code</A><SPAN CLASS="esymbol">,</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_from_code">exception_from_code</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../base/any.html#f_default_create">default_create</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_last_exception"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Last exception</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception_cell">Last_exception_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_item">item</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Raise</SPAN>
+
+	<A NAME="f_raise"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_raise">raise</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Raise </SPAN>`a_exception'<SPAN CLASS="ecomment">.</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Raising </SPAN>`a_exception'<SPAN CLASS="ecomment"> by this routine makes </SPAN>`a_exception'<SPAN CLASS="ecomment"> accessible by </SPAN><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> in rescue clause. Hence causes removal of original </SPAN><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">p_meaning</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">p_message</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_is_ignored">is_ignored</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_in_rescue">in_rescue</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_throwing_exception">set_throwing_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_set_last_exception">set_last_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">p_meaning</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_pointer">default_pointer</A>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/c_string.html">C_STRING</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_c_description">c_description</A> <SPAN CLASS="ekeyword">as</SPAN> m <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">p_message</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/c_string.html#f_item">item</A>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<SPAN CLASS="elocal">p_message</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_pointer">default_pointer</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_developer_raise">developer_raise</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_code">code</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">p_meaning</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">p_message</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status setting</SPAN>
+
+	<A NAME="f_ignore"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignore">ignore</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Make sure that any exception of type </SPAN>`a_exception'<SPAN CLASS="ecomment"> will be</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> ignored. This is not the default.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignored_exceptions">Ignored_exceptions</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_force">force</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_catch"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_catch">catch</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set type of </SPAN>`a_exception'<SPAN CLASS="ecomment"> </SPAN><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_ignored">is_ignored</A><SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignored_exceptions">Ignored_exceptions</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_remove">remove</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_is_ignored"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_set_is_ignored">set_is_ignored</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_ignored</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set type of </SPAN>`a_exception'<SPAN CLASS="ecomment"> to be </SPAN>`a_ignored'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">a_ignored</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignore">ignore</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_catch">catch</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Status report</SPAN>
+
+	<A NAME="f_is_ignorable"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_ignorable">is_ignorable</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> If set, type of </SPAN>`a_exception'<SPAN CLASS="ecomment"> is ignorable.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_unignorable_exceptions">Unignorable_exceptions</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_raisable"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_raisable">is_raisable</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> If set, type of </SPAN>`a_exception'<SPAN CLASS="ecomment"> is raisable.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_unraisable_exceptions">Unraisable_exceptions</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_ignored"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_ignored">is_ignored</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> If set, type of </SPAN>`a_exception'<SPAN CLASS="ecomment"> is not raised.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignored_exceptions">Ignored_exceptions</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_caught"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_caught">is_caught</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> If set, type of </SPAN>`a_exception'<SPAN CLASS="ecomment"> is raised.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignored_exceptions">Ignored_exceptions</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_has">has</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/exceptions.html">EXCEPTIONS</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Compatibility support</SPAN>
+
+	<A NAME="f_type_of_code"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_type_of_code">type_of_code</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Exception type of </SPAN>`a_code'
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">inspect</SPAN> <SPAN CLASS="elocal">a_code</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_void_call_target">void_call_target</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/void_target.html">VOID_TARGET</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_no_more_memory">no_more_memory</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/no_more_memory.html">NO_MORE_MEMORY</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_precondition">precondition</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/precondition_violation.html">PRECONDITION_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_postcondition">postcondition</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/postcondition_violation.html">POSTCONDITION_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_floating_point_exception">floating_point_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/floating_point_failure.html">FLOATING_POINT_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_class_invariant">class_invariant</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/invariant_violation.html">INVARIANT_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_check_instruction">check_instruction</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/check_violation.html">CHECK_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_routine_failure">routine_failure</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/routine_failure.html">ROUTINE_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_incorrect_inspect_value">incorrect_inspect_value</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/bad_inspect_value.html">BAD_INSPECT_VALUE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_loop_variant">loop_variant</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/variant_violation.html">VARIANT_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_loop_invariant">loop_invariant</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/loop_invariant_violation.html">LOOP_INVARIANT_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_signal_exception">signal_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/operating_system_signal_failure.html">OPERATING_SYSTEM_SIGNAL_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_eiffel_runtime_panic">eiffel_runtime_panic</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/eiffel_runtime_panic.html">EIFFEL_RUNTIME_PANIC</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_rescue_exception">rescue_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/rescue_failure.html">RESCUE_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_out_of_memory">out_of_memory</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/no_more_memory.html">NO_MORE_MEMORY</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_resumption_failed">resumption_failed</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/resumption_failure.html">RESUMPTION_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_create_on_deferred">create_on_deferred</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/create_on_deferred.html">CREATE_ON_DEFERRED</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_external_exception">external_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/external_failure.html">EXTERNAL_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_void_assigned_to_expanded">void_assigned_to_expanded</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/void_assigned_to_expanded.html">VOID_ASSIGNED_TO_EXPANDED</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_exception_in_signal_handler">exception_in_signal_handler</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/exception_in_signal_handler_failure.html">EXCEPTION_IN_SIGNAL_HANDLER_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_io_exception">io_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/io_failure.html">IO_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_operating_system_exception">operating_system_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/operating_system_failure.html">OPERATING_SYSTEM_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_retrieve_exception">retrieve_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/mismatch_failure.html">MISMATCH_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_developer_exception">developer_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/developer_exception.html">DEVELOPER_EXCEPTION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_eiffel_runtime_fatal_error">eiffel_runtime_fatal_error</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/eiffel_runtime_panic.html">EIFFEL_RUNTIME_PANIC</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_dollar_applied_to_melted_feature">dollar_applied_to_melted_feature</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/address_applied_to_melted_feature.html">ADDRESS_APPLIED_TO_MELTED_FEATURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_runtime_io_exception">runtime_io_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/io_failure.html">IO_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_com_exception">com_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/com_failure.html">COM_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_runtime_check_exception">runtime_check_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/check_violation.html">CHECK_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_old_exception">old_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/old_violation.html">OLD_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_serialization_exception">serialization_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/serialization_failure.html">SERIALIZATION_FAILURE</A><SPAN CLASS="esymbol">}</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_exception_from_code"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_from_code">exception_from_code</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create exception object from </SPAN>`a_code'
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_rt_panic</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/eiffel_runtime_panic.html">EIFFEL_RUNTIME_PANIC</A>
+			<SPAN CLASS="elocal">l_io_failure</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/io_failure.html">IO_FAILURE</A>
+			<SPAN CLASS="elocal">l_no_more_mem</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/no_more_memory.html">NO_MORE_MEMORY</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">inspect</SPAN> <SPAN CLASS="elocal">a_code</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_void_call_target">void_call_target</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/void_target.html">VOID_TARGET</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_no_more_memory">no_more_memory</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="elocal">l_no_more_mem</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_no_memory_exception_object_cell">No_memory_exception_object_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_item">item</A>
+				<SPAN CLASS="elocal">l_no_more_mem</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/no_more_memory.html#f_set_code">set_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_no_more_memory">no_more_memory</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_no_more_mem</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_precondition">precondition</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/precondition_violation.html">PRECONDITION_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_postcondition">postcondition</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/postcondition_violation.html">POSTCONDITION_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_floating_point_exception">floating_point_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/floating_point_failure.html">FLOATING_POINT_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_class_invariant">class_invariant</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/invariant_violation.html">INVARIANT_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_check_instruction">check_instruction</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/check_violation.html">CHECK_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_routine_failure">routine_failure</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/routine_failure.html">ROUTINE_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_incorrect_inspect_value">incorrect_inspect_value</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/bad_inspect_value.html">BAD_INSPECT_VALUE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_loop_variant">loop_variant</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/variant_violation.html">VARIANT_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_loop_invariant">loop_invariant</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/loop_invariant_violation.html">LOOP_INVARIANT_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_signal_exception">signal_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/operating_system_signal_failure.html">OPERATING_SYSTEM_SIGNAL_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_eiffel_runtime_panic">eiffel_runtime_panic</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_rt_panic</SPAN>
+				<SPAN CLASS="elocal">l_rt_panic</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/eiffel_runtime_panic.html#f_set_code">set_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_eiffel_runtime_panic">eiffel_runtime_panic</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_rt_panic</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_rescue_exception">rescue_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/rescue_failure.html">RESCUE_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_out_of_memory">out_of_memory</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="elocal">l_no_more_mem</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_no_memory_exception_object_cell">No_memory_exception_object_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_item">item</A>
+				<SPAN CLASS="elocal">l_no_more_mem</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/no_more_memory.html#f_set_code">set_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_out_of_memory">out_of_memory</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_no_more_mem</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_resumption_failed">resumption_failed</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/resumption_failure.html">RESUMPTION_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_create_on_deferred">create_on_deferred</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/create_on_deferred.html">CREATE_ON_DEFERRED</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_external_exception">external_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/external_failure.html">EXTERNAL_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_void_assigned_to_expanded">void_assigned_to_expanded</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/void_assigned_to_expanded.html">VOID_ASSIGNED_TO_EXPANDED</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_exception_in_signal_handler">exception_in_signal_handler</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/exception_in_signal_handler_failure.html">EXCEPTION_IN_SIGNAL_HANDLER_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_io_exception">io_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_io_failure</SPAN>
+				<SPAN CLASS="elocal">l_io_failure</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_failure.html#f_set_code">set_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_io_exception">io_exception</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_io_failure</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_operating_system_exception">operating_system_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/operating_system_failure.html">OPERATING_SYSTEM_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_retrieve_exception">retrieve_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/mismatch_failure.html">MISMATCH_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_developer_exception">developer_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/developer_exception.html">DEVELOPER_EXCEPTION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_eiffel_runtime_fatal_error">eiffel_runtime_fatal_error</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_rt_panic</SPAN>
+				<SPAN CLASS="elocal">l_rt_panic</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/eiffel_runtime_panic.html#f_set_code">set_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_eiffel_runtime_fatal_error">eiffel_runtime_fatal_error</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_rt_panic</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_dollar_applied_to_melted_feature">dollar_applied_to_melted_feature</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/address_applied_to_melted_feature.html">ADDRESS_APPLIED_TO_MELTED_FEATURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_runtime_io_exception">runtime_io_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_io_failure</SPAN>
+				<SPAN CLASS="elocal">l_io_failure</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_failure.html#f_set_code">set_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_runtime_io_exception">runtime_io_exception</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_io_failure</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_com_exception">com_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/com_failure.html">COM_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_runtime_check_exception">runtime_check_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/check_violation.html">CHECK_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_old_exception">old_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/old_violation.html">OLD_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">when</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/excep_const.html">EXCEP_CONST</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/excep_const.html#f_serialization_exception">serialization_exception</A> <SPAN CLASS="ekeyword">then</SPAN> 
+				<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/serialization_failure.html">SERIALIZATION_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ekeyword">Result</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Access</SPAN>
+
+	<A NAME="f_exception_data"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data">exception_data</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">signal_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">error_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">recipient</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">eclass</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">rf_routine</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">rf_class</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">trace</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">line_number</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">is_invariant_entry</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Exception data</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Used to store temporary exception information,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> which is used to create exception object later.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data_cell">Exception_data_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_item">item</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Element change</SPAN>
+
+	<A NAME="f_set_last_exception"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_set_last_exception">set_last_exception</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_last_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set </SPAN><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A><SPAN CLASS="ecomment"> with </SPAN>`a_last_exception'<SPAN CLASS="ecomment">.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception_cell">Last_exception_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_last_exception</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">ensure</SPAN>
+			<SPAN CLASS="etag">last_exception_set</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception_cell">Last_exception_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_item">item</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="elocal">a_last_exception</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_exception_data"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_set_exception_data">set_exception_data</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">new_obj</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">signal_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">error_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">tag</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">recipient</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">eclass</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">rf_routine</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">rf_class</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">trace</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">line_number</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">is_invariant_entry</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set exception data.</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data_cell">Exception_data_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">signal_code</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">error_code</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">tag</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">recipient</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">eclass</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">rf_routine</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">rf_class</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">trace</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">line_number</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">is_invariant_entry</SPAN><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">new_obj</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_from_data">exception_from_data</A> <SPAN CLASS="ekeyword">as</SPAN> e <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_set_last_exception">set_last_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">e</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">check</SPAN>
+					<SPAN CLASS="etag">last_exception_attached</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A> <SPAN CLASS="ekeyword">as</SPAN> l_exception
+				<SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">l_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_exception_trace">set_exception_trace</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">trace</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">l_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_recipient_name">set_recipient_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">recipient</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">l_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_type_name">set_type_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">eclass</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation, ignoring</SPAN>
+
+	<A NAME="f_ignored_exceptions"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignored_exceptions">Ignored_exceptions</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/hash_table.html">HASH_TABLE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Ignored exceptions</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_unignorable_exceptions"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_unignorable_exceptions">Unignorable_exceptions</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/hash_table.html">HASH_TABLE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Unignorable exceptions</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/void_target.html">VOID_TARGET</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_force">force</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_unraisable_exceptions"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_unraisable_exceptions">Unraisable_exceptions</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/hash_table.html">HASH_TABLE</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Unraisable exceptions</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">2</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/routine_failure.html">ROUTINE_FAILURE</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_force">force</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="elocal">l_type</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/old_violation.html">OLD_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/type.html#f_type_id">type_id</A>
+			<SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/hash_table.html#f_force">force</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_is_code_ignored"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_code_ignored">is_code_ignored</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Is exception of </SPAN>`a_code'<SPAN CLASS="ecomment"> ignored?</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/type.html">TYPE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_type_of_code">type_of_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_code</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_type <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_is_ignored">is_ignored</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_type</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Cells</SPAN>
+
+	<A NAME="f_exception_data_cell"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data_cell">Exception_data_cell</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/cell.html">CELL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/tuple.html">TUPLE</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">signal_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">error_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">tag</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">recipient</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">eclass</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">rf_routine</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">rf_class</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">trace</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">line_number</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">is_invariant_entry</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A><SPAN CLASS="esymbol">]</SPAN><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Cell to hold current exception data</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Void</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_last_exception_cell"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception_cell">Last_exception_cell</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/cell.html">CELL</A> <SPAN CLASS="esymbol">[</SPAN><SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Cell to hold last exception</SPAN>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Void</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_no_memory_exception_object_cell"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_no_memory_exception_object_cell">No_memory_exception_object_cell</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/cell.html">CELL</A> <SPAN CLASS="esymbol">[</SPAN><A CLASS="eclass" HREF="../base/no_more_memory.html">NO_MORE_MEMORY</A><SPAN CLASS="esymbol">]</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> No more memory exception object.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_nomem</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/no_more_memory.html">NO_MORE_MEMORY</A>
+		<SPAN CLASS="ekeyword">once</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">l_nomem</SPAN>
+			<SPAN CLASS="elocal">l_nomem</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_exception_trace">set_exception_trace</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">create</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/string_8.html">STRING_8</A><SPAN CLASS="esymbol">}</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/readable_string_8.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">4096</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="ekeyword">Result</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_put">put</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_nomem</SPAN><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Implementation</SPAN>
+
+	<A NAME="f_exception_from_data"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_from_data">exception_from_data</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Create an exception object </SPAN><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data">exception_data</A>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">t</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data">exception_data</A> <SPAN CLASS="ekeyword">as</SPAN> l_data <A CLASS="ekeyword" HREF="../base/boolean.html#f_conjuncted_semistrict">and then</A> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">}</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_from_code">exception_from_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">code</SPAN><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="ekeyword">as</SPAN> e <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/routine_failure.html">ROUTINE_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_rf <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">t</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">t</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_throwing_exception">set_throwing_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">t</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="elocal">l_rf</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/routine_failure.html#f_set_routine_name">set_routine_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">rf_routine</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="elocal">l_rf</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/routine_failure.html#f_set_class_name">set_class_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">rf_class</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">elseif</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/old_violation.html">OLD_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_ov <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">t</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">t</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_throwing_exception">set_throwing_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">t</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/invariant_violation.html">INVARIANT_VIOLATION</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_inva <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">l_inva</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/invariant_violation.html#f_set_is_entry">set_is_entry</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">is_invariant_entry</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">elseif</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/operating_system_signal_failure.html">OPERATING_SYSTEM_SIGNAL_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_sig <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">l_sig</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/operating_system_signal_failure.html#f_set_signal_code">set_signal_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">signal_code</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">elseif</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/io_failure.html">IO_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_io <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">l_io</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/io_failure.html#f_set_error_code">set_error_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">error_code</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">elseif</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/operating_system_failure.html">OPERATING_SYSTEM_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_sys <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">l_sys</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/operating_system_failure.html#f_set_error_code">set_error_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">error_code</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">elseif</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/com_failure.html">COM_FAILURE</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="ekeyword">as</SPAN> l_com <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">l_com</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/com_failure.html#f_set_hresult_code">set_hresult_code</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">signal_code</SPAN><SPAN CLASS="esymbol">)</SPAN>
+						<SPAN CLASS="elocal">l_com</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/com_failure.html#f_set_exception_information">set_exception_information</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">tag</SPAN><SPAN CLASS="esymbol">)</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_in_rescue">in_rescue</A> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">t</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">t</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+						<SPAN CLASS="elocal">t</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">e</SPAN>
+					<SPAN CLASS="ekeyword">end</SPAN>
+					<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_throwing_exception">set_throwing_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">t</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_exception_trace">set_exception_trace</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">trace</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_description">set_description</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">tag</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_recipient_name">set_recipient_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">recipient</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_type_name">set_type_name</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="elocal">eclass</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">e</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_once_raise"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_once_raise">once_raise</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Called by runtime to raise saved exception for once routines.</SPAN>
+		<SPAN CLASS="ekeyword">require</SPAN>
+			<SPAN CLASS="etag">a_exception_not_void</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">a_exception</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">p_meaning</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">p_message</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="ekeyword" HREF="../base/boolean.html#f_negated">not</A> <SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_is_ignored">is_ignored</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_in_rescue">in_rescue</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_original">original</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_throwing_exception">set_throwing_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception">last_exception</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_set_last_exception">set_last_exception</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">p_meaning</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_pointer">default_pointer</A>
+				<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="ekeyword">attached</SPAN> <SPAN CLASS="esymbol">{</SPAN><A CLASS="eclass" HREF="../base/c_string.html">C_STRING</A><SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_c_description">c_description</A> <SPAN CLASS="ekeyword">as</SPAN> m <SPAN CLASS="ekeyword">then</SPAN>
+					<SPAN CLASS="elocal">p_message</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">m</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/c_string.html#f_item">item</A>
+				<SPAN CLASS="ekeyword">else</SPAN>
+					<SPAN CLASS="elocal">p_message</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/any.html#f_default_pointer">default_pointer</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_developer_raise">developer_raise</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_exception</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_code">code</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">p_meaning</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">p_message</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_init_exception_manager"></A><SPAN CLASS="ekeyword">frozen</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_init_exception_manager">init_exception_manager</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Call once routines to create objects beforehand,</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> in case it goes into critical session (Stack overflow, no memory etc.)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> The creations doesn't fail.</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">arr</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignored_exceptions">Ignored_exceptions</A>
+			<SPAN CLASS="elocal">l_data</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data_cell">Exception_data_cell</A>
+			<SPAN CLASS="elocal">l_ex</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception_cell">Last_exception_cell</A>
+			<SPAN CLASS="elocal">l_nomem</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">like</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_no_memory_exception_object_cell">No_memory_exception_object_cell</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">arr</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_ignored_exceptions">Ignored_exceptions</A>
+			<SPAN CLASS="elocal">arr</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_unignorable_exceptions">Unignorable_exceptions</A>
+			<SPAN CLASS="elocal">arr</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_unraisable_exceptions">Unraisable_exceptions</A>
+			<SPAN CLASS="elocal">l_data</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_exception_data_cell">Exception_data_cell</A>
+			<SPAN CLASS="elocal">l_ex</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_last_exception_cell">Last_exception_cell</A>
+			<SPAN CLASS="elocal">l_nomem</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_no_memory_exception_object_cell">No_memory_exception_object_cell</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_free_preallocated_trace"></A><SPAN CLASS="ekeyword">frozen</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_free_preallocated_trace">free_preallocated_trace</A>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="ekeyword">detachable</SPAN> <A CLASS="eclass" HREF="../base/exception.html">EXCEPTION</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_no_memory_exception_object_cell">No_memory_exception_object_cell</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/cell.html#f_item">item</A>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">e</SPAN> <SPAN CLASS="esymbol">/=</SPAN> <SPAN CLASS="ekeyword">Void</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">e</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../base/exception.html#f_set_description">set_description</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="ekeyword">Void</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_developer_raise"></A><A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_developer_raise">developer_raise</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_code</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32.html">INTEGER_32</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_meaning</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_message</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/pointer.html">POINTER</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Raise an exception</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;built_in&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_in_rescue"></A><SPAN CLASS="ekeyword">frozen</SPAN> <A CLASS="efeature" HREF="../base/ise_exception_manager.html#f_in_rescue">in_rescue</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean.html">BOOLEAN</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Current execution is during rescue?</SPAN>
+		<SPAN CLASS="ekeyword">external</SPAN>
+			&quot;C use %&quot;eif_except.h%&quot;&quot;
+		<SPAN CLASS="ekeyword">alias</SPAN>
+			&quot;eif_is_in_rescue&quot;
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">library</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;EiffelBase: Library of reusable components for Eiffel.&quot;</SPAN>
+	<SPAN CLASS="eitag">copyright</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Copyright (c) 1984-2008, Eiffel Software and others&quot;</SPAN>
+	<SPAN CLASS="eitag">license</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Eiffel Forum License v2 (see </SPAN><A CLASS="estring" HREF="http://www.eiffel.com/licensing/forum.txt">http://www.eiffel.com/licensing/forum.txt</A><SPAN CLASS="estring">)&quot;</SPAN>
+	<SPAN CLASS="eitag">source</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">Eiffel Software</SPAN>
+		<SPAN CLASS="estring">356 Storke Road, Goleta, CA 93117 USA</SPAN>
+		<SPAN CLASS="estring">Telephone 805-685-1006, Fax 805-685-6869</SPAN>
+		<SPAN CLASS="estring">Website </SPAN><A CLASS="estring" HREF="http://www.eiffel.com">http://www.eiffel.com</A>
+		<SPAN CLASS="estring">Customer support </SPAN><A CLASS="estring" HREF="http://support.eiffel.com">http://support.eiffel.com</A>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../base/ise_exception_manager.html">ISE_EXCEPTION_MANAGER</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="ise_exception_manager_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="ise_exception_manager_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="ise_exception_manager"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 14.05.9.5394 GPL Edition - windows">
+<meta name="description" content="Abstract convertor for string to number conversion"/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>string_to_numeric_convertor Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_to_numeric_convertor_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_to_numeric_convertor.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="string_to_numeric_convertor"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">deferred</SPAN> <SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../base/string_to_numeric_convertor_chart.html">STRING_TO_NUMERIC_CONVERTOR</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="necluster">elks</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Abstract convertor for string to number conversion&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../base/numeric_information_chart.html">NUMERIC_INFORMATION</A>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`conversion_type' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_conversion_type">conversion_type</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`conversion_type_valid' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_conversion_type_valid">conversion_type_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`double_type_valid' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_double_type_valid">double_type_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`integer_natural_type_valid' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_integer_natural_type_valid">integer_natural_type_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`integer_type_valid' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_integer_type_valid">integer_type_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`leading_separators' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_leading_separators">leading_separators</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`leading_separators_acceptable' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_leading_separators_acceptable">leading_separators_acceptable</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`max_integer_type' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_max_integer_type">max_integer_type</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_64_chart.html">INTEGER_64</A></SPAN>
+	<SPAN TITLE="`max_natural_type' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_max_natural_type">max_natural_type</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/natural_64_chart.html">NATURAL_64</A></SPAN>
+	<SPAN TITLE="`natural_type_valid' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_natural_type_valid">natural_type_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`overflowed' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_overflowed">overflowed</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`parse_successful' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_parse_successful">parse_successful</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`real_double_type_valid' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_real_double_type_valid">real_double_type_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`real_type_valid' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_real_type_valid">real_type_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`separators_valid' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_separators_valid">separators_valid</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">separators</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`trailing_separators' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_trailing_separators">trailing_separators</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A></SPAN>
+	<SPAN TITLE="`trailing_separators_acceptable' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_trailing_separators_acceptable">trailing_separators_acceptable</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+	<SPAN TITLE="`type_count' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_count">Type_count</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_double' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_double">Type_double</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_integer' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_integer">Type_integer</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_integer_16' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_integer_16">Type_integer_16</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_integer_32' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_integer_32">Type_integer_32</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_integer_64' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_integer_64">Type_integer_64</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_integer_8' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_integer_8">Type_integer_8</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_integer_natural_separator' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_integer_natural_separator">Type_integer_natural_separator</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_natural' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_natural">Type_natural</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_natural_16' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_natural_16">Type_natural_16</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_natural_32' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_natural_32">Type_natural_32</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_natural_64' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_natural_64">Type_natural_64</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_natural_8' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_natural_8">Type_natural_8</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_no_limitation' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_no_limitation">Type_no_limitation</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`type_real' was declared in NUMERIC_INFORMATION"><A CLASS="efeature" HREF="../base/numeric_information.html#f_type_real">Type_real</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A></SPAN>
+	<SPAN TITLE="`underflowed' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_underflowed">underflowed</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`parse_character' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_parse_character">parse_character</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">c</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/character_8_chart.html">CHARACTER_8</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`parse_string_with_type' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_parse_string_with_type">parse_string_with_type</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">s</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</A><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`reset' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_reset">reset</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">type</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/integer_32_chart.html">INTEGER_32</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_leading_separators' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_set_leading_separators">set_leading_separators</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">separators</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_leading_separators_acceptable' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_set_leading_separators_acceptable">set_leading_separators_acceptable</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">b</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_trailing_separators' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_set_trailing_separators">set_trailing_separators</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">separators</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/string_8_chart.html">STRING_8</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_trailing_separators_acceptable' is declared in `Current'"><A CLASS="efeature" HREF="../base/string_to_numeric_convertor.html#f_set_trailing_separators_acceptable">set_trailing_separators_acceptable</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">b</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../base/boolean_chart.html">BOOLEAN</A><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<SPAN CLASS="ekeyword">Constraints</SPAN>
+	<SPAN CLASS="etag">leading separators not void</SPAN>
+	<SPAN CLASS="etag">trailing separators not void</SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_to_numeric_convertor_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="string_to_numeric_convertor.html">Text</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="string_to_numeric_convertor"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
