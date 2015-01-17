@@ -154,6 +154,8 @@ When you want to write Eiffel data objects to a DBF file, use the FP_DBF_WRITER.
 
 Once one has provided the above information (in order), then a call to `generate_dbf” will create a DBF in whatever location you specify.
 
+See: https://www.youtube.com/watch?v=vHD2_O808YE&feature=youtu.be&hd=1
+
 
 FP_DBF_READER
 
