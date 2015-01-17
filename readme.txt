@@ -115,7 +115,10 @@ Round-trip Mapping
 This library is designed (and tested as) a round-trip mechanism—that is—data may begin in Eiffel code, be exported (written) to FoxPro DBFs and then read back into Eiffel from the DBF file, where the end result is precisely the same as how it started. Moreover, data generated in and by FoxPro systems ought to be well formed and on-par with its Eiffel counterpart once arriving in Eiffel from the FoxPro legacy DBF file.
 
 You will find tests and testing that demonstrate this process both internally within the Eiffel FoxPro library and externally, by writing to an actual DBF (created on-the-fly) and then read back in, parsed, and translated from the raw DBF data into Eiffel counterpart types.
+
+
 Clusters and Classes: The lay-of-the-land
+=========================================
 The Eiffel FoxPro library consists of a few primary classes, some supporting classes, and testing classes. You will also find documentation classes, which are temporary “hacks” designed to hold library and cluster documentation until Eiffel Studio has been thought through more thoroughly and thoughtfully as how to have a mechanism for presenting documentation. Nevertheless, the primary and secondary classes are of immediate interest for you (presuming reading this documentation represents a need on your part).
 
 
