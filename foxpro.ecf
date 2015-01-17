@@ -10,7 +10,7 @@
 			<exclude>/.svn$</exclude>
 			<exclude>/.git$</exclude>
 		</file_rule>
-		<option warning="true" void_safety="transitional">
+		<option warning="true" void_safety="transitional" syntax="provisional">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
@@ -29,6 +29,8 @@
 			<exclude>/.svn$</exclude>
 			<include>tests</include>
 		</file_rule>
+		<option void_safety="transitional" syntax="provisional">
+		</option>
 		<library name="test_set_helper" location="C:\Users\Larry_2\Documents\GitHub\test_set_helper\test_set_helper.ecf"/>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
