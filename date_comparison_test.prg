@@ -1,0 +1,25 @@
+CLOSE ALL 
+CLEAR ALL 
+RELEASE ALL EXTENDED
+USE date_comparison_test.dbf IN 0 EXCLUSIVE
+DELETE ALL
+PACK
+
+LOCAL d as Datetime
+
+FOR i = 2100 TO 0101 STEP -1
+	d = DATETIME(i, 3, 5, 12, 0, 0)
+	FOR y = 1 TO (90 - 19)
+		APPEND BLANK
+		REPLACE fld_datetm WITH d
+		REPLACE fld_chdate WITH DTOS(d)
+		d = d - (24*60*60)
+	ENDFOR 
+ENDFOR
+
+SELECT date_comparison_test
+USE
+
+
+RETURN
+
