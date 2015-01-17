@@ -19,6 +19,8 @@ note
 		]"
 	EIS: "name=readme", "protocol=PDF", "tag=readme",
 			"src=$JINNY_TRUNK\jinny_foxpro\readme.pdf"
+	EIS: "name=video", "protocol=URI", "tag=video",
+			"src=https://www.youtube.com/watch?v=vHD2_O808YE&feature=youtu.be&hd=1"
 
 	date: "$Date: 2015-01-16 10:27:47 -0500 (Fri, 16 Jan 2015) $"
 	revision: "$Revision: 10604 $"
