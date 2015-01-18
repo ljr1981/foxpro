@@ -61,6 +61,9 @@ feature -- Access
 	header: FP_HEADER
 			-- Table header specification of Current.
 
+	update_date: detachable DATE
+			-- Optional update date
+
 feature -- Settings
 
 	set_name (a_name: like name)
@@ -69,6 +72,14 @@ feature -- Settings
 			name := a_name
 		ensure
 			name_set: name = a_name
+		end
+
+	set_update_date (a_update_date: attached like update_date)
+			-- Sets `update_date' with attached version of `a_update_date'.
+		do
+			update_date := a_update_date
+		ensure
+			update_date_set: update_date ~ a_update_date
 		end
 
 feature -- Basic Operations
@@ -96,7 +107,11 @@ feature -- Basic Operations
 
 				-- Create and prepare the DBF file
 			create l_file.make_create_read_write (dbf_name)
-			l_file.put_string (header.out)
+			if attached update_date as al_update_date then
+				l_file.put_string (header.header_string (al_update_date))
+			else
+				l_file.put_string (header.header_string (create {DATE}.make (2010, 1, 1)))
+			end
 
 				-- Add data to file
 			if data.count > 0 then

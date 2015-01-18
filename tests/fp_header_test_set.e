@@ -295,7 +295,7 @@ feature {NONE} -- Implementation: Headers
 			l_file: RAW_FILE
 		do
 			create l_file.make_create_read_write (a_name)
-			l_file.put_string (a_header.out)
+			l_file.put_string (a_header.header_string (create {DATE}.make (2015, 1, 1)))
 			l_file.close
 		end
 
