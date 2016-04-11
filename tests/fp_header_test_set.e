@@ -45,7 +45,15 @@ class
 	FP_HEADER_TEST_SET
 
 inherit
-	TEST_SET_HELPER
+	EQA_TEST_SET
+		rename
+			assert as assert_old
+		end
+
+	EQA_COMMONLY_USED_ASSERTIONS
+		undefine
+			default_create
+		end
 
 	FP_HEX_HELPER
 		undefine
@@ -123,15 +131,15 @@ feature -- Test routines
 			create l_header
 				-- 999_999_990_000 (e.g. 99_999_999.0000)
 			l_tuple := l_header.all_bytes_tuple_64 (999_999_990_000)
-			assert_equals ("msb", (0).as_natural_8, l_tuple.msb)
-			assert_equals ("msb2", (0).as_natural_8, l_tuple.msb2)
-			assert_equals ("msb3", (0).as_natural_8, l_tuple.msb3)
-			assert_equals ("msb4", (232).as_natural_8, l_tuple.msb4)
-			assert_equals ("msb5", (212).as_natural_8, l_tuple.msb5)
-			assert_equals ("msb6", (164).as_natural_8, l_tuple.msb6)
-			assert_equals ("msb7", (232).as_natural_8, l_tuple.msb7)
-			assert_equals ("lsb", (240).as_natural_8, l_tuple.lsb)
-			assert_equals ("same_value", (999_999_990_000).as_integer_64, calculate_from_msb (l_tuple))
+			assert_equal ("msb", (0).as_natural_8, l_tuple.msb)
+			assert_equal ("msb2", (0).as_natural_8, l_tuple.msb2)
+			assert_equal ("msb3", (0).as_natural_8, l_tuple.msb3)
+			assert_equal ("msb4", (232).as_natural_8, l_tuple.msb4)
+			assert_equal ("msb5", (212).as_natural_8, l_tuple.msb5)
+			assert_equal ("msb6", (164).as_natural_8, l_tuple.msb6)
+			assert_equal ("msb7", (232).as_natural_8, l_tuple.msb7)
+			assert_equal ("lsb", (240).as_natural_8, l_tuple.lsb)
+			assert_equal ("same_value", (999_999_990_000).as_integer_64, calculate_from_msb (l_tuple))
 
 			assert_strings_equal ("hex_strings_match", "F0-E8-A4-D4-E8-00-00-00", l_tuple.lsb.to_hex_string + "-" + l_tuple.msb7.to_hex_string + "-" + l_tuple.msb6.to_hex_string + "-" + l_tuple.msb5.to_hex_string + "-" + l_tuple.msb4.to_hex_string + "-" + l_tuple.msb3.to_hex_string + "-" + l_tuple.msb2.to_hex_string + "-" + l_tuple.msb.to_hex_string)
 
@@ -140,45 +148,45 @@ feature -- Test routines
 				--	Byte#	├───8──┤├───7──┤├───6──┤├───5──┤├───4──┤├───3──┤├───2──┤├───1──┤
 				--	        0000000000000000000000001110100011010100101001001110100011110000 --000000E8D4A4E8F0
 			l_tuple := l_header.all_bytes_tuple_64 (999_999_990_000)
-			assert_equals ("msb", (0).as_natural_8, l_tuple.msb)
-			assert_equals ("msb2", (0).as_natural_8, l_tuple.msb2)
-			assert_equals ("msb3", (0).as_natural_8, l_tuple.msb3)
+			assert_equal ("msb", (0).as_natural_8, l_tuple.msb)
+			assert_equal ("msb2", (0).as_natural_8, l_tuple.msb2)
+			assert_equal ("msb3", (0).as_natural_8, l_tuple.msb3)
 				-- msb4	232
 				-- | << 24	1110100011010100101001001110100011110000◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|
 				-- | >> 56	►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►11101000 = 232 x 4_294_967_296
-			assert_equals ("996_432_412_672", (996_432_412_672).to_integer_64, 232 * 4_294_967_296)
-			assert_equals ("msb4", (232).as_natural_8, l_tuple.msb4)
+			assert_equal ("996_432_412_672", (996_432_412_672).to_integer_64, 232 * 4_294_967_296)
+			assert_equal ("msb4", (232).as_natural_8, l_tuple.msb4)
 
 				-- msb5	212
 				-- | << 32	11010100101001001110100011110000◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|
 				-- | >> 56	►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►11010100 = 212 x 16_777_216
-			assert_equals ("msb5", (212).as_natural_8, l_tuple.msb5)
-			assert_equals ("3_556_769_792", (3_556_769_792).to_integer_64, (212).to_integer_64 * (16_777_216).to_integer_64)
+			assert_equal ("msb5", (212).as_natural_8, l_tuple.msb5)
+			assert_equal ("3_556_769_792", (3_556_769_792).to_integer_64, (212).to_integer_64 * (16_777_216).to_integer_64)
 
 				-- msb6	164
 				-- | << 40	101001001110100011110000◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|
 				-- | >> 56	►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►10100100 = 164 x 65_536
-			assert_equals ("msb6", (164).as_natural_8, l_tuple.msb6)
-			assert_equals ("10_747_904", (10_747_904).to_integer_64, (164).to_integer_64 * (65_536).to_integer_64)
+			assert_equal ("msb6", (164).as_natural_8, l_tuple.msb6)
+			assert_equal ("10_747_904", (10_747_904).to_integer_64, (164).to_integer_64 * (65_536).to_integer_64)
 
 				-- msb7	232
 				-- |<< 48	1110100011110000◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|
 				-- |>> 56	►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►11101000 = 232 x 256
-			assert_equals ("msb7", (232).as_natural_8, l_tuple.msb7)
-			assert_equals ("59_392", (59_392).to_integer_64, (232).to_integer_64 * (256).to_integer_64)
+			assert_equal ("msb7", (232).as_natural_8, l_tuple.msb7)
+			assert_equal ("59_392", (59_392).to_integer_64, (232).to_integer_64 * (256).to_integer_64)
 
 				-- lsb	240
 				-- <<56	    11110000◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|◄◄◄◄◄◄◄|
 				-- |>> 56	►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►►11110000 = 240 x 1
-			assert_equals ("lsb", (240).as_natural_8, l_tuple.lsb)
-			assert_equals ("999_999_990_000", (999_999_990_000).to_integer_64, (240).to_integer_64 +
+			assert_equal ("lsb", (240).as_natural_8, l_tuple.lsb)
+			assert_equal ("999_999_990_000", (999_999_990_000).to_integer_64, (240).to_integer_64 +
 																				(59_392).to_integer_64 +
 																				(10_747_904).to_integer_64 +
 																				(3_556_769_792).to_integer_64 +
 																				(996_432_412_672).to_integer_64)
 
 			print ((999_999_990_000).as_integer_64 - calculate_from_msb (l_tuple))
-			assert_equals ("999_999_990_000", (999_999_990_000).as_integer_64, calculate_from_msb (l_tuple))
+			assert_equal ("999_999_990_000", (999_999_990_000).as_integer_64, calculate_from_msb (l_tuple))
 
 		end
 
@@ -186,7 +194,7 @@ feature -- Test routines
 			-- Test {FP_HEADER}.byte_n_of_4
 		note
 			attention: "[
-				(1) Note the various `assert_equals' calls where earlier versions have
+				(1) Note the various `assert_equal' calls where earlier versions have
 					calls to `(n).to_integer_8', whereas others use '%/0x00/'-style
 					calls instead. This was a discovery that turned out to be more
 					convenient when inspecting the "hex-edit" of a file, where the
@@ -201,56 +209,56 @@ feature -- Test routines
 		do
 			create l_header
 				-- 363 (1 x 256 + 107)
-			assert_equals ("byte_3", (1).to_integer_8, l_header.byte_n_of_8 (7, 363))
-			assert_equals ("byte_4", (107).to_integer_8, l_header.byte_n_of_8 (8, 363))
+			assert_equal ("byte_3", (1).to_integer_8, l_header.byte_n_of_8 (7, 363))
+			assert_equal ("byte_4", (107).to_integer_8, l_header.byte_n_of_8 (8, 363))
 				-- 999 (3 x 256 + 231)
-			assert_equals ("byte_1_999", (0).to_integer_8, l_header.byte_n_of_8 (5, 999))
-			assert_equals ("byte_2_999", (0).to_integer_8, l_header.byte_n_of_8 (6, 999))
-			assert_equals ("byte_3_999", (3).to_integer_8, l_header.byte_n_of_8 (7, 999))
-			assert_equals ("byte_4_999", (231).to_integer_8, l_header.byte_n_of_8 (8, 999))
+			assert_equal ("byte_1_999", (0).to_integer_8, l_header.byte_n_of_8 (5, 999))
+			assert_equal ("byte_2_999", (0).to_integer_8, l_header.byte_n_of_8 (6, 999))
+			assert_equal ("byte_3_999", (3).to_integer_8, l_header.byte_n_of_8 (7, 999))
+			assert_equal ("byte_4_999", (231).to_integer_8, l_header.byte_n_of_8 (8, 999))
 				-- 2049 (8 x 256 + 1)
-			assert_equals ("byte_1_2049", (0).to_integer_8, l_header.byte_n_of_8 (5, 2049))
-			assert_equals ("byte_2_2049", (0).to_integer_8, l_header.byte_n_of_8 (6, 2049))
-			assert_equals ("byte_3_2049", (8).to_integer_8, l_header.byte_n_of_8 (7, 2049))
-			assert_equals ("byte_4_2049", (1).to_integer_8, l_header.byte_n_of_8 (8, 2049))
+			assert_equal ("byte_1_2049", (0).to_integer_8, l_header.byte_n_of_8 (5, 2049))
+			assert_equal ("byte_2_2049", (0).to_integer_8, l_header.byte_n_of_8 (6, 2049))
+			assert_equal ("byte_3_2049", (8).to_integer_8, l_header.byte_n_of_8 (7, 2049))
+			assert_equal ("byte_4_2049", (1).to_integer_8, l_header.byte_n_of_8 (8, 2049))
 				-- 3149 (12 x 256 + 77)
-			assert_equals ("byte_1_3149", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 3149))
-			assert_equals ("byte_2_3149", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 3149))
-			assert_equals ("byte_3_3149", ('%/0x0C/').code.to_integer_8, l_header.byte_n_of_8 (7, 3149))
-			assert_equals ("byte_4_3149", ('%/0x4D/').code.to_integer_8, l_header.byte_n_of_8 (8, 3149))
+			assert_equal ("byte_1_3149", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 3149))
+			assert_equal ("byte_2_3149", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 3149))
+			assert_equal ("byte_3_3149", ('%/0x0C/').code.to_integer_8, l_header.byte_n_of_8 (7, 3149))
+			assert_equal ("byte_4_3149", ('%/0x4D/').code.to_integer_8, l_header.byte_n_of_8 (8, 3149))
 			-- All permutations of 0,0,0,1
-			assert_equals ("byte_1_1", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 1))
-			assert_equals ("byte_2_1", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 1))
-			assert_equals ("byte_3_1", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 1))
-			assert_equals ("byte_4_1", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (8, 1))
+			assert_equal ("byte_1_1", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 1))
+			assert_equal ("byte_2_1", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 1))
+			assert_equal ("byte_3_1", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 1))
+			assert_equal ("byte_4_1", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (8, 1))
 			--	| 0,0,0,255
-			assert_equals ("byte_1_255", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 255))
-			assert_equals ("byte_2_255", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 255))
-			assert_equals ("byte_3_255", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 255))
-			assert_equals ("byte_4_255", ('%/0xFF/').code.to_integer_8, l_header.byte_n_of_8 (8, 255))
+			assert_equal ("byte_1_255", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 255))
+			assert_equal ("byte_2_255", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 255))
+			assert_equal ("byte_3_255", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 255))
+			assert_equal ("byte_4_255", ('%/0xFF/').code.to_integer_8, l_header.byte_n_of_8 (8, 255))
 			--	| 1,1,1,255 = 16777216 + 65536 + 256 + 255 = 16843263
-			assert_equals ("byte_1_16843263", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (5, 16843263))
-			assert_equals ("byte_2_16843263", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (6, 16843263))
-			assert_equals ("byte_3_16843263", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (7, 16843263))
-			assert_equals ("byte_4_16843263", ('%/0xFF/').code.to_integer_8, l_header.byte_n_of_8 (8, 16843263))
+			assert_equal ("byte_1_16843263", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (5, 16843263))
+			assert_equal ("byte_2_16843263", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (6, 16843263))
+			assert_equal ("byte_3_16843263", ('%/0x01/').code.to_integer_8, l_header.byte_n_of_8 (7, 16843263))
+			assert_equal ("byte_4_16843263", ('%/0xFF/').code.to_integer_8, l_header.byte_n_of_8 (8, 16843263))
 			--	| 0, 0, 0, 100
-			assert_equals ("byte_1_100", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 100))
-			assert_equals ("byte_2_100", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 100))
-			assert_equals ("byte_3_100", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 100))
-			assert_equals ("byte_4_100", ('%/0x64/').code.to_integer_8, l_header.byte_n_of_8 (8, 100))
+			assert_equal ("byte_1_100", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 100))
+			assert_equal ("byte_2_100", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 100))
+			assert_equal ("byte_3_100", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 100))
+			assert_equal ("byte_4_100", ('%/0x64/').code.to_integer_8, l_header.byte_n_of_8 (8, 100))
 			--	| 5, 5, 5, 100 = (16777216 * 5 = 83886080) + (65536 * 5 = 327680) + (256 * 5 = 1280) + 100 = 84215140)
-			assert_equals ("84215140", (16777216 * 5) + (65536 * 5) + (256 * 5) + 100, 84215140)
+			assert_equal ("84215140", (16777216 * 5) + (65536 * 5) + (256 * 5) + 100, 84215140)
 				-- INTEGER_64
-			assert_equals ("byte_5_84215140", ('%/0x05/').code.to_integer_8, l_header.byte_n_of_8 (5, 84215140))
-			assert_equals ("byte_6_84215140", ('%/0x05/').code.to_integer_8, l_header.byte_n_of_8 (6, 84215140))
-			assert_equals ("byte_7_84215140", ('%/0x05/').code.to_integer_8, l_header.byte_n_of_8 (7, 84215140))
-			assert_equals ("byte_8_84215140", ('%/0x64/').code.to_integer_8, l_header.byte_n_of_8 (8, 84215140))
+			assert_equal ("byte_5_84215140", ('%/0x05/').code.to_integer_8, l_header.byte_n_of_8 (5, 84215140))
+			assert_equal ("byte_6_84215140", ('%/0x05/').code.to_integer_8, l_header.byte_n_of_8 (6, 84215140))
+			assert_equal ("byte_7_84215140", ('%/0x05/').code.to_integer_8, l_header.byte_n_of_8 (7, 84215140))
+			assert_equal ("byte_8_84215140", ('%/0x64/').code.to_integer_8, l_header.byte_n_of_8 (8, 84215140))
 			-- plus
 			--	zero and
-			assert_equals ("byte_1_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 0))
-			assert_equals ("byte_2_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 0))
-			assert_equals ("byte_3_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 0))
-			assert_equals ("byte_4_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (8, 0))
+			assert_equal ("byte_1_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (5, 0))
+			assert_equal ("byte_2_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (6, 0))
+			assert_equal ("byte_3_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (7, 0))
+			assert_equal ("byte_4_84215140", ('%/0x00/').code.to_integer_8, l_header.byte_n_of_8 (8, 0))
 
 			-- Remaining tests to code ...
 			--	2147483647

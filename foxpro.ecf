@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-13-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-13-0 http://www.eiffel.com/developers/xml/configuration-1-13-0.xsd" name="foxpro" uuid="4F64E265-DC82-4759-B1AD-C40EA2DB286D" library_target="foxpro">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="foxpro" uuid="4F64E265-DC82-4759-B1AD-C40EA2DB286D" library_target="foxpro">
 	<description>Classes relative to working with MS FoxPro</description>
 	<target name="foxpro">
 		<root all_classes="true"/>
@@ -10,7 +10,7 @@
 			<exclude>/.svn$</exclude>
 			<exclude>/.git$</exclude>
 		</file_rule>
-		<option warning="true" void_safety="transitional" syntax="provisional">
+		<option warning="true" is_obsolete_routine_type="true" void_safety="transitional" syntax="provisional">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
@@ -31,7 +31,6 @@
 		</file_rule>
 		<option void_safety="transitional" syntax="provisional">
 		</option>
-		<library name="test_set_helper" location="$GITHUB\test_set_helper\test_set_helper.ecf"/>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
 	</target>

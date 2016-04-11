@@ -11,7 +11,15 @@ class
 	FP_DBF_WRITER_TEST_SET
 
 inherit
-	TEST_SET_HELPER
+	EQA_TEST_SET
+		rename
+			assert as assert_old
+		end
+
+	EQA_COMMONLY_USED_ASSERTIONS
+		undefine
+			default_create
+		end
 
 	FP_HEX_HELPER
 		undefine
