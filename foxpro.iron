@@ -1,0 +1,15 @@
+package foxpro
+
+project
+	foxpro = "foxpro.ecf"
+
+note
+	title: FoxPro
+	description: "An Eiffel library for accessing FoxPro basic DBF files."
+
+	tags: eiffel,foxpro,visual foxpro
+	license: Eiffel Forum License v2 
+	copyright: 2018 Larry Rix
+	link[license]: http://www.eiffel.com/licensing/forum.txt external
+
+end
